@@ -7,7 +7,9 @@
     <meta name="description" content="academic project" />
     <title>Equalizer landing page</title>
   </head>
-  <body class="bg-mobile md:bg-tablet xl:bg-desktop bg-top-right bg-auto bg-no-repeat max-h-[1100px]">
+  <body
+    class="bg-[url(assets/bg-main-mobile.png)] md:bg-[url(assets/bg-main-tablet.png)] mx-auto xl:bg-[url(assets/bg-main-desktop.png)] xl:bg-[position:-230px_-250px] bg-no-repeat md:bg-no-repeat md:bg-auto md:bg-[position:-350px_-200px] bg-[position:70px_-220px] bg-auto max-h-[1100px] xl:mx-[10rem]"
+  >
     <div>
       <img class="hidden md:block absolute -top-10 -right-16" src="assets/bg-pattern-1.svg" alt="illustration app" />
       <img class="pt-16 md:py-32 pl-5 pb-16" src="assets/logo.svg" alt="logo equalizer" />
@@ -32,14 +34,16 @@
         Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take your listening experience to a whole new level and access all our incredible features!
       </p>
       <p class="text-base-slate text-preset-2 pb-12">$4 <span class="text-preset-4 align-middle">/ month</span></p>
-      <button class="flex justify-center items-center bg-base-slate py-4 w-[95%] gap-2 rounded-xl pt-4">
-        <img src="assets/icon-apple.svg" alt="icon apple" />
-        <p class="text-preset-6 text-white pt-1">IOS Download</p>
-      </button>
-      <button class="flex justify-center items-center bg-white w-[95%] gap-2 rounded-xl py-4">
-        <img src="assets/icon-android.svg" alt="icon apple" />
-        <p class="text-preset-6 text-base-slate pt-1">IOS Download</p>
-      </button>
+      <div class="flex flex-col gap-2">
+        <button class="group flex cursor-pointer gap-2 justify-center transition-colors duration-200 items-center bg-base-slate py-4 w-[95%] rounded-xl pt-4 hover:bg-base-cyan">
+          <img src="assets/icon-apple.svg" alt="icon apple" />
+          <p class="text-preset-6 text-white pt-1 group-hover:text-base-slate">IOS Download</p>
+        </button>
+        <button class="flex justify-center cursor-pointer items-center transition-colors duration-200 bg-white w-[95%] gap-2 rounded-xl py-4 hover:bg-base-yellow">
+          <img src="assets/icon-android.svg" alt="icon apple" />
+          <p class="text-preset-6 text-base-slate pt-1">IOS Download</p>
+        </button>
+      </div>
     </div>
 
     <footer class="mt-32 md:relative md:-top-105">
