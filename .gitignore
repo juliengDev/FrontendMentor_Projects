@@ -1,0 +1,28 @@
+# Ignore tous les node_modules dans tous les sous-dossiers
+**/node_modules/
+
+# Ignore les dossiers de build
+**/dist/
+**/public/
+
+# Ignore les fichiers de lock
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+
+# Ignore les fichiers env
+**/.env*
+
+# Fichiers système et cache
+**/.DS_Store
+**/Thumbs.db
+
+# Fichiers de preview
+**/preview.jpg
+
+# Logs
+**/*.log
+
+# Config éditeurs
+**/.vscode/
+**/.idea/
