@@ -35,14 +35,14 @@
 
 @theme {
   --color-base-brown: var(--color-brown);
-  --color-basse-pink-primary: var(--color-pink-primary);
+  --color-base-pink-primary: var(--color-pink-primary);
   --color-pink-base-secondary: var(--color-pink-secondary);
 }
 
 /* FONTS */
 
 @font-face {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans";
   src: url("/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
   font-optical-sizing: auto;
   font-weight: 400;
@@ -58,9 +58,6 @@ body {
 }
 
 @layer utilities {
-  .font-lexend {
-    font-family: "Lexend Deca", sans-serif;
-  }
   .pink-gradient {
     background-image: linear-gradient(to right, #f8bfbf, #ee8b8b);
   }

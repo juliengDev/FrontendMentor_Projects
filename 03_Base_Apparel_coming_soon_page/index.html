@@ -7,9 +7,30 @@
     <meta name="description" content="academic project" />
     <title>Project Title</title>
   </head>
-  <body class="min-h-screen flex items-center justify-center">
-    <div id="app" class="">
-     
+  <body class="min-h-screen flex justify-center">
+    <div id="app" class="grid w-full max-w-[1400px] mx-auto grid-rows-[84px_250px_1fr] md:grid-cols-2 md:grid-rows-3">
+      <div class="max-w-[6.25rem] m-8">
+        <img src="assets/images/logo.svg" alt="logo" />
+      </div>
+      <div class="md:row-span-3">
+        <img class="md:hidden bg-cover mx-auto" src="assets/images/hero-mobile.jpg" alt="hero image" />
+      </div>
+      <div class="md:row-span-2 flex flex-col items-center text-center pt-16 mx-8">
+        <h1 class="uppercase text-[2.5rem] font-light tracking-[10.83px] leading-[42px] text-base-pink-primary mb-4">
+          we're<span class="block text-base-brown font-semibold">coming <span class="block"></span>soon</span>
+        </h1>
+        <p class="text-sm leading-[22px] text-base-pink-primary mb-8">
+          Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
+        <form id="form" action="" class="flex flex-col items-center">
+          <div class="flex items-center gap-2 mb-4">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" class="border-1 rounded" />
+          </div>
+          <button class="border py-2 px-5 w-full cursor-pointer">Submit</button>
+        </form>
+        <p id="error"></p>
+      </div>
     </div>
     <script type="module" src="src/main.ts"></script>
   </body>
