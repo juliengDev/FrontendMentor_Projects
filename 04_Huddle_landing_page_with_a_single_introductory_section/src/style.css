@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+
+  --color-brown: #423a3a;
+  --color-pink-primary: #ce9898;
+  --color-pink-secondary: #ee8b8b;
+
+  /* FONTS */
+  --font-size-preset-1: 5.5rem;
+  --font-size-preset-1-mobil: 2.5rem;
+  --font-size-preset-1-tablet: 4rem;
+  --font-size-preset-2: 4rem;
+  --font-size-preset-3: 2.5rem;
+  --font-size-preset-4: 1.25rem;
+  --font-size-preset-5-bold: 1rem;
+  --font-size-preset-5: 1rem;
+  --font-size-preset-6: 1.125rem;
+  --line-height-preset-1: 100%;
+  --line-height-preset-2: 100%;
+  --line-height-preset-3: 110%;
+  --line-height-preset-4: 150%;
+  --line-height-preset-5-bold: 150%;
+  --line-height-preset-5: 150%;
+  --line-height-preset-6: 180%;
+  --letter-spacing-preset-1: -1px;
+  --letter-spacing-preset-2: 0px;
+  --letter-spacing-preset-3: 0px;
+  --letter-spacing-preset-4: 0px;
+  --letter-spacing-preset-5-bold: 0px;
+  --letter-spacing-preset-5: 0px;
+  --letter-spacing-preset-6: 0px;
+}
+
+@theme {
+  --color-base-brown: var(--color-brown);
+  --color-base-pink-primary: var(--color-pink-primary);
+  --color-pink-base-secondary: var(--color-pink-secondary);
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  font-optical-sizing: auto;
+}
+
+@layer utilities {
+  .pink-gradient {
+    background-image: linear-gradient(to right, #f8bfbf, #ee8b8b);
+  }
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 15px 20px rgba(198, 110, 110, 0.24));
+  }
+}
+
+@layer components {
+  @media (min-width: 365px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1-mobil);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1-tablet);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+  .text-preset-2 {
+    font-size: var(--font-size-preset-2);
+    line-height: var(--line-height-preset-2);
+    letter-spacing: var(--letter-spacing-preset-2);
+    font-weight: bold;
+  }
+  .text-preset-3 {
+    font-size: var(--font-size-preset-3);
+    line-height: var(--line-height-preset-3);
+    letter-spacing: var(--letter-spacing-preset-3);
+    font-weight: bold;
+  }
+  .text-preset-4 {
+    font-size: var(--font-size-preset-4);
+    line-height: var(--line-height-preset-4);
+    letter-spacing: var(--letter-spacing-preset-4);
+    font-weight: normal;
+  }
+  .text-preset-5-bold {
+    font-size: var(--font-size-preset-5-bold);
+    line-height: var(--line-height-preset-5-bold);
+    letter-spacing: var(--letter-spacing-preset-5-bold);
+    font-weight: bold;
+  }
+  .text-preset-5 {
+    font-size: var(--font-size-preset-5);
+    line-height: var(--line-height-preset-5);
+    letter-spacing: var(--letter-spacing-preset-5);
+    font-weight: normal;
+  }
+  .text-preset-6 {
+    font-size: var(--font-size-preset-6);
+    /* line-height: var(--line-height-preset-6); */
+    letter-spacing: var(--letter-spacing-preset-6);
+    font-weight: bold;
+  }
+}
+
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+  
+  */
+
+/* .bg-mobile {
+  background-image: url("../assets/bg-main-mobile.png");
+}
+
+
+*/
+@media (min-width: 768px) {
+  .bg-tablet {
+    background-image: url("../assets/images/bg-pattern-desktop.svg");
+  }
+}
