@@ -2,20 +2,31 @@ import "./style.css";
 import * as z from "zod";
 
 const EmailSchema = z.object({
-  email: z.string().min(1, "Email required").email("Please provide a valid email"),
+  email: z
+    .string()
+    .min(1, "Email required")
+    .email("Please provide a valid email"),
 });
 
 const formEl = document.getElementById("form") as HTMLFormElement;
-const errorEl = document.getElementById("error") as HTMLParagraphElement;
+const emailInputEl = document.getElementById("email") as HTMLInputElement;
+const errorEl = document.querySelector(".error-msg") as HTMLParagraphElement;
+const errorIcon = document.querySelector(".error-icon") as HTMLImageElement;
 
 function displayError(message: string): void {
   errorEl.textContent = message;
-  errorEl.className = "text-red-500 text-sm mt-2";
+  errorEl.className = "self-start pl-6 text-[#F96464]";
+  errorIcon.className = "absolute top-1/2 right-20 -translate-y-1/2";
+  emailInputEl.classList.add("border-2", "border-[#F96464]");
+  emailInputEl.classList.remove("border-base-pink-primary", "border-1");
 }
 
 function clearError(): void {
   errorEl.textContent = "";
   errorEl.className = "";
+  errorIcon.className = "";
+  emailInputEl.classList.add("border-base-pink-primary", "border-1");
+  emailInputEl.classList.remove("border-2 border-[#F96464]");
 }
 
 formEl.addEventListener("submit", (e: Event) => {
