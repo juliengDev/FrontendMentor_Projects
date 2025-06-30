@@ -149,14 +149,10 @@ body {
   background-image: url("../assets/bg-main-mobile.png");
 }
 
+
+*/
 @media (min-width: 768px) {
   .bg-tablet {
-    background-image: url("../assets/bg-main-tablet.png");
+    background-image: url("../assets/images/bg-pattern-desktop.svg");
   }
 }
-
-@media (min-width: 1280px) {
-  .bg-desktop {
-    background-image: url("../assets/bg-main-desktop.png");
-  }
-} */
