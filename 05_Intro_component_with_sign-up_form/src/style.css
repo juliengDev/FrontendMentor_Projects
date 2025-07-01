@@ -164,8 +164,13 @@ body {
 
 
 */
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .bg-desktop {
     background-image: url("../images/bg-intro-desktop.png");
+  }
+}
+@media (min-width: 370px) {
+  .bg-desktop {
+    background-image: url("../images/bg-intro-mobile.png");
   }
 }
