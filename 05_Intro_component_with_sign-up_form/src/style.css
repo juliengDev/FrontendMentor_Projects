@@ -166,6 +166,6 @@ body {
 */
 @media (min-width: 1024px) {
   .bg-desktop {
-    background-image: url("../assets/images/bg-desktop.svg");
+    background-image: url("../images/bg-intro-desktop.png");
   }
 }
