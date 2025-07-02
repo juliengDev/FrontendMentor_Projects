@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="academic project" />
+    <title>NFT preview card component</title>
+  </head>
+  <body class="bg-base-blue-950 mx-auto max-w-[21.875rem]">
+    <div class="bg-base-blue-900 mx-3 my-9 rounded-[15px] lg:my-[9.5rem]">
+      <div class="flex flex-col p-6">
+        <div id="equilibriumGrp" class="group relative mb-6 max-w-[18.875rem]">
+          <img
+            class="w-full cursor-pointer rounded-lg"
+            src="images/image-equilibrium.jpg"
+            alt="image equilibrium"
+          />
+          <div
+            class="absolute inset-0 rounded-lg bg-[#00FFF8] opacity-0 transition-opacity duration-300 group-hover:opacity-50"
+          ></div>
+          <img
+            id="equilibriumImgView"
+            class="absolute top-1/2 left-1/2 max-w-[44px] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            src="images/icon-view.svg"
+            alt="icon view"
+          />
+        </div>
+        <h1
+          id="equilibriumTitle"
+          class="mb-4 text-[1.375rem] font-semibold text-white transition-colors duration-300"
+        >
+          Equilibrium #3429
+        </h1>
+        <p class="text-base-blue-500 mb-6 text-lg font-light">
+          Our Equilibrium collection promotes balance and calm.
+        </p>
+        <div class="mb-6 flex justify-between">
+          <div class="flex items-center gap-2">
+            <img src="images/icon-ethereum.svg" alt="icon ethereum" />
+            <p class="text-base-cyan text-base font-semibold">0.041 ETH</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <img src="images/icon-clock.svg" alt="icon clock" />
+            <p class="text-base-blue-500 text-base font-normal">3 days left</p>
+          </div>
+        </div>
+        <hr class="text-base-blue-800 mb-6" />
+        <div class="flex items-center">
+          <img
+            class="h-auto max-w-[33px] rounded-full border-2 border-white"
+            src="images/image-avatar.png"
+            alt="image avatar"
+          />
+          <p class="text-base-blue-500 pl-4 text-base font-normal">
+            Creation of
+            <span
+              id="equilibriumCreator"
+              class="text-white transition-colors duration-200"
+              >Jules Wyvern</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

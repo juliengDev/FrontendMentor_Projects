@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+
+  --color-blue-950: rgb(13, 25, 44);
+  --color-blue-900: rgb(21, 38, 63);
+  --color-blue-800: rgb(46, 64, 90);
+  --color-blue-500: rgb(139, 172, 217);
+  --color-cyan: rgb(0, 255, 248);
+
+  /* FONTS */
+  --font-size-preset-1: 5.5rem;
+  --font-size-preset-1-mobil: 2.5rem;
+  --font-size-preset-1-tablet: 4rem;
+  --font-size-preset-2: 4rem;
+  --font-size-preset-3: 2.5rem;
+  --font-size-preset-4: 1.25rem;
+  --font-size-preset-5-bold: 1rem;
+  --font-size-preset-5: 1rem;
+  --font-size-preset-6: 1.125rem;
+  --line-height-preset-1: 100%;
+  --line-height-preset-2: 100%;
+  --line-height-preset-3: 110%;
+  --line-height-preset-4: 150%;
+  --line-height-preset-5-bold: 150%;
+  --line-height-preset-5: 150%;
+  --line-height-preset-6: 180%;
+  --letter-spacing-preset-1: -1px;
+  --letter-spacing-preset-2: 0px;
+  --letter-spacing-preset-3: 0px;
+  --letter-spacing-preset-4: 0px;
+  --letter-spacing-preset-5-bold: 0px;
+  --letter-spacing-preset-5: 0px;
+  --letter-spacing-preset-6: 0px;
+}
+
+@theme {
+  --color-base-blue-950: var(--color-blue-950);
+  --color-base-blue-900: var(--color-blue-900);
+  --color-base-blue-800: var(--color-blue-800);
+  --color-base-blue-500: var(--color-blue-500);
+  --color-base-cyan: var(--color-cyan);
+}
+
+/* FONTS */
+/* 
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  font-optical-sizing: auto;
+}
+
+@layer utilities {
+  .pink-gradient {
+    background-image: linear-gradient(to right, #f8bfbf, #ee8b8b);
+  }
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 8px 0px rgba(0, 0, 0, 0.14));
+  }
+  .active {
+    color: var(--color-cyan);
+    
+  }
+}
+
+@layer components {
+  @media (min-width: 365px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1-mobil);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1-tablet);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-preset-1 {
+      font-size: var(--font-size-preset-1);
+      line-height: var(--line-height-preset-1);
+      letter-spacing: var(--letter-spacing-preset-1);
+      font-weight: bold;
+    }
+  }
+  .text-preset-2 {
+    font-size: var(--font-size-preset-2);
+    line-height: var(--line-height-preset-2);
+    letter-spacing: var(--letter-spacing-preset-2);
+    font-weight: bold;
+  }
+  .text-preset-3 {
+    font-size: var(--font-size-preset-3);
+    line-height: var(--line-height-preset-3);
+    letter-spacing: var(--letter-spacing-preset-3);
+    font-weight: bold;
+  }
+  .text-preset-4 {
+    font-size: var(--font-size-preset-4);
+    line-height: var(--line-height-preset-4);
+    letter-spacing: var(--letter-spacing-preset-4);
+    font-weight: normal;
+  }
+  .text-preset-5-bold {
+    font-size: var(--font-size-preset-5-bold);
+    line-height: var(--line-height-preset-5-bold);
+    letter-spacing: var(--letter-spacing-preset-5-bold);
+    font-weight: bold;
+  }
+  .text-preset-5 {
+    font-size: var(--font-size-preset-5);
+    line-height: var(--line-height-preset-5);
+    letter-spacing: var(--letter-spacing-preset-5);
+    font-weight: normal;
+  }
+  .text-preset-6 {
+    font-size: var(--font-size-preset-6);
+    /* line-height: var(--line-height-preset-6); */
+    letter-spacing: var(--letter-spacing-preset-6);
+    font-weight: bold;
+  }
+  .open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 0.875rem;
+    font-variation-settings: "wdth" 100;
+    line-height: 24px;
+  }
+}
+
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+  
+  */
+
+/* .bg-mobile {
+  background-image: url("../assets/bg-main-mobile.png");
+}
+
+
+*/
+/* @media (max-width: 1024px) {
+  .bg-desktop {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+}
+@media (min-width: 370px) {
+  .bg-desktop {
+    background-image: url("../images/bg-intro-mobile.png");
+  }
+} */
