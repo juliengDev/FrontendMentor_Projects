@@ -54,11 +54,10 @@
 } */
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Outfit";
   font-optical-sizing: auto;
-  font-size: 1rem;
-  font-weight: 400;
-  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer utilities {
@@ -70,7 +69,6 @@ body {
   }
   .active {
     color: var(--color-cyan);
-    
   }
 }
 
