@@ -54,7 +54,7 @@
 } */
 
 body {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Libre Franklin";
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -73,8 +73,8 @@ body {
   .drop-shadow-custom {
     filter: drop-shadow(0px 20px 20px rgba(56, 42, 225, 0.19));
   }
-  .drop-shadow-card {
-    box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+  .drop-shadow-btn {
+    box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.23);
   }
   .active {
     color: var(--color-cyan);
