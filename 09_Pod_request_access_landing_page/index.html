@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="academic project" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ping coming soon page</title>
+  </head>
+  <body class="relative h-screen w-full bg-white">
+    <div class="bg-project-image absolute inset-0"></div>
+    <div
+      class="relative z-10 mx-auto flex h-full max-w-[303px] flex-col items-center"
+    >
+      <img
+        class="mt-[6.875rem] mb-[3.5rem]"
+        src="images/desktop/logo.svg"
+        alt=""
+      />
+      <section class="mb-10">
+        <h1
+          class="text-base-green mb-4 text-center text-[2rem] leading-[120%] font-light uppercase"
+        >
+          Publish your podcasts <span class="text-white">everywhere.</span>
+        </h1>
+        <p
+          class="text-base-blue-300 text-center text-sm leading-[150%] font-light"
+        >
+          Upload your audio to Pod with a single click. We’ll then distribute
+          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
+          and more!
+        </p>
+      </section>
+      <section class="mb-10 flex items-center gap-4">
+        <img
+          class="fill-base-blue-300 w-[55px]"
+          src="images/desktop/spotify.svg"
+          alt="image spotify"
+        /><img
+          class="fill-base-blue-300 w-[45px]"
+          src="images/desktop/apple-podcast.svg"
+          alt=""
+        /><img
+          class="fill-base-blue-300 w-[72px]"
+          src="images/desktop/google-podcasts.svg"
+          alt=""
+        /><img
+          class="fill-base-blue-300 w-[75px]"
+          src="images/desktop/pocket-casts.svg"
+          alt=""
+        />
+      </section>
+      <form class="flex w-full flex-col items-center">
+        <label for="email"></label>
+        <input
+          class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email Adress"
+        />
+        <button
+          class="bg-base-green w-full rounded-4xl px-7 py-2 font-semibold"
+        >
+          Request Access
+        </button>
+      </form>
+    </div>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
