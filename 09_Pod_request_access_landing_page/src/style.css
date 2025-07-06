@@ -51,16 +51,14 @@ body {
 
 .bg-project {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: top;
-  /* Appliquer l'overlay directement avec un gradient */
-  background-blend-mode: overlay;
 }
 
 .bg-project-tablet {
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 340px 0px;
+  background-position: center right;
 }
 
 .bg-project-mobile::before {
@@ -72,14 +70,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  mask-image: inherit;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-image: inherit;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
 }
 
 @media (width <= 767px) {

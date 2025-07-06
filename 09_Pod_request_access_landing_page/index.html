@@ -13,18 +13,20 @@
     />
     <title>Ping coming soon page</title>
   </head>
-  <body class="relative h-screen w-full bg-white">
-    <div
-      id="tablet"
-      class="bg-project bg-project-tablet hidden h-full md:block"
-    >
+  <body class="bg-base-blue-950 relative w-full">
+    <img
+      class="absolute right-0 -bottom-13 hidden max-h-[6.5rem] max-w-[14.5rem] bg-no-repeat md:block lg:right-30 lg:-bottom-13"
+      src="images/desktop/bg-pattern-dots.svg"
+      alt="dots pattern"
+    />
+    <div id="tablet" class="bg-project bg-project-tablet hidden md:block">
       <div
-        class="bg-base-blue-950 flex w-[46%] items-center pt-[10.375rem] pb-[4.2rem]"
+        class="bg-base-blue-950 flex max-w-[30%] items-center pt-[10.375rem] pb-[4.2rem]"
       >
         <img class="pl-12" src="images/desktop/logo.svg" alt="image logo" />
       </div>
-      <div class="bg-base-blue-950 flex w-[84%] items-start pt-22">
-        <section class="flex h-full w-full max-w-[33rem] flex-col pl-12">
+      <div class="bg-base-blue-950 flex w-[84%] pt-22 lg:w-[55%]">
+        <section class="flex w-full max-w-[33rem] flex-col self-start pl-12">
           <h1
             class="text-base-green mb-6 max-w-[21.625rem] justify-self-start text-[2rem] leading-[120%] font-light uppercase"
           >
@@ -49,7 +51,7 @@
               placeholder="Email Adress"
             />
             <button
-              class="bg-base-green absolute right-0 rounded-4xl px-7 py-2 font-semibold hover:cursor-pointer"
+              class="bg-base-green absolute right-0 rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
             >
               Request Access
             </button>
@@ -79,7 +81,7 @@
     <div id="mobile" class="block md:hidden">
       <div class="bg-project-mobile bg-project absolute inset-0"></div>
       <div
-        class="relative z-10 mx-auto flex h-full max-w-[303px] flex-col items-center"
+        class="relative z-10 mx-auto flex max-w-[303px] flex-col items-center"
       >
         <img
           class="mt-[6.875rem] mb-[3.5rem]"
@@ -129,7 +131,7 @@
             placeholder="Email Adress"
           />
           <button
-            class="bg-base-green w-full rounded-4xl px-7 py-2 font-semibold"
+            class="bg-base-green w-full rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
           >
             Request Access
           </button>
