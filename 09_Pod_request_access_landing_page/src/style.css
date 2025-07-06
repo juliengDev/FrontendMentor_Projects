@@ -49,15 +49,21 @@ body {
   }
 }
 
-.bg-project-image {
+.bg-project {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   /* Appliquer l'overlay directement avec un gradient */
   background-blend-mode: overlay;
 }
 
-.bg-project-image::before {
+.bg-project-tablet {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 340px 0px;
+}
+
+.bg-project-mobile::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -77,19 +83,19 @@ body {
 }
 
 @media (width <= 767px) {
-  .bg-project-image {
+  .bg-project-mobile {
     background-image: url("../images/mobile/image-host.jpg");
   }
 }
 
 @media (768px <= width <= 1024px) {
-  .bg-project-image {
+  .bg-project {
     background-image: url("../images/tablet/image-host.jpg");
   }
 }
 
 @media (width > 1024px) {
-  .bg-project-image {
+  .bg-project {
     background-image: url("../images/desktop/image-host.jpg");
   }
 }
