@@ -27,7 +27,7 @@ const buttonsEl = document.querySelectorAll(
 function displayError(message: string): void {
   errorEl.textContent = message;
   errorEl.className =
-    " text-base-red block self-start p-2 text-sm font-semibold";
+    " text-base-red block self-center pt-2 text-sm font-semibold";
   errorMobilEl.textContent = message;
   errorMobilEl.className =
     " text-base-red block self-start pl-4 text-sm font-semibold";
