@@ -23,25 +23,28 @@
       >
         We are launching <span class="font-bold text-[#15202A]">soon!</span>
       </h1>
-      <h2 class="mb-8 text-xs font-light text-[#15202A] lg:text-xl">
+      <h2 class="mb-8 text-xs font-light text-[#15202A] lg:mb-10 lg:text-xl">
         Subscribe and get notified
       </h2>
       <form
         action=""
+        id="form"
         class="mx-2.5 flex w-full flex-col items-center gap-2.5 lg:flex-row"
       >
-        <div class="w-[90%] lg:basis-[70%]">
+        <div class="flex w-[90%] flex-col gap-[2px] lg:basis-[70%]">
           <label class="hidden" for="email"></label>
           <input
-            class="h-10 w-full rounded-4xl border-1 border-[#C2D3FF] py-[0.625rem] placeholder:pl-8 placeholder:text-xs placeholder:leading-[20px] placeholder:font-light placeholder:text-[#B8C7ED] lg:placeholder:text-base"
+            class="h-10 w-full rounded-4xl border-1 border-[#C2D3FF] py-[0.625rem] pl-8 text-[#15202A] placeholder:text-xs placeholder:leading-[20px] placeholder:font-light placeholder:text-[#B8C7ED] lg:placeholder:text-base"
             type="text"
             name="email"
             id="email"
             placeholder="Your email address..."
           />
+          <p class="error-msg"></p>
         </div>
+
         <button
-          class="drop-shadow-btn h-10 w-[90%] rounded-4xl border-1 border-[#4C7BF3] bg-[#4C7BF3] py-[0.625rem] text-xs leading-4 font-semibold text-white hover:cursor-pointer lg:basis-[30%] lg:text-base"
+          class="drop-shadow-btn h-10 w-[90%] rounded-4xl border-1 border-[#4C7BF3] bg-[#4C7BF3] py-[0.625rem] text-xs leading-4 font-semibold text-white hover:cursor-pointer lg:basis-[30%] lg:self-start lg:text-base"
         >
           Notify Me
         </button>
