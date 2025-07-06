@@ -40,13 +40,13 @@
             Casts and more!
           </p>
           <form
-            class="relative mb-10 flex w-full max-w-[28rem] flex-col items-center"
+            class="form relative mb-10 flex w-full max-w-[28rem] flex-col items-center"
           >
-            <label for="email"></label>
+            <label for="email-tablet"></label>
             <input
               class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
               type="email"
-              id="email"
+              id="email-tablet"
               name="email"
               placeholder="Email Adress"
             />
@@ -55,6 +55,7 @@
             >
               Request Access
             </button>
+            <p class="error-mobil-msg"></p>
           </form>
           <div class="mt-auto flex items-center gap-10">
             <img
@@ -121,12 +122,12 @@
             alt=""
           />
         </section>
-        <form class="flex w-full flex-col items-center">
-          <label for="email"></label>
+        <form class="form flex w-full flex-col items-center">
+          <label for="email-mobile"></label>
           <input
             class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
             type="email"
-            id="email"
+            id="email-mobile"
             name="email"
             placeholder="Email Adress"
           />
@@ -135,6 +136,7 @@
           >
             Request Access
           </button>
+          <p class="error-msg"></p>
         </form>
       </div>
     </div>

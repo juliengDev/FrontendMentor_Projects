@@ -6,42 +6,66 @@ const EmailSchema = z.object({
   email: z
     .string()
     .min(1, "Email required")
-    .email("Please provide a valid email address"),
+    .email("Oops! Please check your email"),
 });
 
-const formEl = document.getElementById("form") as HTMLFormElement;
-const emailInputEl = document.getElementById("email") as HTMLInputElement;
+const formEl = document.querySelectorAll("form") as NodeListOf<HTMLFormElement>;
+const emailInputEl = document.getElementById(
+  "email-tablet",
+) as HTMLInputElement;
+const emailInputMobilEl = document.getElementById(
+  "email-mobile",
+) as HTMLInputElement;
 const errorEl = document.querySelector(".error-msg") as HTMLParagraphElement;
+const errorMobilEl = document.querySelector(
+  ".error-mobil-msg",
+) as HTMLParagraphElement;
+const buttonsEl = document.querySelectorAll(
+  "button",
+) as NodeListOf<HTMLButtonElement>;
 
 function displayError(message: string): void {
   errorEl.textContent = message;
   errorEl.className =
-    " self-start  text-[0.625rem] pl-3 leading-[20px] tracking-[0.13px] text-[#FF5466] italic lg:pl-[1.875rem]";
+    " text-base-red block self-start p-2 text-sm font-semibold";
+  errorMobilEl.textContent = message;
+  errorMobilEl.className =
+    " text-base-red block self-start pl-4 text-sm font-semibold";
+  buttonsEl.forEach((btn) => btn.classList.add("top-[2px]", "right-[2px]"));
   emailInputEl.classList.add("border-2", "border-[#FF5466]");
   emailInputEl.classList.remove("border-[#C2D3FF]", "border-1");
+  emailInputMobilEl.classList.add("border-2", "border-[#FF5466]");
+  emailInputMobilEl.classList.remove("border-[#C2D3FF]", "border-1");
 }
 
 function clearError(): void {
   errorEl.textContent = "";
   errorEl.className = "";
+  errorMobilEl.textContent = "";
+  errorMobilEl.className = "";
+  buttonsEl.forEach((btn) => btn.classList.remove("top-0", "right-0"));
   emailInputEl.classList.add("border-[#C2D3FF]", "border-1");
   emailInputEl.classList.remove("border-2", "border-[#FF5466]");
+  emailInputMobilEl.classList.add("border-[#C2D3FF]", "border-1");
+  emailInputMobilEl.classList.remove("border-2", "border-[#FF5466]");
 }
 
-formEl.addEventListener("submit", (e: Event) => {
-  e.preventDefault();
+formEl.forEach((form) => {
+  form.addEventListener("submit", (e: Event) => {
+    e.preventDefault();
 
-  const target = e.target as HTMLFormElement;
-  const formData = new FormData(target);
-  const email = formData.get("email") as string;
+    const target = e.target as HTMLFormElement;
+    const formData = new FormData(target);
+    const email = formData.get("email") as string;
 
-  const result = EmailSchema.safeParse({ email });
+    const result = EmailSchema.safeParse({ email });
 
-  if (!result.success) {
-    const firstError = result.error.issues[0];
-    displayError(firstError.message);
-  } else {
-    clearError();
-    console.log("Email valide:", result.data);
-  }
+    if (!result.success) {
+      const firstError = result.error.issues[0];
+      displayError(firstError.message);
+    } else {
+      clearError();
+      console.log("Email valide:", result.data);
+    }
+  });
 });
