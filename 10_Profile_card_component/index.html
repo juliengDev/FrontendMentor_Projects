@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="academic project" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pod request access landing page</title>
+  </head>
+  <body class="bg-base-blue-950 relative w-full lg:py-[9.5625rem]">
+    <img
+      class="absolute right-0 -bottom-13 hidden max-h-[6.5rem] max-w-[14.5rem] bg-no-repeat md:block lg:right-30 lg:bottom-25"
+      src="images/desktop/bg-pattern-dots.svg"
+      alt="dots pattern"
+    />
+    <div id="tablet" class="bg-project bg-project-tablet hidden md:block">
+      <div
+        class="bg-base-blue-950 flex max-w-[30%] items-center pt-[10.375rem] pb-[4.2rem]"
+      >
+        <img class="pl-12" src="images/desktop/logo.svg" alt="image logo" />
+      </div>
+      <div class="bg-base-blue-950 flex w-[84%] pt-22 lg:w-[55%]">
+        <section class="flex w-full max-w-[33rem] flex-col self-start pl-12">
+          <h1
+            class="text-base-green mb-6 max-w-[21.625rem] justify-self-start text-[2rem] leading-[120%] font-light uppercase"
+          >
+            Publish your podcasts <span class="text-white">everywhere.</span>
+          </h1>
+          <p
+            class="text-base-blue-300 mb-10 max-w-[22rem] text-sm leading-[150%] font-light"
+          >
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+            Casts and more!
+          </p>
+          <form
+            class="form relative mb-10 flex w-full max-w-[28rem] flex-col items-center"
+          >
+            <label for="email-tablet"></label>
+            <input
+              class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
+              type="email"
+              id="email-tablet"
+              name="email"
+              placeholder="Email Adress"
+            />
+            <button
+              class="bg-base-green absolute right-0 rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
+            >
+              Request Access
+            </button>
+            <p class="error-mobil-msg"></p>
+          </form>
+          <div class="mt-auto flex items-center gap-10">
+            <img
+              class="fill-base-blue-300 w-[95px]"
+              src="images/desktop/spotify.svg"
+              alt="image spotify"
+            /><img
+              class="fill-base-blue-300 w-[78px]"
+              src="images/desktop/apple-podcast.svg"
+              alt=""
+            /><img
+              class="fill-base-blue-300 w-[124px]"
+              src="images/desktop/google-podcasts.svg"
+              alt=""
+            /><img
+              class="fill-base-blue-300 w-[128px]"
+              src="images/desktop/pocket-casts.svg"
+              alt=""
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="mobile" class="block md:hidden">
+      <div class="bg-project-mobile bg-project absolute inset-0"></div>
+      <div
+        class="relative z-10 mx-auto flex max-w-[303px] flex-col items-center"
+      >
+        <img
+          class="mt-[6.875rem] mb-[3.5rem]"
+          src="images/desktop/logo.svg"
+          alt=""
+        />
+        <section class="mb-10">
+          <h1
+            class="text-base-green mb-4 text-center text-[2rem] leading-[120%] font-light uppercase"
+          >
+            Publish your podcasts <span class="text-white">everywhere.</span>
+          </h1>
+          <p
+            class="text-base-blue-300 text-center text-sm leading-[150%] font-light"
+          >
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+            Casts and more!
+          </p>
+        </section>
+        <section class="mb-10 flex items-center gap-4">
+          <img
+            class="fill-base-blue-300 w-[55px]"
+            src="images/desktop/spotify.svg"
+            alt="image spotify"
+          /><img
+            class="fill-base-blue-300 w-[45px]"
+            src="images/desktop/apple-podcast.svg"
+            alt=""
+          /><img
+            class="fill-base-blue-300 w-[72px]"
+            src="images/desktop/google-podcasts.svg"
+            alt=""
+          /><img
+            class="fill-base-blue-300 w-[75px]"
+            src="images/desktop/pocket-casts.svg"
+            alt=""
+          />
+        </section>
+        <form class="form flex w-full flex-col items-center">
+          <label for="email-mobile"></label>
+          <input
+            class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
+            type="email"
+            id="email-mobile"
+            name="email"
+            placeholder="Email Adress"
+          />
+          <button
+            class="bg-base-green w-full rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
+          >
+            Request Access
+          </button>
+          <p class="error-msg"></p>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
