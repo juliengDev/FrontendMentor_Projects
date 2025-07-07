@@ -8,139 +8,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <title>Pod request access landing page</title>
   </head>
-  <body class="bg-base-blue-950 relative w-full lg:py-[9.5625rem]">
-    <img
-      class="absolute right-0 -bottom-13 hidden max-h-[6.5rem] max-w-[14.5rem] bg-no-repeat md:block lg:right-30 lg:bottom-25"
-      src="images/desktop/bg-pattern-dots.svg"
-      alt="dots pattern"
-    />
-    <div id="tablet" class="bg-project bg-project-tablet hidden md:block">
+  <body>
+    <div id="app" class="relative flex h-screen items-center bg-[#19A1AE]">
       <div
-        class="bg-base-blue-950 flex max-w-[30%] items-center pt-[10.375rem] pb-[4.2rem]"
-      >
-        <img class="pl-12" src="images/desktop/logo.svg" alt="image logo" />
-      </div>
-      <div class="bg-base-blue-950 flex w-[84%] pt-22 lg:w-[55%]">
-        <section class="flex w-full max-w-[33rem] flex-col self-start pl-12">
-          <h1
-            class="text-base-green mb-6 max-w-[21.625rem] justify-self-start text-[2rem] leading-[120%] font-light uppercase"
-          >
-            Publish your podcasts <span class="text-white">everywhere.</span>
-          </h1>
-          <p
-            class="text-base-blue-300 mb-10 max-w-[22rem] text-sm leading-[150%] font-light"
-          >
-            Upload your audio to Pod with a single click. We’ll then distribute
-            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
-            Casts and more!
-          </p>
-          <form
-            class="form relative mb-10 flex w-full max-w-[28rem] flex-col items-center"
-          >
-            <label for="email-tablet"></label>
-            <input
-              class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
-              type="email"
-              id="email-tablet"
-              name="email"
-              placeholder="Email Adress"
-            />
-            <button
-              class="bg-base-green absolute right-0 rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
-            >
-              Request Access
-            </button>
-            <p class="error-mobil-msg"></p>
-          </form>
-          <div class="mt-auto flex items-center gap-10">
-            <img
-              class="fill-base-blue-300 w-[95px]"
-              src="images/desktop/spotify.svg"
-              alt="image spotify"
-            /><img
-              class="fill-base-blue-300 w-[78px]"
-              src="images/desktop/apple-podcast.svg"
-              alt=""
-            /><img
-              class="fill-base-blue-300 w-[124px]"
-              src="images/desktop/google-podcasts.svg"
-              alt=""
-            /><img
-              class="fill-base-blue-300 w-[128px]"
-              src="images/desktop/pocket-casts.svg"
-              alt=""
-            />
-          </div>
-        </section>
-      </div>
-    </div>
-    <div id="mobile" class="block md:hidden">
-      <div class="bg-project-mobile bg-project absolute inset-0"></div>
+        class="absolute right-0 bottom-0 h-1/2 w-1/2 bg-[url('/images/bg-pattern-top.svg')] bg-no-repeat"
+      ></div>
       <div
-        class="relative z-10 mx-auto flex max-w-[303px] flex-col items-center"
-      >
-        <img
-          class="mt-[6.875rem] mb-[3.5rem]"
-          src="images/desktop/logo.svg"
-          alt=""
-        />
-        <section class="mb-10">
-          <h1
-            class="text-base-green mb-4 text-center text-[2rem] leading-[120%] font-light uppercase"
-          >
-            Publish your podcasts <span class="text-white">everywhere.</span>
-          </h1>
-          <p
-            class="text-base-blue-300 text-center text-sm leading-[150%] font-light"
-          >
-            Upload your audio to Pod with a single click. We’ll then distribute
-            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
-            Casts and more!
-          </p>
-        </section>
-        <section class="mb-10 flex items-center gap-4">
-          <img
-            class="fill-base-blue-300 w-[55px]"
-            src="images/desktop/spotify.svg"
-            alt="image spotify"
-          /><img
-            class="fill-base-blue-300 w-[45px]"
-            src="images/desktop/apple-podcast.svg"
-            alt=""
-          /><img
-            class="fill-base-blue-300 w-[72px]"
-            src="images/desktop/google-podcasts.svg"
-            alt=""
-          /><img
-            class="fill-base-blue-300 w-[75px]"
-            src="images/desktop/pocket-casts.svg"
-            alt=""
-          />
-        </section>
-        <form class="form flex w-full flex-col items-center">
-          <label for="email-mobile"></label>
-          <input
-            class="bg-base-blue-900 placeholder:text-base-blue-300 mb-2 w-full rounded-4xl px-7 py-2 text-white placeholder:text-sm placeholder:leading-[200%] placeholder:font-semibold"
-            type="email"
-            id="email-mobile"
-            name="email"
-            placeholder="Email Adress"
-          />
-          <button
-            class="bg-base-green w-full rounded-4xl px-7 py-2 font-semibold transition-colors duration-200 hover:cursor-pointer hover:bg-[#a9f3d7]"
-          >
-            Request Access
-          </button>
-          <p class="error-msg"></p>
-        </form>
-      </div>
-    </div>
+        class="absolute top-0 left-0 h-1/2 w-1/2 rotate-180 bg-[url('/images/bg-pattern-bottom.svg')] bg-no-repeat"
+      ></div>
 
+      <div class="relative z-10 mx-auto w-[90%] max-w-[20.375rem]">
+        <div class="relative rounded-t-2xl">
+          <img
+            class="w-full rounded-t-2xl"
+            src="images/bg-pattern-card.svg"
+            alt="image pattern card"
+          />
+          <img
+            class="absolute bottom-0 left-1/2 size-24 translate-x-[-50%] translate-y-[50%] rounded-full border-4 border-white"
+            src="images/image-victor.jpg"
+            alt="image profil"
+          />
+        </div>
+
+        <div class="rounded-b-2xl bg-white pt-18 pb-6">
+          <div class="mb-[13px] flex items-center justify-center gap-[8.5px]">
+            <p class="text-lg font-bold text-[#2E3349]">Victor Crest</p>
+            <p class="text-lg font-normal text-[#6B7082]">26</p>
+          </div>
+          <p class="mb-7 text-center text-sm font-normal text-[#6B7082]">
+            London
+          </p>
+          <hr class="mb-6 text-[#E8E9EC]" />
+          <div
+            class="width-[80%] mx-auto flex max-w-[233px] justify-center gap-[50px]"
+          >
+            <div class="flex flex-col items-center">
+              <p class="text-lg font-bold text-[#2E3349]">80K</p>
+              <p
+                class="text-[0.625rem] font-normal tracking-[1.5px] text-[#6B7082]"
+              >
+                Followers
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <p class="text-lg font-bold text-[#2E3349]">803K</p>
+              <p
+                class="text-[0.625rem] font-normal tracking-[1.5px] text-[#6B7082]"
+              >
+                Likes
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <p class="text-lg font-bold text-[#2E3349]">1.4K</p>
+              <p
+                class="text-[0.625rem] font-normal tracking-[1.5px] text-[#6B7082]"
+              >
+                Photos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
