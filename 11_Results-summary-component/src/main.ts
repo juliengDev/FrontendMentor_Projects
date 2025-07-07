@@ -2,6 +2,8 @@ import "./style.css";
 import data from "../data.json";
 
 const infoGrpEl = document.getElementById("grp") as HTMLDivElement;
+
+// Mapping des couleurs vers les classes complètes
 const colorClasses = {
   red: {
     bg: "bg-base-red-50",
@@ -9,11 +11,11 @@ const colorClasses = {
     textStrong: "text-base-red-950",
     textMuted: "text-base-red-950/50",
   },
-  orange: {
-    bg: "bg-base-orange-50",
-    text: "text-base-orange-400",
-    textStrong: "text-base-orange-950",
-    textMuted: "text-base-orange-950/50",
+  yellow: {
+    bg: "bg-base-yellow-50",
+    text: "text-base-yellow-400",
+    textStrong: "text-base-yellow-950",
+    textMuted: "text-base-yellow-950/50",
   },
   green: {
     bg: "bg-base-green-50",
@@ -48,7 +50,7 @@ data.forEach((el) => {
     </div>
   </div>
   `;
-  
+
   const temp = document.createElement("div");
   temp.innerHTML = component.trim();
   const element = temp.firstElementChild;
