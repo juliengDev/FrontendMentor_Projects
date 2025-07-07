@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+
+  --color-red: hsl(0, 100%, 67%);
+  --color-orange: hsl(39, 100%, 56%);
+  --color-green: hsl(166, 100%, 37%);
+  --color-blue: hsl(234, 85%, 45%);
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-lavender: hsl(241, 100%, 89%);
+  --color-grey-blue: hsl(224, 30%, 27%);
+}
+
+@theme {
+  --color-base-red: var(--color-red);
+  --color-base-orange: var(--color-orange);
+  --color-base-green: var(--color-green);
+  --color-base-blue: var(--color-blue);
+  --color-base-pale-blue: var(--color-pale-blue);
+  --color-base-lavender: var(--color-lavender);
+  --color-base-grey-blue: var(--color-grey-blue);
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Hanken Grotesk";
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+}
+
+@layer utilities {
+  .background-gradient {
+    background-image: linear-gradient(
+      to bottom,
+      hsl(252, 100%, 67%),
+      hsl(241, 81%, 54%)
+    );
+  }
+  .circle-gradient {
+    background-image: linear-gradient(
+      to bottom,
+      hsla(256, 72%, 46%, 1),
+      hsla(241, 72%, 46%, 0)
+    );
+  }
+
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 20px 20px rgba(56, 42, 225, 0.19));
+  }
+  .drop-shadow-btn {
+    box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.23);
+  }
+}
+
+.bg-project {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+
+.bg-project-tablet {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center right;
+}
+
+.bg-project-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 23, 37, 0.85), rgba(18, 23, 37, 0.85));
+  /* Limiter l'overlay aux dimensions de l'image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (width <= 767px) {
+  .bg-project-mobile {
+    background-image: url("../images/mobile/image-host.jpg");
+  }
+}
+
+@media (768px <= width <= 1024px) {
+  .bg-project {
+    background-image: url("../images/tablet/image-host.jpg");
+  }
+}
+
+@media (width > 1024px) {
+  .bg-project {
+    background-image: url("../images/desktop/image-host.jpg");
+  }
+}
