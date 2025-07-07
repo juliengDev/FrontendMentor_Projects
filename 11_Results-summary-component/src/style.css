@@ -3,23 +3,31 @@
 :root {
   /* COLORS */
 
-  --color-red: hsl(0, 100%, 67%);
-  --color-orange: hsl(39, 100%, 56%);
-  --color-green: hsl(166, 100%, 37%);
-  --color-blue: hsl(234, 85%, 45%);
-  --color-pale-blue: hsl(221, 100%, 96%);
-  --color-lavender: hsl(241, 100%, 89%);
-  --color-grey-blue: hsl(224, 30%, 27%);
+  --color-red-400: hsl(0, 100%, 67%);
+  --color-red-50: hsl(0, 100%, 98%);
+  --color-yellow-400: hsl(39, 100%, 56%);
+  --color-yellow-50: hsl(38, 100%, 98%);
+  --color-green-500: hsl(166, 100%, 37%);
+  --color-green-50: hsl(162, 63%, 97%);
+  --color-blue-800: hsl(234, 85%, 45%);
+  --color-blue-50: hsl(234, 71%, 97%);
+  --color-navy-950: hsl(224, 30%, 27%);
+  --color-navy-50: hsl(221, 100%, 96%);
+  --color-navy-200: hsl(241, 100%, 89%);
 }
 
 @theme {
-  --color-base-red: var(--color-red);
-  --color-base-orange: var(--color-orange);
-  --color-base-green: var(--color-green);
-  --color-base-blue: var(--color-blue);
-  --color-base-pale-blue: var(--color-pale-blue);
-  --color-base-lavender: var(--color-lavender);
-  --color-base-grey-blue: var(--color-grey-blue);
+  --color-base-red-400: var(--color-red-400);
+  --color-base-red-50: var(--color-red-50);
+  --color-base-yellow-400: var(--color-yellow-400);
+  --color-base-yellow-50: var(--color-yellow-50);
+  --color-base-green-500: var(--color-green-500);
+  --color-base-green-50: var(--color-green-50);
+  --color-base-blue-800: var(--color-blue-800);
+  --color-base-blue-50: var(--color-blue-50);
+  --color-base-navy-950: var(--color-navy-950);
+  --color-base-navy-200: var(--color-navy-200);
+  --color-base-navy-50: var(--color-navy-50);
 }
 
 /* FONTS */
@@ -47,6 +55,41 @@ body {
       hsl(252, 100%, 67%),
       hsl(241, 81%, 54%)
     );
+  }
+  .background-btn {
+    position: relative;
+    background-color: var(--color-base-navy-950);
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .background-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to bottom,
+      hsl(252, 100%, 67%),
+      hsl(241, 81%, 54%)
+    );
+    background-size: 200% auto;
+    background-position: left center;
+    transition:
+      background-position 0.3s ease,
+      opacity 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .background-btn:hover::before {
+    background-position: right center;
+    opacity: 1;
+  }
+
+  .background-btn > * {
+    position: relative;
+    z-index: 1;
   }
   .circle-gradient {
     background-image: linear-gradient(
