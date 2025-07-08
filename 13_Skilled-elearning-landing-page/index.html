@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="academic project" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Skilled e-learning landing page</title>
+  </head>
+  <body>
+    <div id="app" class="flex flex-col items-center">
+      <header
+        class="mb-16 flex w-full items-center justify-between px-8 py-4 lg:px-[10rem]"
+      >
+        <img
+          class="h-[20px] w-[80px] shrink-0"
+          src="images/logo-dark.svg"
+          alt="logo"
+        />
+        <a
+          class="items-center justify-center rounded-4xl bg-[#13183F] px-6 py-4 text-base font-bold tracking-[-0.2px] text-white transition-colors duration-200 hover:bg-[#666CA3]"
+          href="#"
+        >
+          Get Started
+        </a>
+      </header>
+      <div
+        class="mb-[4rem] flex flex-col px-8 sm:flex-row sm:items-center lg:px-[10rem]"
+      >
+        <section class="mb-12">
+          <h1
+            class="text-custom-blue-900 mb-6 text-[2.5rem] leading-[120%] font-extrabold"
+          >
+            Maximize skill, minimize budget
+          </h1>
+          <p class="text-custom-grey mb-10 text-lg leading-[150%] font-medium">
+            Our modern courses across a range of in-demand skills will give you
+            the knowledge you need to live the life you want.
+          </p>
+          <a
+            class="from-custom-pink to-custom-orange items-center justify-center rounded-4xl bg-gradient-to-t px-6 py-4 text-base font-bold tracking-[-0.2px] text-white transition-opacity duration-200 hover:opacity-50"
+            href="#"
+          >
+            Get Started
+          </a>
+        </section>
+        <section>
+          <picture>
+            <!-- Desktop -->
+            <source
+              srcset="
+                /images/image-hero-desktop.webp,
+                /images/image-hero-desktop@2x.webp 2x
+              "
+              media="(min-width: 1024px)"
+              type="image/webp"
+            />
+
+            <!-- Tablet -->
+            <source
+              srcset="
+                /images/image-hero-tablet.webp,
+                /images/image-hero-tablet@2x.webp 2x
+              "
+              media="(min-width: 640px)"
+              type="image/webp"
+            />
+            <!-- Mobile -->
+            <img
+              src="/images/image-hero-mobile.webp"
+              srcset="/images/image-hero-mobile@2x.webp 2x"
+              alt="Hero banner illustration"
+              class="scale-125 sm:translate-x-[150px] sm:-translate-y-[100px] lg:translate-x-[290px] lg:-translate-y-[150px] xl:translate-x-[350px] xl:-translate-y-[200px]"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </section>
+      </div>
+      <section
+        class="mb-20 grid grid-cols-1 gap-y-15 px-8 sm:mb-[9rem] sm:grid-cols-2 sm:gap-15 lg:grid-cols-3 lg:gap-x-8 lg:px-[10rem]"
+      >
+        <div
+          class="from-custom-pink to-custom-orange box-shadow-card rounded-2xl bg-gradient-to-t p-8 text-2xl leading-[120%] font-extrabold text-white"
+        >
+          Check out our most popular courses!
+        </div>
+        <div class="relative rounded-[15px] bg-white">
+          <img
+            class="absolute left-8 -translate-y-1/2"
+            src="images/icon-animation.svg"
+            alt=""
+          />
+          <div class="mt-16 mb-6 flex flex-col gap-6 px-8">
+            <h2
+              class="text-custom-blue-900 text-xl leading-[120%] font-extrabold"
+            >
+              Animation
+            </h2>
+            <p
+              class="text-custom-grey max-w-[270px] text-lg leading-[150%] font-medium"
+            >
+              Learn the latest animation techniques to create stunning motion
+              design and captivate your audience.
+            </p>
+            <a
+              class="text-custom-pink text-lg leading-[150%] font-bold"
+              href="#"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="relative rounded-[15px] bg-white">
+          <img
+            class="absolute left-8 -translate-y-1/2"
+            src="images/icon-design.svg"
+            alt=""
+          />
+          <div class="mt-16 mb-6 flex flex-col gap-6 px-8">
+            <h2
+              class="text-custom-blue-900 text-xl leading-[120%] font-extrabold"
+            >
+              Design
+            </h2>
+            <p
+              class="text-custom-grey max-w-[270px] text-lg leading-[150%] font-medium"
+            >
+              Create beautiful, usable interfaces to help shape the future of
+              how the web looks.
+            </p>
+            <a
+              class="text-custom-pink text-lg leading-[150%] font-bold"
+              href="#"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="relative rounded-[15px] bg-white">
+          <img
+            class="absolute left-8 -translate-y-1/2"
+            src="images/icon-photography.svg"
+            alt=""
+          />
+          <div class="mt-16 mb-6 flex flex-col gap-6 px-8">
+            <h2
+              class="text-custom-blue-900 text-xl leading-[120%] font-extrabold"
+            >
+              Photography
+            </h2>
+            <p
+              class="text-custom-grey max-w-[270px] text-lg leading-[150%] font-medium"
+            >
+              Explore critical fundamentals like lighting, composition, and
+              focus to capture exceptional photos.
+            </p>
+            <a
+              class="text-custom-pink text-lg leading-[150%] font-bold"
+              href="#"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="relative rounded-[15px] bg-white">
+          <img
+            class="absolute left-8 -translate-y-1/2"
+            src="images/icon-crypto.svg"
+            alt=""
+          />
+          <div class="mt-16 mb-6 flex flex-col gap-6 px-8">
+            <h2
+              class="text-custom-blue-900 text-xl leading-[120%] font-extrabold"
+            >
+              Crypto
+            </h2>
+            <p
+              class="text-custom-grey max-w-[270px] text-lg leading-[150%] font-medium"
+            >
+              All you need to know to get started investing in crypto. Go from
+              beginner to advanced with this 54 hour course.
+            </p>
+            <a
+              class="text-custom-pink text-lg leading-[150%] font-bold"
+              href="#"
+              >Get Started</a
+            >
+          </div>
+        </div>
+        <div class="relative rounded-[15px] bg-white">
+          <img
+            class="absolute left-8 -translate-y-1/2"
+            src="images/icon-business.svg"
+            alt=""
+          />
+          <div class="mt-16 mb-6 flex flex-col gap-6 px-8">
+            <h2
+              class="text-custom-blue-900 text-xl leading-[120%] font-extrabold"
+            >
+              Business
+            </h2>
+            <p
+              class="text-custom-grey max-w-[270px] text-lg leading-[150%] font-medium"
+            >
+              A step-by-step playbook to help you start, scale, and sustain your
+              business without outside investment.
+            </p>
+            <a
+              class="text-custom-pink text-lg leading-[150%] font-bold"
+              href="#"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer
+        class="bg-custom-blue-900 flex w-full items-center justify-between px-5 py-6"
+      >
+        <img
+          class="h-[20px] w-[80px] shrink-0"
+          src="images/logo-light.svg"
+          alt="logo"
+        />
+
+        <a
+          class="from-custom-violet to-custom-pink2 items-center justify-center rounded-4xl bg-gradient-to-b px-6 py-4 text-base font-bold tracking-[-0.2px] text-white transition-opacity duration-200 hover:opacity-50"
+          href="#"
+        >
+          Get Started
+        </a>
+      </footer>
+    </div>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
