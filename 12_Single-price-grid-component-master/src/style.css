@@ -31,80 +31,33 @@
 }
 
 /* FONTS */
-
+/* 
 @font-face {
   font-family: "Hanken Grotesk";
   src: url("/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 body {
-  font-family: "Hanken Grotesk";
+  font-family: "Karla";
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
   font-size: 1.125rem;
+  background-color: #e6eff5;
 }
 
 @layer utilities {
-  .background-gradient {
-    background-image: linear-gradient(
-      to bottom,
-      hsl(252, 100%, 67%),
-      hsl(241, 81%, 54%)
-    );
-  }
-  .background-btn {
-    position: relative;
-    background-color: var(--color-base-navy-950);
-    color: white;
-    overflow: hidden;
-    z-index: 0;
-  }
 
-  .background-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(
-      to bottom,
-      hsl(252, 100%, 67%),
-      hsl(241, 81%, 54%)
-    );
-    background-size: 200% auto;
-    background-position: left center;
-    transition:
-      background-position 0.3s ease,
-      opacity 0.3s ease;
-    opacity: 0;
-    z-index: -1;
-  }
-
-  .background-btn:hover::before {
-    background-position: right center;
-    opacity: 1;
-  }
-
-  .background-btn > * {
-    position: relative;
-    z-index: 1;
-  }
-  .circle-gradient {
-    background-image: linear-gradient(
-      to bottom,
-      hsla(256, 72%, 46%, 1),
-      hsla(241, 72%, 46%, 0)
-    );
-  }
 
   .drop-shadow-custom {
-    filter: drop-shadow(0px 20px 20px rgba(56, 42, 225, 0.19));
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
   }
-  .drop-shadow-btn {
-    box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.23);
-  }
+ .box-shadow-custom {
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.0973);
+}
 }
 
 .bg-project {
