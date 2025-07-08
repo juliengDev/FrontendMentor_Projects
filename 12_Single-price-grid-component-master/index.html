@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="academic project" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <title>Results summary component</title>
+  </head>
+  <body>
+    <div
+      id="app"
+      class="bg-base-blue-50 flex h-screen flex-col md:justify-center"
+    >
+      <div
+        class="mx-auto flex w-full max-w-[375px] flex-col items-center md:max-w-[686px] md:flex-row"
+      >
+        <div
+          class="background-gradient relative z-20 flex h-full flex-col items-center rounded-b-[32px] py-8 md:rounded-[32px]"
+        >
+          <p class="text-base-navy-50 mb-6 text-lg leading-[130%] font-bold">
+            Your Result
+          </p>
+          <div
+            class="circle-gradient mb-6 flex flex-col items-center justify-center rounded-full px-9.5 py-8"
+          >
+            <p class="text-[56px] leading-[100%] font-extrabold text-white">
+              76
+            </p>
+            <p class="text-base-navy-200 text-base leading-[130%] font-bold">
+              of 100
+            </p>
+          </div>
+          <p class="mb-8 text-2xl leading-[130%] font-bold text-white">Great</p>
+          <p
+            class="text-base-navy-200 w-[80%] text-center text-base leading-[130%] font-medium"
+          >
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+        <div
+          class="relative bottom-5 z-10 flex w-full flex-col bg-white p-8 md:right-14 md:bottom-0 md:rounded-[32px] md:p-12 md:pl-21"
+        >
+          <p
+            class="text-base-navy-950 mb-6 pt-5 text-lg leading-[130%] font-bold"
+          >
+            Summary
+          </p>
+          <div id="grp" class="mb-6 flex flex-col gap-4"></div>
+          <button
+            class="background-btn w-full rounded-[128px] py-4 text-lg leading-[130%] font-bold text-white hover:cursor-pointer"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
