@@ -54,7 +54,7 @@ body {
   }
 }
 
-.bg-project {
+/* .bg-project {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
@@ -64,20 +64,19 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center right;
-}
+} */
 
-.bg-project-mobile::before {
+/* .bg-project-mobile::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(rgba(18, 23, 37, 0.85), rgba(18, 23, 37, 0.85));
-  /* Limiter l'overlay aux dimensions de l'image */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
-@media (width <= 767px) {
+/* @media (width <= 767px) {
   .bg-project-mobile {
     background-image: url("../images/mobile/image-host.jpg");
   }
@@ -93,4 +92,4 @@ body {
   .bg-project {
     background-image: url("../images/desktop/image-host.jpg");
   }
-}
+} */
