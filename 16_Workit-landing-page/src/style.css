@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+  --blue-900: rgb(19, 24, 63);
+  --blue-600: rgb(102, 108, 163);
+  --pink-600: rgb(247, 71, 128);
+  --pink-300: rgb(255, 167, 195);
+  --grey: rgb(131, 134, 154);
+}
+
+@theme {
+  --color-custom-blue-900: var(--blue-900);
+  --color-custom-blue-600: var(--blue-600);
+  --color-custom-pink-600: var(--pink-600);
+  --color-custom-pink-300: var(--pink-300);
+  --color-custom-grey: var(--grey);
+  --color-custom-pink: rgb(240, 42, 166);
+  --color-custom-orange: rgb(255, 111, 72);
+  --color-custom-violet: rgb(72, 81, 255);
+  --color-custom-pink2: rgb(240, 42, 166);
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900; /* Plage de poids pour une font variable */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf")
+    format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 600; /* SemiBold = 600 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900; /* Plage de poids pour une font variable */
+  font-style: normal;
+}
+
+body {
+  font-family: "Fraunces", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
+  }
+  .box-shadow-custom {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.0973);
+  }
+  .box-shadow-card {
+    box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.0442);
+  }
+  .manrope {
+    font-family: "manrope", sans-serif;
+  }
+
+  .curved-bottom-1::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #24053e;
+    border-radius: 0 0 50% 50%;
+  }
+  .curved-bottom-2 {
+    clip-path: ellipse(100% 55% at 50% 35%);
+    padding-bottom: 110px;
+  }
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ab5cdb;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}
+
+/* .bg-project {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+}
+
+.bg-project-tablet {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center right;
+} */
+
+/* .bg-project-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 23, 37, 0.85), rgba(18, 23, 37, 0.85));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* @media (width <= 767px) {
+  .bg-project {
+    background-image:
+      url("/images/bg-pattern-top-mobile.svg"),
+      url("/images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      bottom right;
+    background-size: cover;
+  }
+} */
+
+@media (width > 640px) {
+  .overlay {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
