@@ -103,44 +103,39 @@ body {
   }
 }
 
-/* .bg-project {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top;
-}
-
-.bg-project-tablet {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center right;
-} */
-
-/* .bg-project-mobile::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(18, 23, 37, 0.85), rgba(18, 23, 37, 0.85));
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
-
-/* @media (width <= 767px) {
-  .bg-project {
-    background-image:
-      url("/images/bg-pattern-top-mobile.svg"),
-      url("/images/bg-pattern-bottom-mobile.svg");
-    background-repeat: no-repeat;
-    background-position:
-      top left,
-      bottom right;
-    background-size: cover;
-  }
-} */
-
 @media (width > 640px) {
-  .overlay {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  .bg-pattern1 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 100px;
+    left: -100px;
+    transform: scale(1.2);
+  }
+  .bg-pattern2 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 200px;
+    right: -100px;
+  }
+  .bg-pattern3 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-3.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -120px;
+    right: 0px;
   }
 }
