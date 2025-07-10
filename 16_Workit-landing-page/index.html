@@ -23,13 +23,15 @@
     <title>Workit landing page</title>
   </head>
   <body>
-    <div id="app" class="z-10 flex flex-col items-center">
+    <div id="app" class="z-10 flex flex-col items-center overflow-hidden">
       <section class="relative z-20 w-full">
         <div class="pointer-events-none absolute inset-0 z-50 hidden sm:block">
           <div class="bg-pattern1"></div>
           <div class="bg-pattern2"></div>
         </div>
-        <div class="curved-bottom-2 relative w-full bg-[#24053E] px-5 py-10">
+        <div
+          class="curved-bottom-2 relative w-full bg-[#24053E] px-5 py-10 lg:px-[160px]"
+        >
           <header class="mb-[3.5rem] flex items-center justify-between">
             <img src="images/logo-light.svg" alt="logo" />
             <a
@@ -58,21 +60,25 @@
           alt=""
         />
       </section>
-      <section class="mt-[100px] mb-[432px] flex flex-col gap-8">
+      <section
+        class="mt-[100px] flex flex-col gap-8 py-20 lg:mx-[160px] lg:flex-row"
+      >
         <div
-          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px]"
+          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px] lg:flex-col"
         >
           <div
             class="mb-6 flex h-12 w-12 items-center justify-center rounded-full border-1 border-[#24053E] p-5 text-[#24053E] sm:mb-0"
           >
             1
           </div>
-          <div class="flex flex-col items-center sm:items-start">
+          <div
+            class="flex flex-col items-center sm:items-start lg:items-center"
+          >
             <h2 class="mb-[16px] text-2xl font-semibold text-[#24053E]">
               Actionable insights
             </h2>
             <p
-              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start"
+              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start lg:text-center"
             >
               Optimize your products, improve customer satisfaction and stay
               ahead of the competition with our product data analytics.
@@ -80,19 +86,21 @@
           </div>
         </div>
         <div
-          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px]"
+          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px] lg:flex-col"
         >
           <div
             class="mb-6 flex h-12 w-12 items-center justify-center rounded-full border-1 border-[#24053E] p-5 text-[#24053E] sm:mb-0"
           >
             2
           </div>
-          <div class="flex flex-col items-center sm:items-start">
+          <div
+            class="flex flex-col items-center sm:items-start lg:items-center"
+          >
             <h2 class="mb-[16px] text-2xl font-semibold text-[#24053E]">
               Data-driven decisions
             </h2>
             <p
-              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start"
+              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start lg:text-center"
             >
               Make data-driven decisions with our product data analytics. Our
               AI-generated reports help you unlock insights hidden in your
@@ -101,19 +109,21 @@
           </div>
         </div>
         <div
-          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px]"
+          class="mx-5 flex max-w-[335px] flex-col items-center sm:mx-12 sm:max-w-[768px] sm:flex-row sm:gap-[56px] lg:flex-col"
         >
           <div
             class="mb-6 flex h-12 w-12 items-center justify-center rounded-full border-1 border-[#24053E] p-5 text-[#24053E] sm:mb-0"
           >
             3
           </div>
-          <div class="flex flex-col items-center sm:items-start">
+          <div
+            class="flex flex-col items-center sm:items-start lg:items-center"
+          >
             <h2 class="mb-[16px] text-2xl font-semibold text-[#24053E]">
               Always affordable
             </h2>
             <p
-              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start"
+              class="manrope text-center text-base leading-[180%] font-normal text-[#24053E] sm:text-start lg:text-center"
             >
               Always affordable pricing that scales with your business. Get
               top-quality product data analytics services without hidden costs
@@ -122,7 +132,7 @@
           </div>
         </div>
       </section>
-      <section class="relative mx-5 mb-20 sm:max-w-[504px]">
+      <section class="relative mx-5 mt-[402px] mb-20 sm:max-w-[504px]">
         <div class="relative z-30 bg-[#24053E] p-8 text-center">
           <h3 class="mb-8 text-[32px] font-semibold text-white">
             Be the first to test
