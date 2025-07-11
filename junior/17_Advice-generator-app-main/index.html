@@ -7,6 +7,7 @@
 
     <meta name="description" content="academic project" />
     <link href="/src/style.css" rel="stylesheet" />
+    <script src="/src/script/main.ts" type="module" defer></script>
     <link
       rel="icon"
       type="image/png"
@@ -16,13 +17,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
 
     <title>Workit landing page</title>
   </head>
   <body>
-    <script type="module" src="src/main.ts"></script>
+    <div
+      id="app"
+      class="flex h-screen items-center justify-center bg-[#202733]"
+    >
+      <article
+        class="relative flex max-w-[343px] flex-col items-center justify-center rounded-[10px] bg-[#313A48] px-6 py-10 pb-[4.4375rem]"
+      >
+        <h1
+          class="mb-4 text-[0.8125rem] leading-[135%] font-extrabold tracking-[4px] text-[#53FFAA] uppercase"
+        >
+          Advice #<span id="idQuote"></span>
+        </h1>
+        <p
+          id="quote"
+          class="mb-8 text-center text-2xl leading-[135%] font-extrabold tracking-[0.3px] text-[#CEE3E9]"
+        ></p>
+        <picture>
+          <source
+            srcset="images/pattern-divider-mobile.svg"
+            media="(max-width: 375px)"
+          />
+
+          <img
+            src="images/pattern-divider-desktop.svg"
+            alt="Illustration responsive"
+            width="444"
+            height="16"
+          />
+        </picture>
+        <button
+          class="generateQuote box-shadow-btn absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-[#53FFAA] p-5 transition-all duration-300"
+        >
+          <img class="h-6 w-6" src="images/icon-dice.svg" alt="" />
+        </button>
+      </article>
+    </div>
   </body>
 </html>
