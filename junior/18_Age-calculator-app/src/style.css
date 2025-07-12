@@ -51,7 +51,7 @@
 }
 */
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -59,6 +59,26 @@ body {
   min-height: 100dvh;
 }
 
+@theme {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-5px);
+    }
+    40% {
+      transform: translateX(5px);
+    }
+    60% {
+      transform: translateX(-5px);
+    }
+    80% {
+      transform: translateX(5px);
+    }
+  }
+}
 @layer utilities {
   .drop-shadow-custom {
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
@@ -69,74 +89,8 @@ body {
   .box-shadow-btn:hover {
     box-shadow: 0px 0px 40px 0px rgba(83, 255, 170, 1);
   }
-  .manrope {
-    font-family: "manrope", sans-serif;
-  }
 
-  .curved-bottom-1::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: #24053e;
-    border-radius: 0 0 50% 50%;
-  }
-  .curved-bottom-2 {
-    clip-path: ellipse(100% 55% at 50% 35%);
-    padding-bottom: 110px;
-  }
-  .image-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ab5cdb;
-    opacity: 0.5;
-    z-index: 1;
-  }
-}
-
-@media (width > 640px) {
-  .bg-pattern1 {
-    width: 200px;
-    height: 200px;
-    background-image: url("/images/bg-pattern-1.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 100px;
-    left: -100px;
-    transform: scale(1.2);
-  }
-  .bg-pattern2 {
-    width: 200px;
-    height: 200px;
-    background-image: url("/images/bg-pattern-2.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 200px;
-    right: -100px;
-  }
-  .bg-pattern3 {
-    width: 200px;
-    height: 200px;
-    background-image: url("/images/bg-pattern-3.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    bottom: -120px;
-    right: 0px;
+  .shake {
+    animation: shake 0.4s ease-in-out;
   }
 }

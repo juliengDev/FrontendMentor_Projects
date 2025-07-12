@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
 
@@ -26,39 +26,85 @@
   <body>
     <div
       id="app"
-      class="flex h-screen items-center justify-center bg-[#202733]"
+      class="flex h-screen flex-col items-center justify-center bg-[#F0F0F0]"
     >
-      <article
-        class="relative mx-4 flex max-w-[343px] flex-col items-center justify-center rounded-[10px] bg-[#313A48] px-6 py-10 pb-[4.4375rem] md:mx-[7.125rem] md:max-w-[540px]"
-      >
-        <h1
-          class="mb-4 text-[0.8125rem] leading-[135%] font-extrabold tracking-[4px] text-[#53FFAA] uppercase"
-        >
-          Advice #<span id="idQuote"></span>
-        </h1>
-        <p
-          id="quote"
-          class="mb-8 text-center text-2xl leading-[135%] font-extrabold tracking-[0.3px] text-[#CEE3E9] md:text-[1.75rem]"
-        ></p>
-        <picture>
-          <source
-            srcset="images/pattern-divider-mobile.svg"
-            media="(max-width: 375px)"
-          />
+      <div>
+        <form id="form" class="flex justify-between gap-8">
+          <div>
+            <label
+              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
+              for="day"
+              >Day</label
+            >
+            <input
+              type="text"
+              id="day"
+              name="day"
+              autocomplete
+              required
+              class="rounded-lg border-2 border-gray-300 px-4 py-2 user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+              minlength="1"
+              maxlength="2"
+              aria-describedby="day-info"
+              pattern="^(0?[1-9]|[12][0-9]|3[01])$"
+            />
+            <div id="day-info" class="sr-only">
+              Enter at least 1 number between 1-31
+            </div>
+          </div>
 
-          <img
-            src="images/pattern-divider-desktop.svg"
-            alt="Illustration responsive"
-            width="444"
-            height="16"
-          />
-        </picture>
-        <button
-          class="generateQuote box-shadow-btn absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-[#53FFAA] p-5 transition-all duration-300"
-        >
-          <img class="h-6 w-6" src="images/icon-dice.svg" alt="" />
-        </button>
-      </article>
+          <div>
+            <label
+              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
+              for="month"
+              >Month</label
+            >
+            <input
+              type="text"
+              id="month"
+              name="month"
+              autocomplete
+              required
+              class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+              minlength="1"
+              maxlength="2"
+              aria-describedby="month-info"
+              pattern="^(0?[1-9]|1[0-2])$"
+            />
+            <div id="month-info" class="sr-only">
+              Enter at least 1 number between 1-12
+            </div>
+          </div>
+
+          <div>
+            <label
+              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
+              for="year"
+              >Year</label
+            >
+            <input
+              type="text"
+              id="year"
+              name="year"
+              autocomplete
+              required
+              class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+              minlength="1"
+              maxlength="4"
+              aria-describedby="year-info"
+              pattern="^\d{4}$"
+            />
+            <div id="year-info" class="sr-only">
+              Enter at least 4 number between 1000 et 9999
+            </div>
+          </div>
+
+          <button class="self-center border-2 px-5 py-3">Submit</button>
+        </form>
+        <p class="mt-2 hidden self-start text-sm text-red-400 italic">
+          Must be a valid date
+        </p>
+      </div>
     </div>
   </body>
 </html>

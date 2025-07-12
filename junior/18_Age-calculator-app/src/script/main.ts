@@ -1,35 +1,30 @@
 "use strict";
 import "./services/api";
 import "./utils/utils";
-import { getData } from "./utils/utils";
 
-const URL_API = "https://api.adviceslip.com/advice";
-const btnEl = document.querySelector(".generateQuote") as HTMLButtonElement;
-const displayQuote = async (): Promise<void> => {
-  const quoteOutputEl = document.getElementById("quote") as HTMLElement;
-  const idOutpuEl = document.getElementById("idQuote") as HTMLSpanElement;
-  if (!quoteOutputEl) {
-    console.error("Élément quote introuvable");
-    return;
-  }
-  if (!idOutpuEl) {
-    console.error("Élément id introuvable");
-    return;
-  }
+// invalid:border-red-400 invalid:ring-red-400
 
-  try {
-    const data = await getData(URL_API);
+const formEl = document.getElementById("form") as HTMLFormElement;
 
-    if (data?.slip?.advice) {
-      quoteOutputEl.innerHTML = "";
-      idOutpuEl.textContent = "";
-      quoteOutputEl.insertAdjacentText("beforeend", `“${data.slip.advice}”`);
-      idOutpuEl.textContent = String(data.slip.id);
+formEl.addEventListener(
+  "invalid",
+  (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    if (target && target instanceof HTMLInputElement) {
+      target.setCustomValidity("Please enter a valid number.");
+      target.classList.add("shake");
+
+      setTimeout(() => {
+        target.classList.remove("shake");
+      }, 400);
     }
-  } catch (error) {
-    quoteOutputEl.innerHTML = "Error loading the quote";
-  }
-};
+  },
+  true,
+);
 
-btnEl.addEventListener("click", displayQuote);
-displayQuote();
+formEl.addEventListener("input", (e: Event) => {
+  const target = e.target as HTMLInputElement;
+  if (target && target instanceof HTMLInputElement) {
+    target.setCustomValidity("");
+  }
+});
