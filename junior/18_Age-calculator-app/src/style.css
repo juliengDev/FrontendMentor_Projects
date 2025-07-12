@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+  --blue-900: rgb(19, 24, 63);
+  --blue-600: rgb(102, 108, 163);
+  --pink-600: rgb(247, 71, 128);
+  --pink-300: rgb(255, 167, 195);
+  --grey: rgb(131, 134, 154);
+}
+
+@theme {
+  --color-custom-blue-900: var(--blue-900);
+  --color-custom-blue-600: var(--blue-600);
+  --color-custom-pink-600: var(--pink-600);
+  --color-custom-pink-300: var(--pink-300);
+  --color-custom-grey: var(--grey);
+  --color-custom-pink: rgb(240, 42, 166);
+  --color-custom-orange: rgb(255, 111, 72);
+  --color-custom-violet: rgb(72, 81, 255);
+  --color-custom-pink2: rgb(240, 42, 166);
+}
+
+/* FONTS */
+
+/*
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf")
+    format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf")
+  format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 600; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900; 
+  font-style: normal;
+}
+*/
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
+  }
+  .box-shadow-custom {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.0973);
+  }
+  .box-shadow-btn:hover {
+    box-shadow: 0px 0px 40px 0px rgba(83, 255, 170, 1);
+  }
+  .manrope {
+    font-family: "manrope", sans-serif;
+  }
+
+  .curved-bottom-1::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #24053e;
+    border-radius: 0 0 50% 50%;
+  }
+  .curved-bottom-2 {
+    clip-path: ellipse(100% 55% at 50% 35%);
+    padding-bottom: 110px;
+  }
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ab5cdb;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}
+
+@media (width > 640px) {
+  .bg-pattern1 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 100px;
+    left: -100px;
+    transform: scale(1.2);
+  }
+  .bg-pattern2 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 200px;
+    right: -100px;
+  }
+  .bg-pattern3 {
+    width: 200px;
+    height: 200px;
+    background-image: url("/images/bg-pattern-3.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -120px;
+    right: 0px;
+  }
+}
