@@ -1,24 +1,19 @@
-interface ApiResponse {
-  slip: {
-    advice: string;
-    id: number;
-  };
-}
+export type Date = {
+  day: string;
+  month: string;
+  year: string;
+};
 
-export async function getData(url: string): Promise<ApiResponse> {
-  try {
-    const response = await fetch(url);
+export function isValidDate({ day, month, year }: Date) {
+  const d = Number(day);
+  const m = Number(month);
+  const y = Number(year);
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(
-        `HTTP ${response.status}: ${errorData.message || response.statusText}`,
-      );
-    }
+  const date = new Date(y, m - 1, d);
 
-    return await response.json();
-  } catch (error) {
-    console.error("Network error:", error);
-    throw error;
-  }
+  return (
+    date.getFullYear() === y &&
+    date.getMonth() === m - 1 &&
+    date.getDate() === d
+  );
 }

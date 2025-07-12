@@ -26,84 +26,128 @@
   <body>
     <div
       id="app"
-      class="flex h-screen flex-col items-center justify-center bg-[#F0F0F0]"
+      class="flex h-screen flex-col items-center justify-center bg-[#F0F0F0] lg:px-[300px]"
     >
-      <div>
-        <form id="form" class="flex justify-between gap-8">
-          <div>
-            <label
-              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
-              for="day"
-              >Day</label
-            >
-            <input
-              type="text"
-              id="day"
-              name="day"
-              autocomplete
-              required
-              class="rounded-lg border-2 border-gray-300 px-4 py-2 user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
-              minlength="1"
-              maxlength="2"
-              aria-describedby="day-info"
-              pattern="^(0?[1-9]|[12][0-9]|3[01])$"
-            />
-            <div id="day-info" class="sr-only">
-              Enter at least 1 number between 1-31
+      <div class="w-full rounded-[24px] rounded-br-[100px] bg-white px-6 py-12">
+        <form id="form" class="flex flex-col justify-between">
+          <div class="mb-8 flex justify-center gap-8">
+            <div class="flex max-w-[87.67px] flex-col">
+              <label
+                class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
+                for="day"
+                >Day</label
+              >
+              <input
+                type="text"
+                id="day"
+                name="day"
+                autocomplete
+                required
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                minlength="1"
+                maxlength="2"
+                aria-describedby="day-info"
+                pattern="^(0?[1-9]|[12][0-9]|3[01])$"
+              />
+              <div id="day-info" class="sr-only">
+                Enter at least 1 number between 1-31
+              </div>
+            </div>
+
+            <div class="flex max-w-[87.67px] flex-col">
+              <label
+                class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
+                for="month"
+                >Month</label
+              >
+              <input
+                type="text"
+                id="month"
+                name="month"
+                autocomplete
+                required
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                minlength="1"
+                maxlength="2"
+                aria-describedby="month-info"
+                pattern="^(0?[1-9]|1[0-2])$"
+              />
+              <div id="month-info" class="sr-only">
+                Enter at least 1 number between 1-12
+              </div>
+            </div>
+
+            <div class="flex max-w-[87.67px] flex-col">
+              <label
+                class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
+                for="year"
+                >Year</label
+              >
+              <input
+                type="text"
+                id="year"
+                name="year"
+                autocomplete
+                required
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                minlength="1"
+                maxlength="4"
+                aria-describedby="year-info"
+                pattern="^\d{4}$"
+              />
+              <div id="year-info" class="sr-only">
+                Enter at least 4 number between 1000 et 9999
+              </div>
             </div>
           </div>
 
-          <div>
-            <label
-              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
-              for="month"
-              >Month</label
-            >
-            <input
-              type="text"
-              id="month"
-              name="month"
-              autocomplete
-              required
-              class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
-              minlength="1"
-              maxlength="2"
-              aria-describedby="month-info"
-              pattern="^(0?[1-9]|1[0-2])$"
-            />
-            <div id="month-info" class="sr-only">
-              Enter at least 1 number between 1-12
-            </div>
-          </div>
-
-          <div>
-            <label
-              class="mb-2 block text-[0.875rem] leading-[150%] font-bold tracking-[5px]"
-              for="year"
-              >Year</label
-            >
-            <input
-              type="text"
-              id="year"
-              name="year"
-              autocomplete
-              required
-              class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
-              minlength="1"
-              maxlength="4"
-              aria-describedby="year-info"
-              pattern="^\d{4}$"
-            />
-            <div id="year-info" class="sr-only">
-              Enter at least 4 number between 1000 et 9999
-            </div>
-          </div>
-
-          <button class="self-center border-2 px-5 py-3">Submit</button>
+          <button
+            type="submit"
+            class="flex h-[64px] w-[64px] cursor-pointer items-center justify-center self-center rounded-full bg-purple-500 transition-colors duration-300 hover:bg-purple-700"
+          >
+            <img class="" src="images/icon-arrow.svg" alt="Submit btn" />
+          </button>
         </form>
         <p class="mt-2 hidden self-start text-sm text-red-400 italic">
           Must be a valid date
         </p>
+
+        <div class="mt-8 flex items-start justify-center gap-4">
+          <div class="flex flex-col">
+            <p
+              class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
+            >
+              --
+            </p>
+            <p
+              class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
+            >
+              --
+            </p>
+            <p
+              class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
+            >
+              --
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <p
+              class="text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-black italic"
+            >
+              years
+            </p>
+            <p
+              class="text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-black italic"
+            >
+              months
+            </p>
+            <p
+              class="text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-black italic"
+            >
+              days
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
