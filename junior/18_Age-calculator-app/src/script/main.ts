@@ -84,5 +84,19 @@ formEl.addEventListener("submit", (e: Event) => {
   console.log(
     `Vous avez ${age.years} ans, ${age.months} mois et ${age.days} jours !`,
   );
-  
+  const yearsElement = document.getElementById("inputYears");
+  const monthsElement = document.getElementById("inputMonths");
+  const daysElement = document.getElementById("inputdays"); // Attention à la casse : "inputdays" et non "inputDays"
+
+  if (yearsElement) {
+    yearsElement.textContent = age.years.toString();
+  }
+
+  if (monthsElement) {
+    monthsElement.textContent = age.months.toString();
+  }
+
+  if (daysElement) {
+    daysElement.textContent = age.days.toString();
+  }
 });
