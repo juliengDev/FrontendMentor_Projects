@@ -51,7 +51,7 @@
 }
 */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -92,5 +92,9 @@ body {
 
   .shake {
     animation: shake 0.4s ease-in-out;
+  }
+
+  .fraunces {
+    font-family: "Fraunces", serif;
   }
 }

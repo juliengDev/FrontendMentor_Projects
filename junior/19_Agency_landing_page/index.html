@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -26,11 +26,13 @@
   <body>
     <div id="app">
       <section
-        class="h-screen bg-[url('/images/mobile/image-header.jpg')] bg-contain bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')]"
+        class="h-screen bg-[url('/images/mobile/image-header.jpg')] bg-contain bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')] sm:bg-cover"
       >
         <header class="px-10 py-11">
-          <nav class="relative flex items-center justify-between p-4">
-            <a href="#" class="logo">Logo</a>
+          <nav class="relative flex items-center justify-between p-0 lg:p-4">
+            <a href="#" class="logo"
+              ><img src="images/logo.svg" alt="logo"
+            /></a>
             <button
               class="z-20 flex cursor-pointer flex-col gap-[5px] border-none bg-transparent lg:hidden"
               id="burger"
@@ -49,22 +51,41 @@
                 class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
               ></span>
             </button>
-
+            <div
+              id="triangle"
+              class="absolute top-[40px] right-0 h-0 w-0 border-t-[20px] border-r-[16px] border-t-transparent border-r-white lg:hidden"
+            ></div>
             <ul
               id="menu"
-              class="absolute top-[120%] right-4 z-10 w-[200px] flex-col bg-white shadow-md lg:static lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:shadow-none"
+              class="absolute top-[60px] right-0 z-10 flex w-full flex-col items-center gap-[32px] bg-white py-10 shadow-md sm:max-w-full lg:relative lg:top-auto lg:right-auto lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:py-0 lg:shadow-none"
             >
               <li>
-                <a href="#" class="block px-4 py-2 text-black">Accueil</a>
+                <a
+                  href="#"
+                  class="block text-center text-xl font-semibold tracking-[125%] text-[#808397] lg:text-lg lg:tracking-[165%] lg:text-white"
+                  >About</a
+                >
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-black">Services</a>
+                <a
+                  href="#"
+                  class="block text-center text-xl font-semibold tracking-[125%] text-[#808397] lg:text-lg lg:tracking-[165%] lg:text-white"
+                  >Services</a
+                >
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-black">Projects</a>
+                <a
+                  href="#"
+                  class="block text-center text-xl font-semibold tracking-[125%] text-[#808397] lg:text-lg lg:tracking-[165%] lg:text-white"
+                  >Projects</a
+                >
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 text-black">Contact</a>
+                <a
+                  href="#"
+                  class="text-grey-900 fraunces max-auto block max-w-[160px] rounded-[28px] bg-[#FAD400] px-[2.25rem] py-4 text-center text-[0.9375rem] font-bold text-[#24303E]"
+                  >Contact</a
+                >
               </li>
             </ul>
           </nav>

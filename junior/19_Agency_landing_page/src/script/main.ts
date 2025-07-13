@@ -1,13 +1,15 @@
 const burger = document.getElementById("burger") as HTMLButtonElement;
 const menu = document.getElementById("menu") as HTMLUListElement;
-
+const triangle = document.getElementById("triangle") as HTMLDivElement;
 burger.addEventListener("click", () => {
   const isOpen = menu.classList.toggle("open");
 
   if (isOpen) {
     menu.classList.remove("hidden");
+    triangle.classList.remove("hidden");
   } else {
     menu.classList.add("hidden");
+    triangle.classList.add("hidden");
   }
 
   burger.setAttribute("aria-expanded", String(isOpen));
