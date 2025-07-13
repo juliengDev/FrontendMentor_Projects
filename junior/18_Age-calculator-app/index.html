@@ -21,18 +21,21 @@
       rel="stylesheet"
     />
 
-    <title>Advice generator app main</title>
+    <title>Age calculator app</title>
   </head>
   <body>
     <div
       id="app"
       class="flex h-screen flex-col items-center justify-center bg-[#F0F0F0] px-6 lg:px-[300px]"
     >
-      <div class="w-full rounded-[24px] rounded-br-[100px] bg-white px-6 py-12">
-        <form id="form" class="flex flex-col justify-between">
+      <div
+        class="w-full max-w-[343px] rounded-[24px] rounded-br-[100px] bg-white px-6 py-12 md:max-w-[686px] lg:max-w-[840px]"
+      >
+        <form id="form" class="flex w-full flex-col justify-between">
           <div class="mb-8 flex justify-center gap-8">
             <div class="flex max-w-[87.67px] flex-col">
               <label
+                id="dayLabel"
                 class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
                 for="day"
                 >Day</label
@@ -43,11 +46,12 @@
                 name="day"
                 autocomplete
                 required
-                class="rounded-lg border-2 border-gray-300 px-4 py-2 user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 placeholder:text-lg placeholder:leading-[150%] placeholder:font-bold user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
                 minlength="1"
                 maxlength="2"
                 aria-describedby="day-info"
                 pattern="^(0?[1-9]|[12][0-9]|3[01])$"
+                placeholder="DD"
               />
               <div id="day-info" class="sr-only">
                 Enter at least 1 number between 1-31
@@ -56,6 +60,7 @@
 
             <div class="flex max-w-[87.67px] flex-col">
               <label
+                id="monthLabel"
                 class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
                 for="month"
                 >Month</label
@@ -66,11 +71,12 @@
                 name="month"
                 autocomplete
                 required
-                class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 placeholder:text-lg placeholder:leading-[150%] placeholder:font-bold user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
                 minlength="1"
                 maxlength="2"
                 aria-describedby="month-info"
                 pattern="^(0?[1-9]|1[0-2])$"
+                placeholder="MM"
               />
               <div id="month-info" class="sr-only">
                 Enter at least 1 number between 1-12
@@ -79,6 +85,7 @@
 
             <div class="flex max-w-[87.67px] flex-col">
               <label
+                id="yearLabel"
                 class="mb-2 text-[0.875rem] leading-[150%] font-bold tracking-[5px] uppercase"
                 for="year"
                 >Year</label
@@ -89,42 +96,47 @@
                 name="year"
                 autocomplete
                 required
-                class="rounded-lg border-2 border-gray-300 px-4 py-2 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
+                class="rounded-lg border-2 border-gray-300 px-4 py-2 placeholder:text-lg placeholder:leading-[150%] placeholder:font-bold user-invalid:border-red-400 user-invalid:ring-red-400 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white focus:outline-none"
                 minlength="1"
                 maxlength="4"
                 aria-describedby="year-info"
                 pattern="^\d{4}$"
+                placeholder="YYYY"
               />
               <div id="year-info" class="sr-only">
                 Enter at least 4 number between 1000 et 9999
               </div>
             </div>
           </div>
-
-          <button
-            type="submit"
-            class="flex h-[64px] w-[64px] cursor-pointer items-center justify-center self-center rounded-full bg-purple-500 transition-colors duration-300 hover:bg-purple-700"
-          >
-            <img class="" src="images/icon-arrow.svg" alt="Submit btn" />
-          </button>
+          <div class="relative flex items-center justify-center">
+            <hr
+              class="absolute top-1/2 left-1/2 h-1 w-full max-w-[343px] -translate-x-1/2 -translate-y-1/2 text-gray-200 lg:max-w-[632px]"
+            />
+            <button
+              type="submit"
+              class="z-10 flex h-[64px] w-[64px] cursor-pointer items-center justify-center self-center rounded-full bg-purple-500 transition-colors duration-300 hover:bg-purple-700 lg:absolute lg:right-0"
+            >
+              <img class="" src="images/icon-arrow.svg" alt="Submit btn" />
+            </button>
+          </div>
         </form>
-        <p class="mt-2 hidden self-start text-sm text-red-400 italic">
-          Must be a valid date
-        </p>
 
         <div class="mt-8 flex items-start justify-center gap-4">
           <div class="flex flex-col">
-            <p id="inputYears"
+            <p
+              id="inputYears"
               class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
             >
               --
             </p>
-            <p id="inputMonths"
+            <p
+              id="inputMonths"
               class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
             >
               --
             </p>
-            <p id="inputdays"
+            <p
+              id="inputdays"
               class="text-right text-[3.5rem] leading-[110%] font-extrabold tracking-[-2px] text-purple-500 italic"
             >
               --

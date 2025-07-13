@@ -8,7 +8,6 @@ export type AgeResult = {
   months: number;
   days: number;
 };
-// invalid:border-red-400 invalid:ring-red-400
 
 const formEl = document.getElementById("form") as HTMLFormElement;
 
@@ -17,6 +16,16 @@ formEl.addEventListener(
   "invalid",
   (e: Event) => {
     const target = e.target as HTMLInputElement;
+    const dayLabelEl = document.getElementById(
+      "dayLabel",
+    ) as HTMLParagraphElement;
+    const monthLabelEl = document.getElementById(
+      "monthLabel",
+    ) as HTMLParagraphElement;
+    const yearLabelEl = document.getElementById(
+      "yearLabel",
+    ) as HTMLParagraphElement;
+
     if (target && target instanceof HTMLInputElement) {
       target.setCustomValidity("Please enter a valid number.");
       target.classList.add("shake");
@@ -24,6 +33,11 @@ formEl.addEventListener(
       setTimeout(() => {
         target.classList.remove("shake");
       }, 400);
+    }
+    if (dayLabelEl && monthLabelEl && yearLabelEl) {
+      dayLabelEl.classList.add("text-red-400");
+      monthLabelEl.classList.add("text-red-400");
+      yearLabelEl.classList.add("text-red-400");
     }
   },
   true,
