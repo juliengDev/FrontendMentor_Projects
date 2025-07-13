@@ -11,6 +11,46 @@ export type AgeResult = {
 
 const formEl = document.getElementById("form") as HTMLFormElement;
 
+function calculateAge({ day, month, year }: Date): AgeResult {
+  const birthDate = new Date(Number(year), Number(month) - 1, Number(day));
+  const today = new Date();
+
+  let years = today.getFullYear() - birthDate.getFullYear();
+  let months = today.getMonth() - birthDate.getMonth();
+  let days = today.getDate() - birthDate.getDate();
+
+  if (days < 0) {
+    months--;
+    const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+    days += lastMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months, days };
+}
+
+function displayInfos(age: AgeResult) {
+  const yearsElement = document.getElementById("inputYears");
+  const monthsElement = document.getElementById("inputMonths");
+  const daysElement = document.getElementById("inputdays"); // Attention à la casse : "inputdays" et non "inputDays"
+
+  if (yearsElement) {
+    yearsElement.textContent = age.years.toString();
+  }
+
+  if (monthsElement) {
+    monthsElement.textContent = age.months.toString();
+  }
+
+  if (daysElement) {
+    daysElement.textContent = age.days.toString();
+  }
+}
+
 // FORM CONTROL
 formEl.addEventListener(
   "invalid",
@@ -50,67 +90,24 @@ formEl.addEventListener("input", (e: Event) => {
   }
 });
 
-export function calculateAge({ day, month, year }: Date): AgeResult {
-  const birthDate = new Date(Number(year), Number(month) - 1, Number(day));
-  const today = new Date();
+function init() {
+  formEl.addEventListener("submit", (e: Event) => {
+    e.preventDefault();
 
-  let years = today.getFullYear() - birthDate.getFullYear();
-  let months = today.getMonth() - birthDate.getMonth();
-  let days = today.getDate() - birthDate.getDate();
+    const day = (document.getElementById("day") as HTMLInputElement)?.value;
+    const month = (document.getElementById("month") as HTMLInputElement)?.value;
+    const year = (document.getElementById("year") as HTMLInputElement)?.value;
 
-  if (days < 0) {
-    months--;
-    const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-    days += lastMonth.getDate();
-  }
+    if (!day || !month || !year) return;
 
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
+    if (!isValidDate({ day, month, year } as Date)) {
+      console.error("Invalid date. Please enter a real calendar date.");
+      return;
+    }
 
-  return { years, months, days };
+    const age = calculateAge({ day, month, year } as Date);
+
+    displayInfos(age);
+  });
 }
-formEl.addEventListener("submit", (e: Event) => {
-  e.preventDefault();
-
-  const day = (document.getElementById("day") as HTMLInputElement)?.value;
-  const month = (document.getElementById("month") as HTMLInputElement)?.value;
-  const year = (document.getElementById("year") as HTMLInputElement)?.value;
-
-  if (!day || !month || !year) return;
-
-  if (!isValidDate({ day, month, year } as Date)) {
-    console.error("Invalid date. Please enter a real calendar date.");
-    return;
-  }
-
-  console.log("Valid date:", `${day}/${month}/${year}`);
-
-  const age = calculateAge({ day, month, year } as Date);
-
-  console.log("Valid date:", `${day}/${month}/${year}`);
-  console.log(
-    "Age:",
-    `${age.years} years, ${age.months} months, ${age.days} days`,
-  );
-
-  console.log(
-    `Vous avez ${age.years} ans, ${age.months} mois et ${age.days} jours !`,
-  );
-  const yearsElement = document.getElementById("inputYears");
-  const monthsElement = document.getElementById("inputMonths");
-  const daysElement = document.getElementById("inputdays"); // Attention à la casse : "inputdays" et non "inputDays"
-
-  if (yearsElement) {
-    yearsElement.textContent = age.years.toString();
-  }
-
-  if (monthsElement) {
-    monthsElement.textContent = age.months.toString();
-  }
-
-  if (daysElement) {
-    daysElement.textContent = age.days.toString();
-  }
-});
+window.addEventListener("DOMContentLoaded", init);
