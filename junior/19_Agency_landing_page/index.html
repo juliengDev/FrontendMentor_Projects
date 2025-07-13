@@ -25,28 +25,47 @@
   </head>
   <body>
     <div id="app">
-      <section>
-        <header>
-          <nav class="nav">
+      <section
+        class="h-screen bg-[url('/images/mobile/image-header.jpg')] bg-contain bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')]"
+      >
+        <header class="px-10 py-11">
+          <nav class="relative flex items-center justify-between p-4">
             <a href="#" class="logo">Logo</a>
-
             <button
+              class="z-20 flex cursor-pointer flex-col gap-[5px] border-none bg-transparent lg:hidden"
               id="burger"
               class="burger"
               aria-label="Menu"
               aria-expanded="false"
               aria-controls="menu"
             >
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+              <span
+                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
+              ></span>
+              <span
+                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
+              ></span>
+              <span
+                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
+              ></span>
             </button>
 
-            <ul id="menu" class="menu hidden">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><button>Contact</button></li>
+            <ul
+              id="menu"
+              class="absolute top-[120%] right-4 z-10 w-[200px] flex-col bg-white shadow-md lg:static lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:shadow-none"
+            >
+              <li>
+                <a href="#" class="block px-4 py-2 text-black">Accueil</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-black">Services</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-black">Projects</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-black">Contact</a>
+              </li>
             </ul>
           </nav>
         </header>
