@@ -7,6 +7,7 @@
   --green-500: rgb(69, 141, 126);
   --green-300: rgb(144, 212, 198);
   --grey-950: rgb(36, 48, 62);
+  --grey-700: rgb(68, 68, 68);
   --grey-600: rgb(91, 99, 109);
   --grey-550: rgb(128, 131, 151);
   --grey-400: rgb(167, 170, 173);
@@ -21,6 +22,7 @@
   --color-custom-green-500: var(--green-500);
   --color-custom-green-300: var(--green-300);
   --color-custom-grey-950: var(--grey-950);
+  --color-custom-grey-700: var(--grey-700);
   --color-custom-grey-600: var(--grey-600);
   --color-custom-grey-550: var(--grey-550);
   --color-custom-grey-400: var(--grey-400);
@@ -63,7 +65,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Barlow", sans-serif;
+  font-family: "Big Shoulders", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -106,7 +108,7 @@ body {
     animation: shake 0.4s ease-in-out;
   }
 
-  .fraunces {
-    font-family: "Fraunces", serif;
+  .text-outfit {
+    font-family: "Outfit", sans-serif;
   }
 }

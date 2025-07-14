@@ -69,3 +69,19 @@
 | `rounded-r-*`  | coins droits          |
 
 </details>
+<details>
+<summary>Tailwind Responsive Scale</summary>
+
+| Préfixe | Min-width (px) | Utilisation dans les classes Tailwind              |
+| ------- | -------------- | -------------------------------------------------- |
+| `sm`    | 640px          | `sm:text-xl` → Appliqué **à partir de 640px**      |
+| `md`    | 768px          | `md:flex` → Appliqué **à partir de 768px**         |
+| `lg`    | 1024px         | `lg:grid-cols-4` → Appliqué **à partir de 1024px** |
+| `xl`    | 1280px         | `xl:py-10` → Appliqué **à partir de 1280px**       |
+| `2xl`   | 1536px         | `2xl:text-4xl` → Appliqué **à partir de 1536px**   |
+
+> 🧠 Tailwind fonctionne en **mobile-first** : les classes sans préfixe s'appliquent à tous les écrans, puis les préfixes ajoutent des styles **au-dessus** du breakpoint spécifié.
+
+---
+
+</details>
