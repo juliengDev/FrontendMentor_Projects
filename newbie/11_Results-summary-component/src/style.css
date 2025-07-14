@@ -3,31 +3,31 @@
 :root {
   /* COLORS */
 
-  --color-red-400: hsl(0, 100%, 67%);
-  --color-red-50: hsl(0, 100%, 98%);
-  --color-yellow-400: hsl(39, 100%, 56%);
-  --color-yellow-50: hsl(38, 100%, 98%);
-  --color-green-500: hsl(166, 100%, 37%);
-  --color-green-50: hsl(162, 63%, 97%);
-  --color-blue-800: hsl(234, 85%, 45%);
-  --color-blue-50: hsl(234, 71%, 97%);
-  --color-navy-950: hsl(224, 30%, 27%);
-  --color-navy-50: hsl(221, 100%, 96%);
-  --color-navy-200: hsl(241, 100%, 89%);
+  --red-400: hsl(0, 100%, 67%);
+  --red-50: hsl(0, 100%, 98%);
+  --yellow-400: hsl(39, 100%, 56%);
+  --yellow-50: hsl(38, 100%, 98%);
+  --green-500: hsl(166, 100%, 37%);
+  --green-50: hsl(162, 63%, 97%);
+  --blue-800: hsl(234, 85%, 45%);
+  --blue-50: hsl(234, 71%, 97%);
+  --navy-950: hsl(224, 30%, 27%);
+  --navy-50: hsl(221, 100%, 96%);
+  --navy-200: hsl(241, 100%, 89%);
 }
 
 @theme {
-  --color-base-red-400: var(--color-red-400);
-  --color-base-red-50: var(--color-red-50);
-  --color-base-yellow-400: var(--color-yellow-400);
-  --color-base-yellow-50: var(--color-yellow-50);
-  --color-base-green-500: var(--color-green-500);
-  --color-base-green-50: var(--color-green-50);
-  --color-base-blue-800: var(--color-blue-800);
-  --color-base-blue-50: var(--color-blue-50);
-  --color-base-navy-950: var(--color-navy-950);
-  --color-base-navy-200: var(--color-navy-200);
-  --color-base-navy-50: var(--color-navy-50);
+  --color-base-red-400: var(--red-400);
+  --color-base-red-50: var(--red-50);
+  --color-base-yellow-400: var(--yellow-400);
+  --color-base-yellow-50: var(--yellow-50);
+  --color-base-green-500: var(--green-500);
+  --color-base-green-50: var(--green-50);
+  --color-base-blue-800: var(--blue-800);
+  --color-base-blue-50: var(--blue-50);
+  --color-base-navy-950: var(--navy-950);
+  --color-base-navy-200: var(--navy-200);
+  --color-base-navy-50: var(--navy-50);
 }
 
 /* FONTS */

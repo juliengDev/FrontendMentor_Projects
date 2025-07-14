@@ -1,4 +1,3 @@
-import "./style.css";
 import data from "../data.json";
 
 const infoGrpEl = document.getElementById("grp") as HTMLDivElement;
