@@ -26,7 +26,7 @@
   <body>
     <div id="app">
       <section
-        class="bg-[url('/images/mobile/image-header.jpg')] bg-cover bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')]"
+        class="h-[800px] bg-[url('/images/mobile/image-header.jpg')] bg-cover bg-center bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')]"
       >
         <header class="px-10 py-11">
           <nav
@@ -85,7 +85,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-grey-900 fraunces max-auto block max-w-[160px] rounded-[28px] bg-[#FAD400] px-[2.25rem] py-4 text-center text-[0.9375rem] font-bold text-[#24303E]"
+                  class="text-grey-900 fraunces max-auto block max-w-[160px] rounded-[28px] bg-white px-[2.25rem] py-4 text-center text-[0.9375rem] font-bold text-[#24303E] uppercase transition-colors duration-300 hover:bg-white/50 hover:text-white"
                   >Contact</a
                 >
               </li>
@@ -96,12 +96,12 @@
           >
             We are creatives
           </h1>
-          <div class="mt-[96px] flex justify-center">
+          <a href="#sectionGrid" class="mt-[96px] flex justify-center">
             <img src="images/icon-arrow-down.svg" alt="" />
-          </div>
+          </a>
         </header>
       </section>
-      <section class="grid md:grid-cols-2">
+      <section id="sectionGrid" class="grid md:grid-cols-2">
         <div>
           <picture>
             <source
@@ -194,7 +194,7 @@
           <picture>
             <source
               srcset="/images/desktop/image-graphic-design.jpg"
-              media="(min-width: 1280px)"
+              media="(min-width: 640px)"
               type="image/jpeg
 "
             />
@@ -225,7 +225,7 @@
           <picture>
             <source
               srcset="/images/desktop/image-photography.jpg"
-              media="(min-width: 1280px)"
+              media="(min-width: 640px)"
               type="image/jpeg
 "
             />
@@ -237,7 +237,7 @@
               decoding="async"
             />
           </picture>
-          <div class="absolute bottom-10 left-1/2 w-[80%] -translate-x-1/2">
+          <div class="absolute bottom-4 left-1/2 w-[80%] -translate-x-1/2">
             <h2
               class="fraunces mb-8 text-center text-[1.75rem] font-semibold tracking-[125%] text-[#052C3B]"
             >
