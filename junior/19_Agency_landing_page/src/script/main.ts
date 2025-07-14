@@ -6,9 +6,11 @@ burger.addEventListener("click", () => {
 
   if (isOpen) {
     menu.classList.remove("hidden");
+    menu.classList.add("flex");
     triangle.classList.remove("hidden");
   } else {
     menu.classList.add("hidden");
+    menu.classList.remove("flex");
     triangle.classList.add("hidden");
   }
 
@@ -22,6 +24,7 @@ document.addEventListener("click", (e) => {
   if (!isClickInside && menu.classList.contains("open")) {
     menu.classList.remove("open");
     menu.classList.add("hidden");
+    triangle.classList.add("hidden");
     burger.setAttribute("aria-expanded", "false");
   }
 });

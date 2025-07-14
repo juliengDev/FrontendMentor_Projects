@@ -26,10 +26,12 @@
   <body>
     <div id="app">
       <section
-        class="h-screen bg-[url('/images/mobile/image-header.jpg')] bg-contain bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')] sm:bg-cover"
+        class="bg-[url('/images/mobile/image-header.jpg')] bg-cover bg-top bg-no-repeat sm:bg-[url('/images/desktop/image-header.jpg')]"
       >
         <header class="px-10 py-11">
-          <nav class="relative flex items-center justify-between p-0 lg:p-4">
+          <nav
+            class="relative mb-[96px] flex items-center justify-between p-0 lg:p-4"
+          >
             <a href="#" class="logo"
               ><img src="images/logo.svg" alt="logo"
             /></a>
@@ -53,11 +55,11 @@
             </button>
             <div
               id="triangle"
-              class="absolute top-[40px] right-0 h-0 w-0 border-t-[20px] border-r-[16px] border-t-transparent border-r-white lg:hidden"
+              class="absolute top-[40px] right-0 hidden h-0 w-0 border-t-[20px] border-r-[16px] border-t-transparent border-r-white lg:hidden"
             ></div>
             <ul
               id="menu"
-              class="absolute top-[60px] right-0 z-10 flex w-full flex-col items-center gap-[32px] bg-white py-10 shadow-md sm:max-w-full lg:relative lg:top-auto lg:right-auto lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:py-0 lg:shadow-none"
+              class="absolute top-[60px] right-0 z-10 hidden w-full flex-col items-center gap-[32px] bg-white py-10 shadow-md sm:max-w-full lg:relative lg:top-auto lg:right-auto lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:py-0 lg:shadow-none"
             >
               <li>
                 <a
@@ -89,7 +91,332 @@
               </li>
             </ul>
           </nav>
+          <h1
+            class="fraunces text-center text-[3.5rem] font-black tracking-[125%] text-white uppercase"
+          >
+            We are creatives
+          </h1>
+          <div class="mt-[96px] flex justify-center">
+            <img src="images/icon-arrow-down.svg" alt="" />
+          </div>
         </header>
+      </section>
+      <section class="grid md:grid-cols-2">
+        <div>
+          <picture>
+            <source
+              srcset="/images/desktop/image-transform.jpg"
+              media="(min-width: 1280px)"
+              type="image/jpeg
+"
+            />
+            <img
+              src="/images/mobile/image-transform.jpg"
+              alt="Egg illustration"
+              loading="lazy"
+              class="h-full w-full object-cover"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div
+          class="flex w-[90%] flex-col items-center justify-center px-6 py-[4.25rem] md:col-start-1 md:row-start-1"
+        >
+          <h2
+            class="fraunces mb-8 text-center text-[2.5rem] font-semibold tracking-[125%]"
+          >
+            Transform your brand
+          </h2>
+          <p
+            class="mb-6 text-center text-lg font-bold tracking-[165%] text-[#808397]"
+          >
+            We are a full-service creative agency specializing in helping brands
+            grow fast. Engage your clients through compelling visuals that do
+            most of the marketing for you.
+          </p>
+          <div class="group relative flex w-full justify-center">
+            <a
+              href="#"
+              class="fraunces z-10 text-center text-[0.9375rem] font-bold tracking-[165%] uppercase"
+            >
+              Learn More
+            </a>
+            <div
+              class="absolute top-[11px] left-1/2 block h-3 w-30 -translate-x-1/2 rounded-full bg-yellow-300/50 transition-colors duration-300 ease-in-out group-hover:bg-yellow-300"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <picture>
+            <source
+              srcset="/images/desktop/image-stand-out.jpg"
+              media="(min-width: 1280px)"
+              type="image/jpeg
+"
+            />
+            <img
+              src="/images/mobile/image-stand-out.jpg"
+              alt="Glass illustration"
+              loading="lazy"
+              class="h-full w-full object-cover"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div
+          class="flex w-[90%] flex-col items-center justify-center px-6 py-[4.25rem]"
+        >
+          <h2
+            class="fraunces mb-8 text-center text-[2.5rem] font-semibold tracking-[125%]"
+          >
+            Stand out to the right audience
+          </h2>
+          <p
+            class="mb-6 text-center text-lg font-bold tracking-[165%] text-[#808397]"
+          >
+            Using a collaborative formula of designers, researchers,
+            photographers, videographers, and copywriters, we’ll build and
+            extend your brand in digital places.
+          </p>
+          <div class="group relative flex w-full justify-center">
+            <a
+              href="#"
+              class="fraunces z-10 text-center text-[0.9375rem] font-bold tracking-[165%] uppercase"
+            >
+              Learn More
+            </a>
+            <div
+              class="absolute top-[11px] left-1/2 block h-3 w-30 -translate-x-1/2 rounded-full bg-red-300/50 transition-colors duration-300 ease-in-out group-hover:bg-red-300"
+            ></div>
+          </div>
+        </div>
+        <div class="relative h-[600px]">
+          <picture>
+            <source
+              srcset="/images/desktop/image-graphic-design.jpg"
+              media="(min-width: 1280px)"
+              type="image/jpeg
+"
+            />
+            <img
+              src="/images/mobile/image-graphic-design.jpg"
+              alt="Glass illustration"
+              loading="lazy"
+              class="h-full w-full object-cover object-[center_20%]"
+              decoding="async"
+            />
+          </picture>
+          <div class="absolute bottom-4 left-1/2 w-[80%] -translate-x-1/2">
+            <h2
+              class="fraunces mb-8 text-center text-[1.75rem] font-semibold tracking-[125%] text-[#24554A]"
+            >
+              Graphic design
+            </h2>
+            <p
+              class="mb-6 text-center text-base font-bold tracking-[165%] text-[#3E7467]"
+            >
+              Great design makes you memorable. We deliver artwork that
+              underscores your brand message and captures potential clients’
+              attention.
+            </p>
+          </div>
+        </div>
+        <div class="relative h-[600px]">
+          <picture>
+            <source
+              srcset="/images/desktop/image-photography.jpg"
+              media="(min-width: 1280px)"
+              type="image/jpeg
+"
+            />
+            <img
+              src="/images/mobile/image-photography.jpg"
+              alt="Glass illustration"
+              loading="lazy"
+              class="h-full w-full object-cover object-[center_20%]"
+              decoding="async"
+            />
+          </picture>
+          <div class="absolute bottom-10 left-1/2 w-[80%] -translate-x-1/2">
+            <h2
+              class="fraunces mb-8 text-center text-[1.75rem] font-semibold tracking-[125%] text-[#052C3B]"
+            >
+              Photography
+            </h2>
+            <p
+              class="mb-6 text-center text-base font-bold tracking-[165%] text-[#19536C]"
+            >
+              Increase your credibility by getting the most stunning,
+              high-quality photos that improve your business image.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="mt-20 mb-[3.4375rem] flex flex-col items-center">
+        <h3
+          class="fraunces mb-20 text-xl leading-[4px] font-semibold tracking-[125%] text-[#A7AAAD] uppercase"
+        >
+          Client testimonials
+        </h3>
+        <div
+          class="flex w-[90%] flex-col items-center gap-14 text-center md:flex-row"
+        >
+          <article>
+            <img
+              class="mx-auto mb-[3.625rem] h-[72px] w-[72px] rounded-full"
+              src="images/image-emily.jpg"
+              alt=" profil emily"
+            />
+            <p class="mb-8 text-lg font-semibold text-[#5B636D]">
+              We put our trust in Sunnyside and they delivered, making sure our
+              needs were met and deadlines were always hit.
+            </p>
+            <p
+              class="fraunces mb-2 text-lg font-bold tracking-[125%] text-[#24303E]"
+            >
+              Emily R.
+            </p>
+            <p class="text-sm tracking-[180%] text-[#A7AAAD]">
+              Chief Operating Officer
+            </p>
+          </article>
+          <article>
+            <img
+              class="mx-auto mb-[3.625rem] h-[72px] w-[72px] rounded-full"
+              src="images/image-thomas.jpg"
+              alt=" profil emily"
+            />
+            <p class="mb-8 text-lg font-semibold text-[#5B636D]">
+              Sunnyside’s enthusiasm coupled with their keen interest in our
+              brand’s success made it a satisfying and enjoyable experience.
+            </p>
+            <p
+              class="fraunces mb-2 text-lg font-bold tracking-[125%] text-[#24303E]"
+            >
+              Thomas S.
+            </p>
+            <p class="text-sm tracking-[180%] text-[#A7AAAD]">
+              Marketing Director
+            </p>
+          </article>
+          <article>
+            <img
+              class="mx-auto mb-[3.625rem] h-[72px] w-[72px] rounded-full"
+              src="images/image-jennie.jpg"
+              alt=" profil emily"
+            />
+            <p class="mb-8 text-lg font-semibold text-[#5B636D]">
+              Incredible end result! Our sales increased over 400% when we
+              worked with Sunnyside. Highly recommended!
+            </p>
+            <p
+              class="fraunces mb-2 text-lg font-bold tracking-[125%] text-[#24303E]"
+            >
+              Jennie F.
+            </p>
+            <p class="text-sm tracking-[180%] text-[#A7AAAD]">Business Owner</p>
+          </article>
+        </div>
+      </section>
+      <section class="grid grid-cols-2 md:grid-cols-4">
+        <picture>
+          <source
+            srcset="/images/desktop/image-gallery-milkbottles.jpg"
+            media="(min-width: 1280px)"
+            type="image/jpeg
+"
+          />
+          <img
+            src="/images/mobile/image-gallery-milkbottles.jpg"
+            alt="Glass illustration"
+            loading="lazy"
+            class="h-full w-full object-cover object-[center_20%]"
+            decoding="async"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="/images/desktop/image-gallery-orange.jpg"
+            media="(min-width: 1280px)"
+            type="image/jpeg
+"
+          />
+          <img
+            src="/images/mobile/image-gallery-orange.jpg"
+            alt="Glass illustration"
+            loading="lazy"
+            class="h-full w-full object-cover object-[center_20%]"
+            decoding="async"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="/images/desktop/image-gallery-cone.jpg"
+            media="(min-width: 1280px)"
+            type="image/jpeg
+"
+          />
+          <img
+            src="/images/mobile/image-gallery-cone.jpg"
+            alt="Glass illustration"
+            loading="lazy"
+            class="h-full w-full object-cover object-[center_20%]"
+            decoding="async"
+          />
+        </picture>
+
+        <img
+          src="/images/mobile/image-gallery-sugar-cubes.jpg"
+          alt="Glass illustration"
+          loading="lazy"
+          class="h-full w-full object-cover object-[center_20%]"
+          decoding="async"
+        />
+      </section>
+      <section
+        class="flex h-full flex-col items-center bg-[#90D4C6] pt-6 pb-[74px] sm:pt-[70px]"
+      >
+        <svg
+          class="mb-10"
+          width="124"
+          height="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.857 18.708c1.638 0 2.995-.36 4.07-1.08 1.075-.721 1.613-1.769 1.613-3.144-.083-1.855-1.464-3.246-4.144-4.173l-1.44-.597c-.314-.1-.538-.198-.67-.298a.45.45 0 01-.198-.373c0-.414.273-.62.819-.62.678 0 1.182.347 1.513 1.043l3.698-1.044c-.893-2.22-2.614-3.329-5.162-3.329-1.522 0-2.788.398-3.797 1.193C1.15 7.08.645 8.116.645 9.39c0 .398.058.766.174 1.106.116.34.29.638.521.894.232.257.455.48.67.671.215.19.488.369.82.534.33.166.582.286.756.36.174.075.41.162.707.261l.422.15 1.49.546c.363.133.6.244.707.335a.449.449 0 01.16.36c0 .431-.404.647-1.215.647-1.191 0-1.903-.53-2.134-1.59L0 14.509c.463 2.8 2.416 4.2 5.857 4.2zm11.636 0c1.638 0 2.845-.63 3.623-1.888v1.615h5.112V5.366h-5.112v7.156c0 1.474-.505 2.21-1.514 2.21-1.026 0-1.539-.736-1.539-2.21V5.366h-5.112v7.653c0 3.793 1.514 5.69 4.542 5.69zm16.103-.273V11.28c0-1.475.504-2.212 1.513-2.212 1.026 0 1.54.737 1.54 2.212v7.155h5.111v-7.652c0-3.793-1.513-5.69-4.541-5.69-1.638 0-2.846.63-3.623 1.888V5.366h-5.113v13.069h5.113zm15.383 0V11.28c0-1.475.504-2.212 1.514-2.212 1.025 0 1.538.737 1.538 2.212v7.155h5.113v-7.652c0-3.793-1.514-5.69-4.542-5.69-1.638 0-2.846.63-3.623 1.888V5.366h-5.113v13.069h5.113zM64.958 24l8.289-18.634H67.91l-2.532 6.684-2.258-6.684h-5.584l5.435 11.802L59.944 24h5.014zm13.67-5.292c1.638 0 2.995-.36 4.07-1.08 1.076-.721 1.614-1.769 1.614-3.144-.083-1.855-1.465-3.246-4.145-4.173l-1.44-.597c-.314-.1-.537-.198-.67-.298a.45.45 0 01-.198-.373c0-.414.273-.62.819-.62.678 0 1.183.347 1.514 1.043l3.698-1.044c-.894-2.22-2.614-3.329-5.162-3.329-1.522 0-2.788.398-3.797 1.193-1.01.795-1.514 1.83-1.514 3.105 0 .398.058.766.173 1.106.116.34.29.638.522.894.231.257.455.48.67.671.215.19.488.369.819.534.33.166.583.286.757.36.173.075.41.162.707.261l.422.15 1.489.546c.364.133.6.244.707.335a.449.449 0 01.161.36c0 .431-.405.647-1.216.647-1.19 0-1.902-.53-2.134-1.59l-3.723.844c.464 2.8 2.416 4.2 5.857 4.2zm9.8-14.137c.91 0 1.613-.215 2.11-.646.495-.43.744-.977.744-1.64 0-.678-.24-1.23-.72-1.651C90.082.21 89.371 0 88.428 0c-.943 0-1.655.211-2.135.634-.48.422-.72.973-.72 1.652 0 .662.249 1.209.745 1.64.497.43 1.2.645 2.11.645zm2.556 13.864V5.366H85.87v13.069h5.113zm7.74.273c1.737 0 2.977-.63 3.722-1.888v1.615h5.112V.472h-5.112v6.534c-.745-1.275-1.985-1.913-3.723-1.913-1.753 0-3.214.642-4.38 1.926-1.166 1.283-1.75 2.91-1.75 4.882 0 1.97.584 3.598 1.75 4.882 1.166 1.283 2.627 1.925 4.38 1.925zm1.39-3.9c-.729 0-1.312-.274-1.75-.82-.439-.547-.658-1.243-.658-2.087 0-.845.215-1.54.645-2.087.447-.547 1.034-.82 1.762-.82s1.311.273 1.75.82c.438.546.657 1.242.657 2.087 0 .844-.219 1.54-.657 2.087-.439.546-1.022.82-1.75.82zm16.698 3.9c2.597 0 4.624-.754 6.08-2.26l-2.11-2.833c-1.042.845-2.217 1.267-3.524 1.267-.992 0-1.799-.224-2.42-.67-.62-.448-.93-.879-.93-1.293h9.604c.083-.298.124-.687.124-1.167 0-2.054-.674-3.677-2.022-4.87-1.349-1.193-3.073-1.789-5.175-1.789-2.25 0-4.028.671-5.335 2.013-1.307 1.341-1.961 2.956-1.961 4.844 0 1.938.69 3.549 2.072 4.833 1.382 1.283 3.247 1.925 5.597 1.925zm2.208-8.149h-5.112c.033-.613.298-1.08.794-1.404.496-.323 1.084-.484 1.762-.484.678 0 1.266.165 1.762.497.497.331.761.795.794 1.391z"
+            fill="#3E7467"
+            fill-rule="nonzero"
+          />
+        </svg>
+        <div
+          class="mb-20 flex justify-between gap-[3.5rem] text-lg font-semibold tracking-[165%] text-[#458D7E]"
+        >
+          <p>About</p>
+          <p>Service</p>
+          <p>Projects</p>
+        </div>
+        <div class="flex gap-6">
+          <img
+            class="cursor-pointer"
+            src="images/icon-facebook.svg"
+            alt="icon facebook"
+          />
+          <img
+            class="cursor-pointer"
+            src="images/icon-instagram.svg"
+            alt="icon instagram"
+          />
+          <img
+            class="cursor-pointer"
+            src="images/icon-twitter.svg"
+            alt="icon twitter"
+          />
+          <img
+            class="cursor-pointer"
+            src="images/icon-pinterest.svg"
+            alt="icon pinterest"
+          />
+        </div>
       </section>
     </div>
   </body>
