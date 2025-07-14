@@ -21,7 +21,7 @@
       rel="stylesheet"
     />
 
-    <title> Art gallery website</title>
+    <title>Art gallery website</title>
   </head>
   <body>
     <div id="app">
@@ -39,6 +39,11 @@
         <picture class="h-full sm:w-1/2 xl:w-1/3">
           <source
             srcset="/images/desktop/image-hero@2x.jpg"
+            media="(min-width:1024px)"
+            type="image/jpeg"
+          />
+          <source
+            srcset="/images/tablet/image-hero@2x.jpg"
             media="(min-width:639px)"
             type="image/jpeg"
           />
@@ -54,7 +59,7 @@
           class="flex flex-col gap-8 px-4 py-8 sm:absolute sm:top-1/2 sm:right-12 sm:w-1/2 sm:-translate-y-1/2 sm:p-0 xl:w-1/3"
         >
           <h1
-            class="text-[3.75rem] leading-[90%] font-black uppercase xl:absolute xl:hidden"
+            class="max-w-[339px] text-[3.75rem] leading-[90%] font-black uppercase xl:absolute xl:hidden"
           >
             Modern Art Gallery
           </h1>
@@ -65,21 +70,27 @@
             from a spark of inspiration. Will these pieces inspire you? Visit us
             and find out.
           </p>
-          <div class="flex w-full max-w-[270px]">
-            <div
-              class="bg-[#151515] px-8 py-[26px] font-extrabold tracking-[3.64px] text-white uppercase xl:px-7 xl:text-xl"
-            >
-              Our location
-            </div>
+          <div
+            class="absolute top-[10px] left-[10px] flex w-full max-w-[270px] sm:top-[280px] xl:top-[220px]"
+          >
             <a
               href="location.html"
-              class="flex items-center justify-center bg-[#D5966C] p-6"
+              class="group flex transition-colors duration-300"
             >
-              <img
-                class="h-6 w-3"
-                src="images/icon-arrow-right.svg"
-                alt="icon arrow right"
-              />
+              <div
+                class="bg-[#151515] px-8 py-[26px] font-extrabold tracking-[3.64px] text-white uppercase transition-colors duration-300 group-hover:bg-[#D5966C] group-hover:text-[#151515] xl:px-7 xl:text-xl"
+              >
+                Our location
+              </div>
+              <div
+                class="flex items-center justify-center bg-[#D5966C] p-5 transition-colors duration-300 group-hover:bg-[#151515]"
+              >
+                <img
+                  class="h-6 w-3"
+                  src="images/icon-arrow-right.svg"
+                  alt="icon arrow left"
+                />
+              </div>
             </a>
           </div>
         </div>
@@ -91,6 +102,11 @@
           <picture>
             <source
               srcset="/images/desktop/image-grid-1@2x.jpg"
+              media="(min-width:1024px)"
+              type="image/jpeg"
+            />
+            <source
+              srcset="/images/tablet/image-grid-1@2x.jpg"
               media="(min-width:640px)"
               type="image/jpeg"
             />
@@ -120,6 +136,11 @@
           <picture>
             <source
               srcset="/images/desktop/image-grid-2@2x.jpg"
+              media="(min-width:1024px)"
+              type="image/jpeg"
+            />
+            <source
+              srcset="/images/tablet/image-grid-2@2x.jpg"
               media="(min-width:640px)"
               type="image/jpeg"
             />
@@ -137,6 +158,11 @@
           <picture>
             <source
               srcset="/images/desktop/image-grid-3@2x.jpg"
+              media="(min-width:1024px)"
+              type="image/jpeg"
+            />
+            <source
+              srcset="/images/tablet/image-grid-3@2x.jpg"
               media="(min-width:640px)"
               type="image/jpeg"
             />
