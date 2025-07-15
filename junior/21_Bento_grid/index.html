@@ -26,12 +26,14 @@
   <body>
     <div
       id="app"
-      class="grid gap-8 bg-[#F6F5F6] px-4 py-8 md:grid-cols-2 md:px-10 md:py-[3.25rem] xl:grid-cols-4 xl:px-[10rem] xl:py-[5.1875rem]"
+      class="xl:grid-template-rows-6 grid gap-8 bg-[#F6F5F6] px-4 py-8 md:grid-cols-2 md:px-10 md:py-[3.25rem] xl:grid-cols-4 xl:px-[10rem] xl:py-[5.1875rem]"
     >
       <article
-        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#7551DC] px-8 py-10 md:col-span-2 md:p-[4.5rem]"
+        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#7551DC] px-8 py-10 md:col-span-2 md:p-[4.5rem] xl:col-span-2 xl:col-start-2 xl:row-span-2 xl:row-start-1"
       >
-        <h1 class="text-center text-[2.875rem] text-white md:max-w-[406px]">
+        <h1
+          class="text-center text-[2.875rem] leading-[58px] text-white md:max-w-[406px]"
+        >
           Social Media <span class="text-[#FFCC6A]">10x</span>
           <span class="italic"> Faster</span> with AI
         </h1>
@@ -47,21 +49,21 @@
         </div>
       </article>
       <article
-        class="flex flex-col items-center gap-4 rounded-[10px] bg-white p-4 md:justify-between md:p-6"
+        class="flex flex-col items-center gap-4 rounded-[10px] bg-white p-4 md:justify-between md:p-6 xl:relative xl:col-span-1 xl:col-start-2 xl:row-span-2 xl:row-start-3 xl:overflow-hidden"
       >
         <img
-          class="max-w-[316px]"
+          class="max-w-[316px] xl:absolute xl:top-6 xl:left-11"
           src="images/illustration-multiple-platforms.webp"
           alt="illustration multiple platforms"
         />
         <h2
-          class="text-start text-[1.625rem] leading-6 font-medium tracking-[-6%] text-[#121212]"
+          class="text-start text-[1.625rem] leading-6 font-medium tracking-[-6%] text-[#121212] xl:absolute xl:bottom-6 xl:left-6"
         >
           Manage multiple accounts and platforms.
         </h2>
       </article>
       <article
-        class="flex h-[232px] flex-col items-center gap-4 overflow-hidden rounded-[10px] bg-[#FFCC6A] px-[1.125rem] py-8"
+        class="flex h-[232px] flex-col items-center gap-4 overflow-hidden rounded-[10px] bg-[#FFCC6A] px-[1.125rem] py-8 xl:col-span-1 xl:col-start-3 xl:row-span-2 xl:row-start-3"
       >
         <div class="relative">
           <h2
@@ -70,34 +72,34 @@
             Maintain a consistent posting schedule.
           </h2>
           <img
-            class="absolute top-17 left-0 max-w-[208px]"
+            class="absolute top-17 left-0 max-w-[208px] xl:top-30"
             src="images/illustration-consistent-schedule.webp"
             alt="illustration consistent schedule"
           />
         </div>
       </article>
       <article
-        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#DBD1FC] px-[1.125rem] py-8 md:col-span-2"
+        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#DBD1FC] px-[1.125rem] py-8 md:col-span-2 xl:relative xl:col-span-1 xl:col-start-4 xl:row-span-4 xl:row-start-1 xl:overflow-hidden xl:py-[3.125rem]"
       >
         <h2
-          class="text-center text-[1.625rem] leading-6 font-medium tracking-[-6%] text-[#121212]"
+          class="text-center text-[1.625rem] leading-6 font-medium tracking-[-6%] text-[#121212] xl:text-start xl:text-[2rem]"
         >
           Schedule to social media.
         </h2>
         <img
-          class="max-w-[308px]"
+          class="max-w-[308px] xl:absolute xl:top-1/2 xl:left-6 xl:-translate-y-1/2"
           src="images/illustration-schedule-posts.webp"
           alt="illustration schedule posts"
         />
         <p
-          class="text-center text-lg leading-5 font-normal text-[#121212] md:max-w-[319px]"
+          class="bottom-12 text-center text-lg leading-5 font-normal text-[#121212] md:max-w-[319px] xl:absolute xl:max-w-[192px] xl:text-start"
         >
           Optimize post timings to publish content at the perfect time for your
           audience.
         </p>
       </article>
       <article
-        class="flex flex-col items-center gap-10 rounded-[10px] bg-[#7551DC] px-[3.75rem] py-6 md:col-span-2 md:flex-row md:justify-center"
+        class="flex flex-col items-center gap-10 rounded-[10px] bg-[#7551DC] px-[3.75rem] py-6 md:col-span-2 md:flex-row md:justify-center xl:col-start-3 xl:row-span-2"
       >
         <img
           class="max-w-[227px]"
@@ -111,7 +113,7 @@
         </h2>
       </article>
       <article
-        class="flex flex-col items-start gap-6 rounded-[10px] bg-white p-6 md:col-span-2 md:flex-row md:justify-between"
+        class="flex flex-col items-start gap-6 rounded-[10px] bg-white p-6 md:col-span-2 md:flex-row md:justify-between xl:col-span-1 xl:col-start-2 xl:row-span-2 xl:row-start-5 xl:flex-col"
       >
         <div>
           <h2
@@ -130,7 +132,7 @@
         />
       </article>
       <article
-        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#F9EEE2] p-8 md:py-[4.6875rem]"
+        class="flex flex-col items-center gap-6 rounded-[10px] bg-[#F9EEE2] p-8 md:py-[4.6875rem] xl:col-start-1 xl:row-span-3 xl:row-start-1"
       >
         <h2
           class="self-baseline text-start text-[2rem] leading-7 tracking-[-6%]"
@@ -144,7 +146,9 @@
           alt="illustration create post"
         />
       </article>
-      <article class="flex flex-col gap-6 rounded-[10px] bg-[#FFCC6A] p-6">
+      <article
+        class="flex flex-col gap-6 rounded-[10px] bg-[#FFCC6A] p-6 xl:col-start-1 xl:row-span-3 xl:row-start-4"
+      >
         <h2 class="self-baseline text-[2rem] leading-7 tracking-[-6%]">
           Write your content using AI.
         </h2>
