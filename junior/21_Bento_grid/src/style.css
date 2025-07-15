@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  /* COLORS */
+  --green-900: rgb(36, 85, 74);
+  --green-600: rgb(62, 116, 103);
+  --green-500: rgb(69, 141, 126);
+  --green-300: rgb(144, 212, 198);
+  --grey-950: rgb(36, 48, 62);
+  --grey-700: rgb(68, 68, 68);
+  --grey-600: rgb(91, 99, 109);
+  --grey-550: rgb(128, 131, 151);
+  --grey-400: rgb(167, 170, 173);
+  --blue-950: rgb(5, 44, 59);
+  --blue-800: rgb(25, 83, 108);
+  --red: rgb(254, 119, 102);
+  --yellow: rgb(250, 212, 0);
+}
+@theme {
+  --color-custom-green-950: var(--green-900);
+  --color-custom-green-600: var(--green-600);
+  --color-custom-green-500: var(--green-500);
+  --color-custom-green-300: var(--green-300);
+  --color-custom-grey-950: var(--grey-950);
+  --color-custom-grey-700: var(--grey-700);
+  --color-custom-grey-600: var(--grey-600);
+  --color-custom-grey-550: var(--grey-550);
+  --color-custom-grey-400: var(--grey-400);
+  --color-custom-blue-950: var(--blue-950);
+  --color-custom-blue-800: var(--blue-800);
+  --color-custom-red: var(--red);
+  --color-custom-yellow: var(--yellow);
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans", sans-serif;
+  src: url("/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  min-height: 100dvh;
+}
+
+@theme {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-5px);
+    }
+    40% {
+      transform: translateX(5px);
+    }
+    60% {
+      transform: translateX(-5px);
+    }
+    80% {
+      transform: translateX(5px);
+    }
+  }
+}
+@layer utilities {
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
+  }
+  .box-shadow-custom {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.0973);
+  }
+  .box-shadow-btn:hover {
+    box-shadow: 0px 0px 40px 0px rgba(83, 255, 170, 1);
+  }
+
+  .shake {
+    animation: shake 0.4s ease-in-out;
+  }
+
+  .text-outfit {
+    font-family: "Outfit", sans-serif;
+  }
+}
