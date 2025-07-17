@@ -6,14 +6,13 @@ import NavLinks from "../components/NavLinks.astro";
 ---
 
 <header class="px-10 py-11">
-  <nav class="relative flex items-center justify-between p-4">
-    <Logo class="fixed top-[42px] left-[26px] z-30" />
+  <nav class="relative flex items-center justify-between lg:static">
+    <Logo class="fixed top-[36px] left-[26px] z-30" />
     <ButtonMenu />
     <ButtonClose />
     <NavLinks />
   </nav>
 </header>
-
 
 <style>
   @media (width < 376px) {
