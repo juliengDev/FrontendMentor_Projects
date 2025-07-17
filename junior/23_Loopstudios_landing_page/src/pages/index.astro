@@ -1,8 +1,10 @@
 ---
 import "@fontsource-variable/josefin-sans";
-import '@fontsource/alata';
+import "@fontsource/alata";
 import MainLayout from "../layouts/MainLayout.astro";
-
+import { Image } from "astro:assets";
+import imageInteractiveDesktop from "../assets/desktop/image-interactive.jpg";
+import imageInteractiveMobile from "../assets/mobile/image-interactive.jpg";
 const { pageTitle } = Astro.props;
 ---
 
@@ -19,6 +21,30 @@ const { pageTitle } = Astro.props;
     </script>
   </head>
   <body>
-    <MainLayout />
+    <MainLayout>
+      <div class="px-6 py-24">
+        <section class="flex justify-center">
+          <div>
+            <Image
+              src={imageInteractiveMobile}
+              alt="image interactive"
+              class="h-full w-full object-cover xl:hidden"
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              src={imageInteractiveDesktop}
+              alt="image interactive"
+              class="hidden h-full w-full object-cover xl:block"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <h2></h2>
+          </div>
+        </section>
+      </div>
+    </MainLayout>
   </body>
 </html>
