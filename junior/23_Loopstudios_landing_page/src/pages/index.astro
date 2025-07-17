@@ -1,7 +1,8 @@
 ---
+import "@fontsource-variable/josefin-sans";
+import MainLayout from "../layouts/MainLayout.astro";
+
 const { pageTitle } = Astro.props;
-const imgHeroMobile = "/assets/mobile/image-hero.jpg";
-const imgHeroDesktop = "/assets/desktop/image-hero.jpg";
 ---
 
 <html lang="en">
@@ -9,6 +10,7 @@ const imgHeroDesktop = "/assets/desktop/image-hero.jpg";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="../src/assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="../src/styles/global.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <script>
@@ -16,72 +18,6 @@ const imgHeroDesktop = "/assets/desktop/image-hero.jpg";
     </script>
   </head>
   <body>
-    <div id="app">
-      <section>
-        <header class="px-10 py-11">
-          <nav class="relative flex items-center justify-between p-4">
-            <a href="#" class="logo">Logo</a>
-            <button
-              class="z-20 flex cursor-pointer flex-col gap-[5px] border-none bg-transparent lg:hidden"
-              id="burger"
-              class="burger"
-              aria-label="Menu"
-              aria-expanded="false"
-              aria-controls="menu"
-            >
-              <span
-                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
-              ></span>
-              <span
-                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
-              ></span>
-              <span
-                class="block h-[3px] w-[25px] bg-white transition-all duration-300 ease-in-out"
-              ></span>
-            </button>
-
-            <ul
-              id="menu"
-              class="absolute top-[120%] right-4 z-10 w-[200px] flex-col bg-white shadow-md lg:static lg:flex lg:w-auto lg:flex-row lg:bg-transparent lg:shadow-none"
-            >
-              <li>
-                <a href="#" class="block px-4 py-2 text-black">Accueil</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-black">Services</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-black">Projects</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-black">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-      </section>
-    </div>
+    <MainLayout />
   </body>
 </html>
-
-<style>
-  @media (width < 376px) {
-    section {
-      background-image: url("../assets/mobile/image-hero.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 650px;
-      width: 100%;
-    }
-  }
-  @media (width > 376px) {
-    section {
-      background-image: url("../assets/desktop/image-hero.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 650px;
-      width: 100%;
-    }
-  }
-</style>

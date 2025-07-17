@@ -1,0 +1,38 @@
+---
+import Logo from "../assets/logo.svg";
+import ButtonMenu from "../components/ui/ButtonMenu.astro";
+import ButtonClose from "../components/ui/ButtonClose.astro";
+import NavLinks from "../components/NavLinks.astro";
+---
+
+<header class="px-10 py-11">
+  <nav class="relative flex items-center justify-between p-4">
+    <Logo class="fixed top-[42px] left-[26px] z-30" />
+    <ButtonMenu />
+    <ButtonClose />
+    <NavLinks />
+  </nav>
+</header>
+
+
+<style>
+  @media (width < 376px) {
+    header {
+      background-image: url("../assets/mobile/image-hero.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 650px;
+      width: 100%;
+    }
+  }
+  @media (width > 376px) {
+    header {
+      background-image: url("../assets/desktop/image-hero.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 650px;
+      width: 100%;
+    }
+  }
+</style>
