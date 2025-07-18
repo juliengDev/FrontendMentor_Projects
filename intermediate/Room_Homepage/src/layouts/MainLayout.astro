@@ -1,0 +1,25 @@
+---
+const { title } = Astro.props;
+import Gallery from "../components/Gallery.astro";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../src/assets/favicon-32x32.png" />
+    <meta
+      name="description"
+      content="Loopstudios creates world-class virtual reality experiences since 2011. Award-winning projects for top global brands, transforming businesses through cutting-edge digital innovation."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <Gallery />
+      <slot />
+    </main>
+  </body>
+</html>

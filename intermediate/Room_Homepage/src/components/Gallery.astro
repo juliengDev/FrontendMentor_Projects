@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+
+import img1 from "../assets/desktop-image-hero-1.jpg";
+import img2 from "../assets/desktop-image-hero-2.jpg";
+import img3 from "../assets/desktop-image-hero-3.jpg";
+import img1Mobile from "../assets/mobile-image-hero-1.jpg";
+import img2Mobile from "../assets/mobile-image-hero-2.jpg";
+import img3Mobile from "../assets/mobile-image-hero-3.jpg";
+---
+
+<section>
+  <div class="carousel">
+    <ul id="carousel-track" class="carousel-track">
+      <li class="slide">
+        <Image
+          src={img1}
+          alt="slide 1"
+          class="hidden h-full w-full object-cover md:block"
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          src={img1Mobile}
+          alt="slide 1"
+          class="block h-full w-full object-cover md:hidden"
+          decoding="async"
+          loading="lazy"
+        />
+      </li>
+      <li class="slide">
+        <Image
+          src={img2}
+          alt="slide 2"
+          class="hidden h-full w-full object-cover md:block"
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          src={img2Mobile}
+          alt="slide 2"
+          class="block h-full w-full object-cover md:hidden"
+          decoding="async"
+          loading="lazy"
+        />
+      </li>
+      <li class="slide">
+        <Image
+          src={img3}
+          alt="slide 2"
+          class="hidden h-full w-full object-cover md:block"
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          src={img3Mobile}
+          alt="slide 2"
+          class="block h-full w-full object-cover xl:hidden"
+          decoding="async"
+          loading="lazy"
+        />
+      </li>
+    </ul>
+
+    <div class="carousel-controls">
+      <button id="prev" aria-label="Slide précédente">‹</button>
+      <button id="next" aria-label="Slide suivante">›</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    height: 300px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .carousel-controls {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .carousel-controls button {
+    background-color: #000000aa;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-controls button:hover {
+    background-color: #000;
+  }
+</style>
+<script>
+  const prevButton = document.getElementById("prev") as HTMLButtonElement;
+  const nextButton = document.getElementById("next") as HTMLButtonElement;
+  const track = document.getElementById("carousel-track") as HTMLUListElement;
+
+  let currentIndex = 0;
+  const slides = track.querySelectorAll("li");
+  const totalSlides = slides.length;
+
+  function updateCarouselPosition() {
+    const slideWidth = slides[0].clientWidth;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  prevButton.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarouselPosition();
+    }
+  });
+
+  nextButton.addEventListener("click", () => {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+      updateCarouselPosition();
+    }
+  });
+</script>
