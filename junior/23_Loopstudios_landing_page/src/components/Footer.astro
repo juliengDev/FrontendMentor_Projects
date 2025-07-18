@@ -1,0 +1,34 @@
+---
+import Logo from "../assets/logo.svg";
+import Facebook from "../assets/icon-facebook.svg";
+import Twitter from "../assets/icon-twitter.svg";
+import Pinterest from "../assets/icon-pinterest.svg";
+import Instagram from "../assets/icon-instagram.svg";
+import FooterLink from "../components/FooterLink.astro";
+---
+
+<footer class="grid bg-black px-[115px] py-[56px] xl:grid-cols-2">
+  <div class="mb-[2.6875rem] justify-self-center xl:mb-6 xl:justify-self-start">
+    <Logo />
+  </div>
+  <ul
+    class="mb-10 flex flex-col items-center gap-4 xl:col-start-1 xl:row-start-2 xl:flex-row"
+  >
+    <FooterLink linkName="About" />
+    <FooterLink linkName="Careers" />
+    <FooterLink linkName="Events" />
+    <FooterLink linkName="Products" />
+    <FooterLink linkName="Support" />
+  </ul>
+  <div
+    class="mb-[1.125rem] flex items-center justify-center gap-4 xl:justify-self-end"
+  >
+    <Facebook />
+    <Twitter />
+    <Pinterest />
+    <Instagram />
+  </div>
+  <p class="text-center text-white/50 xl:justify-self-end">
+    © 2021 Loopstudios. All rights reserved.
+  </p>
+</footer>

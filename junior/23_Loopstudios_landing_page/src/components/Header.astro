@@ -50,6 +50,8 @@ import NavGroup from "../components/NavGroup.astro";
   }
 </style>
 <script>
+  const menuIcon = document.getElementById("icon-burger") as HTMLButtonElement;
+  const barIcon = menuIcon.querySelectorAll("span");
   function initNavbarScroll() {
     const nav = document.getElementById("main-nav") as HTMLElement;
 
@@ -59,9 +61,17 @@ import NavGroup from "../components/NavGroup.astro";
       if (window.scrollY > 50) {
         nav.classList.add("nav-scrolled");
         nav.classList.remove("bg-transparent");
+        barIcon.forEach((bar) => {
+          bar.classList.remove("bg-white");
+          bar.classList.add("bg-black");
+        });
       } else {
         nav.classList.remove("nav-scrolled");
         nav.classList.add("bg-transparent");
+        barIcon.forEach((bar) => {
+          bar.classList.add("bg-white");
+          bar.classList.remove("bg-black");
+        });
       }
     }
 

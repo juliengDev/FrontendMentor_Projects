@@ -1,28 +1,11 @@
 ---
 import "@fontsource-variable/josefin-sans";
 import "@fontsource/alata";
+import CreationSection from "../components/CreationSection.astro";
+import LeaderSection from "../components/LeaderSection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
-import imageInteractiveMobile from "../assets/mobile/image-interactive.jpg";
-import imageDeepEarthMobile from "../assets/mobile/image-deep-earth.jpg";
-import imageNightArcadeMobile from "../assets/mobile/image-night-arcade.jpg";
-import imageNightSoccerMobile from "../assets/mobile/image-soccer-team.jpg";
-import imageInteractiveDesktop from "../assets/desktop/image-interactive.jpg";
-import imageDeepEarthDesktop from "../assets/desktop/image-deep-earth.jpg";
-import imageNightArcadeDesktop from "../assets/desktop/image-night-arcade.jpg";
-import imageNightSoccerDesktop from "../assets/desktop/image-soccer-team.jpg";
-import imageGridDesktop from "../assets/desktop/image-grid.jpg";
-import imageGridMobile from "../assets/mobile/image-grid.jpg";
-import imageFromAboveDesktop from "../assets/desktop/image-from-above.jpg";
-import imageFromAboveMobile from "../assets/mobile/image-from-above.jpg";
-import imagePocketBorealisDesktop from "../assets/desktop/image-pocket-borealis.jpg";
-import imagePocketBorealisMobile from "../assets/mobile/image-pocket-borealis.jpg";
-import imageCuriosityDesktop from "../assets/desktop/image-curiosity.jpg";
-import imageCuriosityMobile from "../assets/mobile/image-curiosity.jpg";
-import imageFisheyeDesktop from "../assets/desktop/image-fisheye.jpg";
-import imageFisheyeMobile from "../assets/mobile/image-fisheye.jpg";
-import CreationCard from "../components/CreationCard.astro";
-const { pageTitle } = Astro.props;
+
+const pageTitle = "Loopstudios landing page";
 ---
 
 <html lang="en">
@@ -34,97 +17,13 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <script>
-      import "../scripts/menu.js";
+      import "../scripts/menu.ts";
     </script>
   </head>
   <body>
     <MainLayout>
-      <section class="px-6 py-24 lg:px-[165px]">
-        <div class="lg:grid lg:grid-cols-2 lg:items-end lg:gap-8">
-          <div>
-            <Image
-              src={imageInteractiveMobile}
-              alt="image interactive"
-              class="h-full w-full object-cover xl:hidden"
-              decoding="async"
-              loading="lazy"
-            />
-            <Image
-              src={imageInteractiveDesktop}
-              alt="image interactive"
-              class="hidden h-full w-full object-cover xl:block"
-              decoding="async"
-              loading="lazy"
-            />
-          </div>
-          <div
-            class="px-8 pt-12 pb-[6rem] lg:z-30 lg:-ml-40 lg:bg-white lg:px-0 lg:pb-0 lg:pl-12"
-          >
-            <h2
-              class="mb-4 text-center text-[clamp(2rem,4vw,3rem)] leading-[100%] font-light uppercase lg:max-w-[445px] lg:text-start"
-            >
-              The leader in interactive VR
-            </h2>
-            <p
-              class="text-alata text-center text-[0.9375rem] leading-[165%] font-medium text-black/50 lg:max-w-[445px] lg:text-start"
-            >
-              Founded in 2011, Loopstudios has been producing world-class
-              virtual reality projects for some of the best companies around the
-              globe. Our award-winning creations have transformed businesses
-              through digital experiences that bind to their brand.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="flex flex-col items-center px-6">
-        <h2
-          class="mb-12 text-[clamp(2rem,4vw,3rem)] leading-[100%] font-light uppercase lg:max-w-[445px]"
-        >
-          Our creations
-        </h2>
-        <div class="flex flex-col items-center gap-6">
-          <CreationCard
-            title="deep earth"
-            linkImgMobile={imageDeepEarthMobile}
-            linkImgDesktop={imageDeepEarthDesktop}
-          />
-          <CreationCard
-            title="night arcade"
-            linkImgMobile={imageNightArcadeMobile}
-            linkImgDesktop={imageNightArcadeDesktop}
-          />
-          <CreationCard
-            title="soccer team vr"
-            linkImgMobile={imageNightSoccerMobile}
-            linkImgDesktop={imageNightSoccerDesktop}
-          />
-          <CreationCard
-            title="the grid"
-            linkImgMobile={imageGridMobile}
-            linkImgDesktop={imageGridDesktop}
-          />
-          <CreationCard
-            title="from up above vr"
-            linkImgMobile={imageFromAboveMobile}
-            linkImgDesktop={imageFromAboveDesktop}
-          />
-          <CreationCard
-            title="pocket borealis"
-            linkImgMobile={imagePocketBorealisMobile}
-            linkImgDesktop={imagePocketBorealisDesktop}
-          />
-          <CreationCard
-            title="the curiosity"
-            linkImgMobile={imageCuriosityMobile}
-            linkImgDesktop={imageCuriosityDesktop}
-          />
-          <CreationCard
-            title="make it fisheye"
-            linkImgMobile={imageFisheyeMobile}
-            linkImgDesktop={imageFisheyeDesktop}
-          />
-        </div>
-      </section>
+      <LeaderSection />
+      <CreationSection />
     </MainLayout>
   </body>
 </html>

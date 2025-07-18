@@ -50,9 +50,9 @@
   font-style: normal;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 body {
   font-family: "Josefin Sans Variable", sans-serif;
   font-optical-sizing: auto;
@@ -98,6 +98,6 @@ body {
   }
 
   .text-alata {
-   font-family: 'Alata', sans-serif;
+    font-family: "Alata", sans-serif;
   }
 }
