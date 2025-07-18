@@ -8,22 +8,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 const pageTitle = "Loopstudios landing page";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="../src/assets/favicon-32x32.png" />
-    <link rel="stylesheet" href="../src/styles/global.css" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <script>
-      import "../scripts/menu.ts";
-    </script>
-  </head>
-  <body>
-    <MainLayout>
-      <LeaderSection />
-      <CreationSection />
-    </MainLayout>
-  </body>
-</html>
+
+
+<MainLayout title={pageTitle}>
+  <LeaderSection />
+  <CreationSection />
+</MainLayout>
