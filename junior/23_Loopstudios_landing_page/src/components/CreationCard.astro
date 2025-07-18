@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  linkImgMobile: ImageMetadata;
+  linkImgDesktop: ImageMetadata;
+  title: string;
+}
+
+const { linkImgMobile, linkImgDesktop, title } = Astro.props;
+
+function extractImageLabel(imageSrc: string): string {
+  if (!imageSrc) return "";
+
+  const fileName = imageSrc
+    .split("/")
+    .pop()
+    ?.replace(/\.[^/.]+$/, "");
+
+  if (!fileName) return "";
+
+  return fileName
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char: string) => char.toUpperCase());
+}
+
+const imageLabel = extractImageLabel(linkImgDesktop.src);
+---
+
+<article>
+  <div class="relative">
+    <Image
+      src={linkImgMobile}
+      alt={imageLabel}
+      class="h-full w-full object-cover xl:hidden"
+      decoding="async"
+      loading="lazy"
+    />
+    <Image
+      src={linkImgDesktop}
+      alt={imageLabel}
+      class="hidden h-full w-full object-cover xl:block"
+      decoding="async"
+      loading="lazy"
+    />
+    <h3
+      class="absolute bottom-[10px] left-[30px] max-w-[106px] text-[1.73rem] leading-[100%] font-light text-white uppercase"
+    >
+      {title}
+    </h3>
+  </div>
+</article>

@@ -5,15 +5,18 @@ import ButtonClose from "../components/ui/ButtonClose.astro";
 import NavGroup from "../components/NavGroup.astro";
 ---
 
-<header class="px-10 py-11">
-  <nav class="relative flex items-center justify-between lg:static">
-    <Logo class="fixed top-[36px] left-[26px] z-30" />
+<header class="relative pb-[146px]">
+  <nav
+    id="main-nav"
+    class="fixed z-40 flex w-full items-center justify-between px-10 pt-20 transition-all duration-300 lg:static"
+  >
+    <Logo class="absolute top-1/2 z-30 -translate-y-1/2 lg:top-22" />
     <ButtonMenu />
     <ButtonClose />
     <NavGroup />
   </nav>
   <h1
-    class="mt-[201px] max-w-[clamp(327px,50vw,608px)] border-2 border-white p-10 text-[clamp(2.5rem,4vw,4.5rem)] font-light text-white uppercase"
+    class="absolute top-[231px] left-10 max-w-[clamp(327px,50vw,608px)] border-2 border-white text-[clamp(2.5rem,4vw,4.5rem)] font-light text-white uppercase"
   >
     Immersive experiences that deliver
   </h1>
@@ -39,4 +42,37 @@ import NavGroup from "../components/NavGroup.astro";
       width: 100%;
     }
   }
+  /* Styles pour la navbar scrollée */
+  .nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
 </style>
+<script>
+  function initNavbarScroll() {
+    const nav = document.getElementById("main-nav") as HTMLElement;
+
+    if (!nav) return;
+
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        nav.classList.add("nav-scrolled");
+        nav.classList.remove("bg-transparent");
+      } else {
+        nav.classList.remove("nav-scrolled");
+        nav.classList.add("bg-transparent");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNavbarScroll);
+  } else {
+    initNavbarScroll();
+  }
+</script>
