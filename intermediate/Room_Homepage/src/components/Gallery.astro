@@ -7,6 +7,8 @@ import img3 from "../assets/desktop-image-hero-3.jpg";
 import img1Mobile from "../assets/mobile-image-hero-1.jpg";
 import img2Mobile from "../assets/mobile-image-hero-2.jpg";
 import img3Mobile from "../assets/mobile-image-hero-3.jpg";
+import ArrowLeft from "../assets/icon-angle-left.svg";
+import ArrowRight from "../assets/icon-angle-right.svg";
 ---
 
 <section>
@@ -16,14 +18,14 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
         <Image
           src={img1}
           alt="slide 1"
-          class="hidden h-full w-full object-cover md:block"
+          class="hidden h-full w-full object-cover sm:block"
           decoding="async"
           loading="lazy"
         />
         <Image
           src={img1Mobile}
           alt="slide 1"
-          class="block h-full w-full object-cover md:hidden"
+          class="h-full w-full object-cover sm:hidden"
           decoding="async"
           loading="lazy"
         />
@@ -32,14 +34,14 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
         <Image
           src={img2}
           alt="slide 2"
-          class="hidden h-full w-full object-cover md:block"
+          class="hidden h-full w-full object-cover sm:block"
           decoding="async"
           loading="lazy"
         />
         <Image
           src={img2Mobile}
           alt="slide 2"
-          class="block h-full w-full object-cover md:hidden"
+          class="h-full w-full object-cover sm:hidden"
           decoding="async"
           loading="lazy"
         />
@@ -47,15 +49,15 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
       <li class="slide">
         <Image
           src={img3}
-          alt="slide 2"
-          class="hidden h-full w-full object-cover md:block"
+          alt="slide 3"
+          class="hidden h-full w-full object-cover sm:block"
           decoding="async"
           loading="lazy"
         />
         <Image
           src={img3Mobile}
-          alt="slide 2"
-          class="block h-full w-full object-cover xl:hidden"
+          alt="slide 3"
+          class="h-full w-full object-cover sm:hidden"
           decoding="async"
           loading="lazy"
         />
@@ -63,8 +65,12 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
     </ul>
 
     <div class="carousel-controls">
-      <button id="prev" aria-label="Slide précédente">‹</button>
-      <button id="next" aria-label="Slide suivante">›</button>
+      <button id="prev" aria-label="Previous Slide">
+        <ArrowLeft />
+      </button>
+      <button id="next" aria-label="Next Slide">
+        <ArrowRight />
+      </button>
     </div>
   </div>
 </section>
@@ -74,18 +80,19 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 800px;
+    max-width: 800px; 
     margin: auto;
   }
 
   .carousel-track {
     display: flex;
     transition: transform 0.5s ease-out;
+    height: 100%;
   }
 
   .slide {
     flex: 0 0 100%;
-    height: 300px;
+    height: 400px;
     background: #eee;
     display: flex;
     align-items: center;
@@ -95,25 +102,33 @@ import img3Mobile from "../assets/mobile-image-hero-3.jpg";
 
   .carousel-controls {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 0rem;
+    right: 0rem;
     display: flex;
-    gap: 1rem;
   }
 
   .carousel-controls button {
-    background-color: #000000aa;
+    background-color: #000000;
     border: none;
     color: white;
     font-size: 2rem;
-    padding: 0.3rem 0.7rem;
+    padding: 1.75rem 2.125rem;
     cursor: pointer;
-    border-radius: 4px;
     transition: background 0.3s ease;
   }
 
   .carousel-controls button:hover {
     background-color: #000;
+  }
+
+  @media (width < 376px) {
+    .carousel-track {
+      max-width: 375px;
+      height: 366px;
+    }
+    .slide {
+      height: 360px;
+    }
   }
 </style>
 <script>
