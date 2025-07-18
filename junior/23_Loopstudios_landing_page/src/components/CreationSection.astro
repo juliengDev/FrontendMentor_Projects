@@ -18,7 +18,9 @@ import imageFisheyeDesktop from "../assets/desktop/image-fisheye.jpg";
 import imageFisheyeMobile from "../assets/mobile/image-fisheye.jpg";
 ---
 
-<section class="mb-[86px] flex flex-col items-center px-6 xl:px-[160px]">
+<section
+  class="mb-[86px] flex flex-col items-center px-6 lg:px-[5rem] xl:px-[160px]"
+>
   <div
     class="xl:mb-[80px] xl:flex xl:w-full xl:items-center xl:justify-between"
   >
@@ -29,11 +31,11 @@ import imageFisheyeMobile from "../assets/mobile/image-fisheye.jpg";
     </h2>
     <a
       href="#"
-      class="text-alata hidden items-center justify-center border-2 border-black px-10 py-[0.8125rem] text-sm leading-[100%] tracking-[5px] uppercase xl:flex"
+      class="text-alata hidden items-center justify-center border-2 border-black px-10 py-[0.8125rem] text-sm leading-[100%] tracking-[5px] uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-black hover:text-white xl:flex"
       >see all</a
     >
   </div>
-  <div class="mb-8 grid w-full gap-6 xl:grid-cols-4">
+  <div class="mb-8 grid w-full gap-6 lg:grid-cols-4">
     <CreationCard
       title="deep earth"
       linkImgMobile={imageDeepEarthMobile}
@@ -77,7 +79,7 @@ import imageFisheyeMobile from "../assets/mobile/image-fisheye.jpg";
   </div>
   <a
     href="#"
-    class="text-alata flex items-center justify-center border-2 border-black px-10 py-[0.8125rem] text-sm leading-[100%] tracking-[5px] uppercase xl:hidden"
+    class="text-alata flex items-center justify-center border-2 border-black px-10 py-[0.8125rem] text-sm leading-[100%] tracking-[5px] uppercase transition-colors duration-300 ease-in-out hover:border-white hover:bg-black hover:text-white xl:hidden"
     >see all</a
   >
 </section>
