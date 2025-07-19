@@ -5,16 +5,18 @@ import ButtonMenu from "./ButtonMenu.astro";
 import NavGroup from "./NavGroup.astro";
 ---
 
-<header class="fixed z-30 w-full">
-  <div class="relative flex h-16 items-center px-4">
-    <div class="border-2 border-red-500">
-      <ButtonMenu />
-      <ButtonClose />
-      <NavGroup />
-    </div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <Logo />
-    </div>
+<header>
+  <div
+    class="absolute top-0 z-10 hidden h-[110px] w-full justify-between bg-white"
+  >
+    <ButtonClose />
+    <NavGroup />
+  </div>
+  <ButtonMenu />
+  <div
+    class="absolute top-[48px] left-1/2 z-10 w-fit -translate-x-1/2 lg:hidden"
+  >
+    <Logo />
   </div>
 </header>
 
