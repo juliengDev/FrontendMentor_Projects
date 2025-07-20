@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
 :root {
+  /* either --dark-mode or --no-dark-mode */
+  --color-scheme: var(--no--dark-mode);
+
+  --font-family: "League Spartan Variable", sans-serif;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+
   /* COLORS */
   --green-900: rgb(36, 85, 74);
   --green-600: rgb(62, 116, 103);
@@ -15,6 +24,10 @@
   --blue-800: rgb(25, 83, 108);
   --red: rgb(254, 119, 102);
   --yellow: rgb(250, 212, 0);
+
+  /* settings */
+  --no-dark-mode: light;
+  --dark-mode: dark light;
 }
 @theme {
   --color-custom-green-950: var(--green-900);
@@ -34,37 +47,32 @@
 
 /* FONTS */
 
-@font-face {
+/* @font-face {
   font-family: "DM Sans", sans-serif;
   src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
   font-optical-sizing: auto;
   font-weight: 100 900;
   font-style: normal;
 }
+ */
 
-@font-face {
-  font-family: "DM Sans", sans-serif;
-  src: url("/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf") format("truetype");
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* html {
-  scroll-behavior: smooth;
-} */
-
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
+html {
+  color-scheme: var(--color-scheme);
+  /* scroll-behavior: smooth; */
+}
+
 body {
-  font-family: "League Spartan Variable", sans-serif;
+  font-family: var(--font-family);
   font-optical-sizing: auto;
-  font-weight: normal;
+  font-weight: var(--fw-regular);
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: var(--fs-400);
   min-height: 100dvh;
 }
 
@@ -89,6 +97,19 @@ body {
   }
 }
 @layer utilities {
+  .container {
+    width: min(50rem, 100% - 2rem);
+    margin-inline: auto;
+  }
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
   .drop-shadow-custom {
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
   }

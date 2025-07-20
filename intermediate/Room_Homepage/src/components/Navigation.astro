@@ -6,17 +6,15 @@ import NavGroup from "./NavGroup.astro";
 ---
 
 <header>
-  <div
-    class="absolute top-0 z-10 hidden h-[110px] w-full justify-between bg-white"
-  >
-    <ButtonClose />
+  <div id="menu" class="absolute top-0 z-10 hidden h-[110px] w-full bg-white">
     <NavGroup />
   </div>
+  <ButtonClose />
   <ButtonMenu />
   <div
     class="absolute top-[48px] left-1/2 z-10 w-fit -translate-x-1/2 lg:hidden"
   >
-    <Logo />
+    <Logo id="logo" />
   </div>
 </header>
 
@@ -26,18 +24,19 @@ import NavGroup from "./NavGroup.astro";
     "icon-burger",
   ) as HTMLButtonElement;
   const iconClose = document.getElementById("icon-close") as HTMLButtonElement;
+  const logoEl = document.getElementById("logo") as HTMLElement;
 
   function openMenu() {
-    menu.classList.remove("hidden");
-    menu.classList.add("flex");
     iconBurger.classList.add("hidden");
     iconClose.classList.remove("hidden");
+    menu.classList.remove("hidden");
+    logoEl.classList.add("hidden");
   }
   function closeMenu() {
-    menu.classList.add("hidden");
-    menu.classList.remove("flex");
     iconBurger.classList.remove("hidden");
     iconClose.classList.add("hidden");
+    menu.classList.add("hidden");
+    logoEl.classList.remove("hidden");
   }
 
   iconBurger.addEventListener("click", openMenu);
