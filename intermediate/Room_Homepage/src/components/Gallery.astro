@@ -92,7 +92,12 @@ const slidesData = [
 <section id="about" class="relative">
   <div class="px-8 py-[3.9375rem] lg:px-[3.9375rem]">
     <div id="text-content" class="text-content">
-      <h1 id="dynamic-heading" class="heading-text">{slidesData[0].heading}</h1>
+      <h1
+        id="dynamic-heading"
+        class="heading-text text-[clamp(2.5rem,4vw,3rem)]"
+      >
+        {slidesData[0].heading}
+      </h1>
       <p id="dynamic-text" class="paragraph-text mb-8">{slidesData[0].text}</p>
       <div class="flex items-center justify-between">
         <p
@@ -189,7 +194,7 @@ const slidesData = [
 
   .heading-text {
     margin-bottom: 1rem;
-    font-size: clamp(2.5rem, 4vw, 3rem);
+
     font-weight: 600;
     letter-spacing: -2px;
     line-height: 100%;
@@ -198,7 +203,7 @@ const slidesData = [
   .paragraph-text {
     font-size: 1rem;
     font-weight: 500;
-    color: #a0a0a0;
+    color: rgb(0, 0, 0, 0.7);
     line-height: 140%;
     letter-spacing: -0.5px;
   }
