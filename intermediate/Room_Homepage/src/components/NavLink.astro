@@ -3,5 +3,10 @@ const { linkName } = Astro.props;
 ---
 
 <li>
-  <a href="#" class="block text-base font-semibold text-black">{linkName}</a>
+  <a
+    
+    href={linkName === "contact" ? "#" : `#${linkName}`}
+    class="block text-base font-semibold text-black ">{linkName}</a
+  >
 </li>
+

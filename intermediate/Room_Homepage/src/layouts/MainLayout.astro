@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import About from "../components/About.astro";
 import Gallery from "../components/Gallery.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
@@ -18,10 +19,13 @@ import "../styles/global.css";
     <title>{title}</title>
   </head>
   <body>
-    <Navigation />
-    <main>
-      <Gallery />
-      <slot />
-    </main>
+    <div id="home" class="grid">
+      <Navigation />
+      <main>
+        <Gallery />
+        <About />
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

@@ -6,6 +6,7 @@ import NavGroup from "./NavGroup.astro";
 ---
 
 <header>
+  <div id="overlay" class="fixed inset-0 z-10 hidden bg-black/50"></div>
   <div id="menu" class="absolute top-0 z-10 hidden h-[110px] w-full bg-white">
     <NavGroup />
   </div>
@@ -25,18 +26,23 @@ import NavGroup from "./NavGroup.astro";
   ) as HTMLButtonElement;
   const iconClose = document.getElementById("icon-close") as HTMLButtonElement;
   const logoEl = document.getElementById("logo") as HTMLElement;
+  const overlay = document.getElementById("overlay") as HTMLElement;
 
   function openMenu() {
     iconBurger.classList.add("hidden");
     iconClose.classList.remove("hidden");
     menu.classList.remove("hidden");
+    menu.classList.add("open");
     logoEl.classList.add("hidden");
+    overlay.classList.remove("hidden");
   }
   function closeMenu() {
     iconBurger.classList.remove("hidden");
     iconClose.classList.add("hidden");
     menu.classList.add("hidden");
     logoEl.classList.remove("hidden");
+    menu.classList.remove("open");
+    overlay.classList.add("hidden");
   }
 
   iconBurger.addEventListener("click", openMenu);
@@ -44,11 +50,13 @@ import NavGroup from "./NavGroup.astro";
 
   document.addEventListener("click", (e) => {
     const target = e.target as Node;
-    const isClickInside = iconBurger.contains(target) || menu.contains(target);
+    const isClickInside =
+      iconBurger.contains(target) ||
+      menu.contains(target) ||
+      iconClose.contains(target);
+
     if (!isClickInside && menu.classList.contains("open")) {
-      menu.classList.remove("open");
-      menu.classList.add("hidden");
-      iconBurger.setAttribute("aria-expanded", "false");
+      closeMenu();
     }
   });
 </script>

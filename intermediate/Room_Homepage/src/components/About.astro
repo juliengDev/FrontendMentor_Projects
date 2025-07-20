@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+import imgDark from "../assets/image-about-dark.jpg";
+import imgLight from "../assets/image-about-light.jpg";
+---
+
+<section id="shop">
+  <Image
+    src={imgDark}
+    alt="slide 1"
+    class="h-full w-full object-cover"
+    decoding="async"
+    loading="eager"
+  />
+</section>
+<section id="about">
+  <div class="m-[4rem]">
+    <h2
+      class="mb-4 text-base leading-[140%] font-bold tracking-[7px] uppercase"
+    >
+      About our furniture
+    </h2>
+    <p
+      class="text-base leading-[140%] font-medium tracking-[-0.5px] text-[#A0A0A0]"
+    >
+      Our multifunctional collection blends design and function to suit your
+      individual taste. Make each room unique, or pick a cohesive theme that
+      best express your interests and what inspires you. Find the furniture
+      pieces you need, from traditional to contemporary styles or anything in
+      between. Product specialists are available to help you create your dream
+      space.
+    </p>
+  </div>
+  <Image
+    src={imgLight}
+    alt="slide 1"
+    class="h-full w-full object-cover"
+    decoding="async"
+    loading="eager"
+  />
+</section>

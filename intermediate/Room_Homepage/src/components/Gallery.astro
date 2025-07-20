@@ -9,6 +9,21 @@ import img2Mobile from "../assets/mobile-image-hero-2.jpg";
 import img3Mobile from "../assets/mobile-image-hero-3.jpg";
 import ArrowLeft from "../assets/icon-angle-left.svg";
 import ArrowRight from "../assets/icon-angle-right.svg";
+import Arrow from "../assets/icon-arrow.svg";
+const slidesData = [
+  {
+    heading: "Discover innovative ways to decorate",
+    text: "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
+  },
+  {
+    heading: "We are available all across the globe",
+    text: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+  },
+  {
+    heading: "Manufactured with the best materials",
+    text: "Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.",
+  },
+];
 ---
 
 <section>
@@ -74,6 +89,22 @@ import ArrowRight from "../assets/icon-angle-right.svg";
     </div>
   </div>
 </section>
+<section id="about">
+  <div class="px-8 py-[3.9375rem] lg:px-[3.9375rem]">
+    <div id="text-content" class="text-content">
+      <h1 id="dynamic-heading" class="heading-text">{slidesData[0].heading}</h1>
+      <p id="dynamic-text" class="paragraph-text mb-8">{slidesData[0].text}</p>
+      <div class="flex items-center justify-between">
+        <a
+          href="#"
+          class="text-[0.9375rem] leading-[100%] font-medium tracking-[12.5px] uppercase"
+          >shop now</a
+        >
+        <Arrow class="arrow" />
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
   .carousel {
@@ -121,6 +152,32 @@ import ArrowRight from "../assets/icon-angle-right.svg";
     background-color: #000;
   }
 
+  /* Styles pour les transitions du contenu textuel */
+  .text-content {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+  }
+
+  .text-content.fade-out {
+    opacity: 0;
+  }
+
+  .heading-text {
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 100%;
+  }
+
+  .paragraph-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+  }
+
   @media (width < 376px) {
     .carousel-track {
       max-width: 375px;
@@ -135,27 +192,89 @@ import ArrowRight from "../assets/icon-angle-right.svg";
   const prevButton = document.getElementById("prev") as HTMLButtonElement;
   const nextButton = document.getElementById("next") as HTMLButtonElement;
   const track = document.getElementById("carousel-track") as HTMLUListElement;
+  const textContent = document.getElementById("text-content") as HTMLDivElement;
+  const dynamicHeading = document.getElementById(
+    "dynamic-heading",
+  ) as HTMLHeadingElement;
+  const dynamicText = document.getElementById(
+    "dynamic-text",
+  ) as HTMLParagraphElement;
+
+  const slidesData = [
+    {
+      heading: "Discover innovative ways to decorate",
+      text: "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
+    },
+    {
+      heading: "We are available all across the globe",
+      text: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+    },
+    {
+      heading: "Manufactured with the best materials",
+      text: "Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.",
+    },
+  ];
 
   let currentIndex = 0;
   const slides = track.querySelectorAll("li");
   const totalSlides = slides.length;
+  let isTransitioning = false;
 
   function updateCarouselPosition() {
     const slideWidth = slides[0].clientWidth;
     track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
 
-  prevButton.addEventListener("click", () => {
+  function updateTextContent() {
+    if (isTransitioning) return;
+
+    isTransitioning = true;
+
+    // Fade out
+    textContent.classList.add("fade-out");
+
+    setTimeout(() => {
+      dynamicHeading.textContent = slidesData[currentIndex].heading;
+      dynamicText.textContent = slidesData[currentIndex].text;
+
+      // Fade in
+      textContent.classList.remove("fade-out");
+
+      // Réinitialiser le flag de transition
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 400);
+    }, 200);
+  }
+
+  function goToPreviousSlide() {
+    if (isTransitioning) return;
+
     if (currentIndex > 0) {
       currentIndex--;
       updateCarouselPosition();
+      updateTextContent();
     }
-  });
+  }
 
-  nextButton.addEventListener("click", () => {
+  function goToNextSlide() {
+    if (isTransitioning) return;
+
     if (currentIndex < totalSlides - 1) {
       currentIndex++;
       updateCarouselPosition();
+      updateTextContent();
+    }
+  }
+
+  prevButton.addEventListener("click", goToPreviousSlide);
+  nextButton.addEventListener("click", goToNextSlide);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      goToPreviousSlide();
+    } else if (e.key === "ArrowRight") {
+      goToNextSlide();
     }
   });
 </script>
