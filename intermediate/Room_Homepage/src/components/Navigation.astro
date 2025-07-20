@@ -7,12 +7,17 @@ import NavGroup from "./NavGroup.astro";
 
 <header class="col-span-full">
   <div id="overlay" class="fixed inset-0 z-10 hidden bg-black/50"></div>
-  <div id="menu" class="absolute top-0 z-10 hidden h-[110px] w-full bg-white">
+  <div
+    id="menu"
+    class="absolute top-0 z-10 hidden h-[110px] w-full bg-white lg:left-[182px] lg:block lg:bg-transparent lg:text-white"
+  >
     <NavGroup />
   </div>
   <ButtonClose />
   <ButtonMenu />
-  <div class="absolute top-[48px] left-1/2 z-10 w-fit -translate-x-1/2">
+  <div
+    class="absolute top-[48px] left-1/2 z-10 w-fit -translate-x-1/2 lg:left-[64px] lg:-translate-x-0"
+  >
     <Logo id="logo" />
   </div>
 </header>
