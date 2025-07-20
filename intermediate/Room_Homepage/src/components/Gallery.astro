@@ -26,7 +26,7 @@ const slidesData = [
 ];
 ---
 
-<section>
+<section class="md:col-span-2">
   <div class="carousel">
     <ul id="carousel-track" class="carousel-track">
       <li class="slide">
@@ -89,20 +89,32 @@ const slidesData = [
     </div>
   </div>
 </section>
-<section id="about">
+<section id="about" class="relative">
   <div class="px-8 py-[3.9375rem] lg:px-[3.9375rem]">
     <div id="text-content" class="text-content">
       <h1 id="dynamic-heading" class="heading-text">{slidesData[0].heading}</h1>
       <p id="dynamic-text" class="paragraph-text mb-8">{slidesData[0].text}</p>
       <div class="flex items-center justify-between">
+        <p
+          class="text-[0.9375rem] leading-[100%] font-medium tracking-[12.5px] uppercase"
+        >
+          shop now
+        </p>
         <a
           href="#"
           class="text-[0.9375rem] leading-[100%] font-medium tracking-[12.5px] uppercase"
-          >shop now</a
+          ><Arrow class="arrow" /></a
         >
-        <Arrow class="arrow" />
       </div>
     </div>
+  </div>
+  <div class="carousel-controls-xl w-fit">
+    <button id="prev-xl" aria-label="Previous Slide">
+      <ArrowLeft />
+    </button>
+    <button id="next-xl" aria-label="Next Slide">
+      <ArrowRight />
+    </button>
   </div>
 </section>
 
@@ -110,9 +122,7 @@ const slidesData = [
   .carousel {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
+    height: 100%;
   }
 
   .carousel-track {
@@ -129,27 +139,42 @@ const slidesData = [
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    height: 100%;
   }
 
   .carousel-controls {
     position: absolute;
-    bottom: 0rem;
-    right: 0rem;
+    bottom: 0;
+    right: 0;
     display: flex;
+    z-index: 10;
+  }
+  .carousel-controls-xl {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
   }
 
-  .carousel-controls button {
+  .carousel-controls button,
+  .carousel-controls-xl button {
     background-color: #000000;
     border: none;
     color: white;
     font-size: 2rem;
     padding: 1.75rem 2.125rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    z-index: 30;
   }
 
-  .carousel-controls button:hover {
-    background-color: #000;
+  .carousel-controls button:hover,
+  .carousel-controls-xl button:hover {
+    background-color: #444444;
+    color: #fff;
   }
 
   /* Styles pour les transitions du contenu textuel */
@@ -179,18 +204,26 @@ const slidesData = [
   }
 
   @media (width < 376px) {
-    .carousel-track {
-      max-width: 375px;
-      height: 366px;
-    }
     .slide {
       height: 360px;
     }
   }
+  @media (width > 1300px) {
+    .carousel-controls {
+      display: none;
+    }
+    .carousel-controls-xl {
+      display: flex;
+    }
+  }
 </style>
 <script>
-  const prevButton = document.getElementById("prev") as HTMLButtonElement;
-  const nextButton = document.getElementById("next") as HTMLButtonElement;
+  // Sélectionner les boutons par leurs IDs plutôt que par classe
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+  const prevButtonXl = document.getElementById("prev-xl");
+  const nextButtonXl = document.getElementById("next-xl");
+
   const track = document.getElementById("carousel-track") as HTMLUListElement;
   const textContent = document.getElementById("text-content") as HTMLDivElement;
   const dynamicHeading = document.getElementById(
@@ -267,8 +300,19 @@ const slidesData = [
     }
   }
 
-  prevButton.addEventListener("click", goToPreviousSlide);
-  nextButton.addEventListener("click", goToNextSlide);
+  // Ajouter les event listeners pour tous les boutons
+  if (prevButton) {
+    prevButton.addEventListener("click", goToPreviousSlide);
+  }
+  if (nextButton) {
+    nextButton.addEventListener("click", goToNextSlide);
+  }
+  if (prevButtonXl) {
+    prevButtonXl.addEventListener("click", goToPreviousSlide);
+  }
+  if (nextButtonXl) {
+    nextButtonXl.addEventListener("click", goToNextSlide);
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
