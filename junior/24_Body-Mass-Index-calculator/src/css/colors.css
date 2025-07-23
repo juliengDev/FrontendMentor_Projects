@@ -1,0 +1,31 @@
+@theme {
+  --color-base: #133041;
+  --color-dark-charcoal: #312e2c;
+  --color-dark-raspberry: #7a284e;
+  --color-white: #fff;
+  --color-black: #000;
+  /* GREY */
+  --color-grey-500: #5e6e85;
+  --color-grey-300: #acc1de;
+  /* BLUE */
+  --color-blue-900: #253347;
+  --color-blue-500: #345ff6;
+  --color-blue-300: #b3d3f1;
+  --color-blue-100: #e1e7fe;
+  /* GRADIENT */
+  --color-blue-start: #d6fcfe;
+  --color-blue-end: #d6e6fe;
+  /* TEXT COLORS */
+  --color-txt: #133041;
+}
+
+@layer components {
+  .gradient-blue {
+    background-image: linear-gradient(
+      -90deg,
+      var(--color-blue-start) 0%,
+      var(--color-blue-end) 100%
+    );
+    background-color: transparent;
+  }
+}

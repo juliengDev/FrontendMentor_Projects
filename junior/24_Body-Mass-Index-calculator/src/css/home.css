@@ -1,0 +1,53 @@
+/* FORM */
+
+.radio-input {
+  @apply relative h-7 w-7 cursor-pointer appearance-none rounded-full border-1 border-gray-500 transition-all;
+}
+
+.radio-input:checked {
+  @apply border-0 bg-[#e1e7fe];
+}
+
+.radio-input:checked::after {
+  content: "";
+  @apply absolute top-1/2 left-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#345ff6] opacity-100;
+}
+
+.radio-input:focus {
+  @apply ring-2 ring-[#345ff6] ring-offset-2 outline-none;
+}
+
+.radio-label {
+  @apply cursor-pointer text-base;
+}
+.input-txt:focus {
+  @apply border-[#345ff6] ring-2 ring-[#345ff6] ring-offset-2 outline-none;
+}
+
+/* .input-txt {
+  -moz-appearance: textfield;
+} */
+
+.input-txt::-webkit-outer-spin-button,
+.input-txt::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* FOOTER */
+
+.attribution p {
+  display: inline-block;
+}
+.attribution {
+  margin: 1.6rem 0 6rem;
+  text-align: center;
+  color: var(--color-base);
+}
+.attribution__credit {
+  font-weight: 800;
+  color: var(--color-blue-500) !important;
+}
+.attribution__credit a {
+  cursor: pointer;
+}
