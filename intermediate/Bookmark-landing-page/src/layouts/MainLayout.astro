@@ -1,0 +1,21 @@
+---
+const { title } = Astro.props;
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../src/assets/favicon-32x32.png" />
+    <meta
+      name="description"
+      content="Discover stylish, high-quality furniture and decor with Room. Create your dream space with our expert-crafted collection that blends comfort, elegance, and personal expression."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

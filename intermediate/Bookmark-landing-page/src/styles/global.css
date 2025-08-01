@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* either --dark-mode or --no-dark-mode */
+  --color-scheme: var(--no--dark-mode);
+
+  --font-family: "League Spartan Variable", sans-serif;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+
+  /* COLORS */
+  --green-900: rgb(36, 85, 74);
+  --green-600: rgb(62, 116, 103);
+  --green-500: rgb(69, 141, 126);
+  --green-300: rgb(144, 212, 198);
+  --grey-950: rgb(36, 48, 62);
+  --grey-700: rgb(68, 68, 68);
+  --grey-600: rgb(91, 99, 109);
+  --grey-550: rgb(128, 131, 151);
+  --grey-400: rgb(167, 170, 173);
+  --blue-950: rgb(5, 44, 59);
+  --blue-800: rgb(25, 83, 108);
+  --red: rgb(254, 119, 102);
+  --yellow: rgb(250, 212, 0);
+
+  /* settings */
+  --no-dark-mode: light;
+  --dark-mode: dark light;
+}
+@theme {
+  --color-custom-green-950: var(--green-900);
+  --color-custom-green-600: var(--green-600);
+  --color-custom-green-500: var(--green-500);
+  --color-custom-green-300: var(--green-300);
+  --color-custom-grey-950: var(--grey-950);
+  --color-custom-grey-700: var(--grey-700);
+  --color-custom-grey-600: var(--grey-600);
+  --color-custom-grey-550: var(--grey-550);
+  --color-custom-grey-400: var(--grey-400);
+  --color-custom-blue-950: var(--blue-950);
+  --color-custom-blue-800: var(--blue-800);
+  --color-custom-red: var(--red);
+  --color-custom-yellow: var(--yellow);
+}
+
+/* FONTS */
+
+/* @font-face {
+  font-family: "DM Sans", sans-serif;
+  src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900;
+  font-style: normal;
+}
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: var(--color-scheme);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: var(--fw-regular);
+  font-style: normal;
+  font-size: var(--fs-400);
+  min-height: 100dvh;
+}
+
+@theme {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-5px);
+    }
+    40% {
+      transform: translateX(5px);
+    }
+    60% {
+      transform: translateX(-5px);
+    }
+    80% {
+      transform: translateX(5px);
+    }
+  }
+}
+@layer base {
+  /* apply style globbaly accross the project
+  If you want to add your own default base styles for specific HTML elements, use the @layer directive to add those styles to Tailwind's base layer */
+}
+@layer components {
+  /* apply style for specific component or reusable ui elements like cards button etc ...
+  Use the components layer for any more complicated classes you want to add to your project that you'd still like to be able to override with utility classes. */
+
+  .container {
+    width: min(50rem, 100% - 2rem);
+    margin-inline: auto;
+  }
+}
+@layer utilities {
+  /* apply style for atomic style for individuals property like margin padding etc ...*/
+
+  .text-alata {
+    font-family: "Alata", sans-serif;
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .drop-shadow-custom {
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.0973));
+  }
+  .box-shadow-custom {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.0973);
+  }
+  .box-shadow-btn:hover {
+    box-shadow: 0px 0px 40px 0px rgba(83, 255, 170, 1);
+  }
+
+  .shake {
+    animation: shake 0.4s ease-in-out;
+  }
+}
+
+/* test */
+/* you can use apply for base, component and utility */
+.font-custom-1 {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+@layer components {
+  .card {
+    @apply m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black;
+  }
+}
