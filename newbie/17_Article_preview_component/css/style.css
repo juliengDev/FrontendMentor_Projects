@@ -1,0 +1,315 @@
+@charset "UTF-8";
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+:root {
+  --color-Fiord: #48556a;
+  --color-Lynch: #6e8098;
+  --color-Cadet-Blue: #9daec2;
+  --color-Black-Squeeze: #ecf2f8;
+  --color-Pure-White: #ffffff;
+  --color-Dusty-Gray: #979797;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100dvh;
+  width: min(73rem, 95%);
+  margin: 0 auto;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+
+  */
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  background-color: var(--color-Black-Squeeze);
+  color: #777;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.ft-heading {
+  font-size: 2rem;
+  line-height: 28px;
+  letter-spacing: 0.25px;
+  font-weight: 700;
+  color: var(--color-Fiord);
+}
+
+.ft-intro {
+  font-size: 1.3rem;
+  line-height: 20px;
+  letter-spacing: 0.12px;
+  font-weight: 500;
+  color: var(--color-Lynch);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 26rem auto 3rem;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.attribution {
+  margin: 1.6rem 0 6rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--color-wenge-brown);
+}
+.attribution__credit {
+  font-weight: 800;
+  color: var(--color-dark-raspberry) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.social {
+  position: absolute;
+  bottom: 90px;
+  right: -67px;
+  width: 100%;
+  max-width: 24.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-Cadet-Blue);
+  background-color: var(--color-Fiord);
+  padding: 1.8rem 3.6rem;
+  gap: 1.8rem;
+  border-radius: 10px;
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  z-index: 1;
+  opacity: 0; /* hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  visibility: 0.3s ease-in-out;
+}
+@media only screen and (max-width: 56.25em) {
+  .social {
+    max-width: 100%;
+    bottom: 0;
+    right: 0;
+    justify-content: flex-start;
+    padding: 3rem 0;
+    border-radius: 0 0 10px 10px;
+    gap: 2.4rem;
+  }
+}
+.social-visible {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.social__txt {
+  text-transform: uppercase;
+  padding-left: min(2.6rem, 80%);
+  flex: 0 1 6.2rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .social__icon {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+  }
+}
+.social__icon:hover {
+  cursor: pointer;
+}
+
+.triangle-down {
+  position: absolute;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-Fiord);
+}
+@media only screen and (max-width: 56.25em) {
+  .triangle-down {
+    display: none;
+  }
+}
+
+.btn__share {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-width: 56.25em) {
+  .btn__share {
+    position: static;
+  }
+}
+.btn__share-active {
+  background-color: var(--color-Fiord);
+}
+@media only screen and (max-width: 56.25em) {
+  .btn__share-active {
+    background-color: var(--color-Lynch);
+  }
+}
+
+.article {
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: minmax(28.5rem, 1fr) minmax(44.5rem, 2fr);
+  max-width: 73rem;
+  width: 100%;
+  box-shadow: 0px 40px 40px rgba(201, 213, 225, 0.5);
+}
+@media only screen and (max-width: 56.25em) {
+  .article {
+    grid-template-columns: 1fr;
+    max-width: 32.7rem;
+  }
+}
+.article__img {
+  width: 117%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px 0 0 10px;
+}
+@media only screen and (max-width: 56.25em) {
+  .article__img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+}
+.article__content {
+  border-radius: 0 10px 10px 0;
+  background-color: var(--color-Pure-White);
+  padding: 3.2rem 4rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .article__content {
+    padding: 3.2rem 3.2rem 2rem;
+    border-radius: 0 0 10px 10px;
+  }
+}
+.article__content__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.article__content__heading {
+  max-width: 29ch;
+  margin-bottom: 1.2rem;
+}
+.article__content__txt {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .article__content__txt {
+    margin-bottom: 4rem;
+  }
+}
+.article__content__card {
+  display: flex;
+  gap: 1.6rem;
+}
+.article__content__card__avatar {
+  border-radius: 50%;
+}
+.article__content__card__profil {
+  font-size: 1.3rem;
+  line-height: 20px;
+  letter-spacing: 0.12px;
+}
+.article__content__card__profil__name {
+  font-size: 1.3rem;
+  color: var(--color-Fiord);
+}
+.article__content__card__profil__date {
+  font-size: 1.3rem;
+  color: var(--color-Cadet-Blue);
+}
+
+/*# sourceMappingURL=style.css.map */

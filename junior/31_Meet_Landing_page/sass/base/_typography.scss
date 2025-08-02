@@ -1,0 +1,51 @@
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+  
+  */
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-size: clamp(1.3rem, 1.5vw, 1.8rem);
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: var(--color-dark-grey);
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.ft-primary-heading {
+  color: var(--color-dark-charcoal);
+  font-weight: 900;
+  font-size: clamp(5.9rem, 1.5vw, 6.4rem);
+  line-height: 6.4rem;
+  @include respond(phone) {
+    font-size: clamp(3.5rem, 1.5vw, 4rem);
+    line-height: 4.4rem;
+  }
+}
+.ft-secondary-heading {
+  color: var(--color-dark-charcoal);
+  font-weight: 900;
+  font-size: clamp(4rem, 1.5vw, 4.5rem);
+  line-height: 4.4rem;
+}
+.ft-tertiary-heading {
+  color: var(--color-dark-green);
+  font-weight: 900;
+  font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+  line-height: 2.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}

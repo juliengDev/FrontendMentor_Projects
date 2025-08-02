@@ -1,6 +1,6 @@
-# Frontend Mentor - Social proof section
+# Frontend Mentor - Article preview component
 
-![Design preview for the Social proof section coding challenge](./preview.jpg)
+![Design preview for the Article preview component coding challenge](./preview.jpg)
 
 ## Welcome! 👋
 
@@ -8,17 +8,20 @@ Thanks for checking out this front-end coding challenge.
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+**To do this challenge, you need a basic understanding of HTML, CSS and a tiny bit of JavaScript.**
 
 ## The challenge
 
-Your challenge is to build out this social proof section and get it looking as close to the design as possible.
+Your challenge is to build out this article preview component and get it looking as close to the design as possible.
 
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
+The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
+
 Your users should be able to:
 
-- View the optimal layout for the section depending on their device's screen size
+- View the optimal layout for the component depending on their device's screen size
+- See the social media share links when they click the share icon
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
@@ -89,3 +92,5 @@ We love receiving feedback! We're always looking to improve our challenges and o
 This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
 **Have fun building!** 🚀
+
+# Article_preview_component

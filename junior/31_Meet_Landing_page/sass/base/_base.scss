@@ -1,0 +1,47 @@
+:root {
+  --color-dark-charcoal: #28283d;
+  --color-dark-grey: #87879d;
+  --color-dark-green: #4d96a9;
+  --color-light-green: #71c0d4;
+  --color-dark-purple: #855fb1;
+  --color-light-purple: #b18bdd;
+  --color-light-purple2: #d9b8ff;
+  --color-light-blue: #8fe3f9;
+  --color-pure-white: #ffffff;
+  --color-footer: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100dvh;
+}
+html {
+  box-sizing: border-box;
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/

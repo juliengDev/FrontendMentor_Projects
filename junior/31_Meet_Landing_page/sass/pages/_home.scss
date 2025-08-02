@@ -1,0 +1,29 @@
+.gallery {
+  margin: 6.4rem auto 0;
+  width: min(111rem, 80%);
+  text-align: center;
+  & img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: contain;
+  }
+}
+
+.content {
+  width: min(54rem, 100%);
+  margin: 8.2rem auto 4rem;
+  text-align: center;
+  @include respond(phone) {
+    margin: 6rem auto 6.4rem;
+  }
+  &__intro {
+    margin: 0 auto 1.6rem;
+  }
+  &__title {
+    max-width: 80%;
+    margin: 0 auto 3.2rem;
+  }
+  &__txt {
+    margin: 0 auto;
+  }
+}

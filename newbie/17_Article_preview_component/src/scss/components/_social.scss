@@ -1,0 +1,75 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.social {
+  position: absolute;
+  bottom: 90px;
+  right: -67px;
+  width: 100%;
+  max-width: 24.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-Cadet-Blue);
+  background-color: var(--color-Fiord);
+  padding: 1.8rem 3.6rem;
+  gap: 1.8rem;
+  border-radius: 10px;
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  z-index: 1;
+  opacity: 0; /* hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  visibility: 0.3s ease-in-out;
+  @include respond(tab-port) {
+    max-width: 100%;
+    bottom: 0;
+    right: 0;
+    justify-content: flex-start;
+    padding: 3rem 0;
+    border-radius: 0 0 10px 10px;
+    gap: 2.4rem;
+  }
+
+  &-visible {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  &__txt {
+    text-transform: uppercase;
+    padding-left: min(2.6rem, 80%);
+    flex: 0 1 6.2rem;
+  }
+  &__icon {
+    @include respond(tab-port) {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.triangle-down {
+  position: absolute;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--color-Fiord);
+  @include respond(tab-port) {
+    display: none;
+  }
+}

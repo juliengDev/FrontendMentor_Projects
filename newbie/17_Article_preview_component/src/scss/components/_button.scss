@@ -1,0 +1,23 @@
+.btn {
+  &__share {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50%;
+    border: none;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    @include respond(tab-port) {
+      position: static;
+    }
+    &-active {
+      background-color: var(--color-Fiord);
+      @include respond(tab-port) {
+        background-color: var(--color-Lynch);
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+  
+  */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  background-color: var(--color-Black-Squeeze);
+  color: #777;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.ft-heading {
+  font-size: 2rem;
+  line-height: 28px;
+  letter-spacing: 0.25px;
+  font-weight: 700;
+  color: var(--color-Fiord);
+}
+
+.ft-intro {
+  font-size: 1.3rem;
+  line-height: 20px;
+  letter-spacing: 0.12px;
+  font-weight: 500;
+  color: var(--color-Lynch);
+}

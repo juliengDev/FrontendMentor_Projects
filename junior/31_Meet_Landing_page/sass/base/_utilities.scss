@@ -1,0 +1,48 @@
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.centered-div2 {
+  margin: 0 auto;
+  max-width: 50%;
+  text-align: center;
+}
+
+.centered-div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container {
+  width: min(144rem, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  margin: 8rem auto 0;
+
+  @include respond(tab-land) {
+    margin: 5.1rem auto 0;
+  }
+}
+.cl-cyan {
+  color: var(--color-light-blue);
+}
+.cl-purple {
+  color: var(--color-light-purple2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,72 @@
+.article {
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: minmax(28.5rem, 1fr) minmax(44.5rem, 2fr);
+  max-width: 73rem;
+  width: 100%;
+  box-shadow: 0px 40px 40px rgba(201, 213, 225, 0.5);
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    max-width: 32.7rem;
+  }
+  &__img {
+    width: 117%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px 0 0 10px;
+
+    @include respond(tab-port) {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    border-radius: 0 10px 10px 0;
+    background-color: var(--color-Pure-White);
+    padding: 3.2rem 4rem;
+    @include respond(tab-port) {
+      padding: 3.2rem 3.2rem 2rem;
+      border-radius: 0 0 10px 10px;
+    }
+    &__container {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__heading {
+      max-width: 29ch;
+      margin-bottom: 1.2rem;
+    }
+    &__txt {
+      margin-bottom: 2rem;
+      @include respond(tab-port) {
+        margin-bottom: 4rem;
+      }
+    }
+    &__card {
+      display: flex;
+      gap: 1.6rem;
+
+      &__avatar {
+        border-radius: 50%;
+      }
+      &__profil {
+        font-size: 1.3rem;
+        line-height: 20px;
+        letter-spacing: 0.12px;
+        &__name {
+          font-size: 1.3rem;
+          color: var(--color-Fiord);
+        }
+        &__date {
+          font-size: 1.3rem;
+          color: var(--color-Cadet-Blue);
+        }
+      }
+    }
+  }
+}
