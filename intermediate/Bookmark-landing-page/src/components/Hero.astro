@@ -3,13 +3,16 @@ import IllustrationHero from "../assets/illustration-hero.svg";
 ---
 
 <article class="mt-20">
-  <img
-    src={IllustrationHero.src}
-    alt="Illustration"
-    class="mx-auto block h-auto w-full max-w-[385px]"
-  />
+  <div class="relative">
+    <img
+      src={IllustrationHero.src}
+      alt="Illustration"
+      class="mx-auto block h-auto w-full max-w-[90%]"
+    />
+    <div class="bg"></div>
+  </div>
 
-  <section class="mx-8">
+  <section class="mx-8 mt-8">
     <h1 class="heading-1 mb-6">A Simple Bookmark Manager</h1>
     <p class="para-1 mb-6">
       A clean and simple interface to organize your favourite websites. Open a
@@ -21,3 +24,16 @@ import IllustrationHero from "../assets/illustration-hero.svg";
     </div>
   </section>
 </article>
+
+<style>
+  .bg {
+    position: absolute;
+    right: -82px;
+    bottom: 40px;
+    height: 250px;
+    width: 100%;
+    background-color: hsl(231, 69%, 60%);
+    border-radius: 200px 0 0 200px;
+    z-index: -1;
+  }
+</style>
