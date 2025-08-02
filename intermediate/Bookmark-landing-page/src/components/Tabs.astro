@@ -1,0 +1,107 @@
+---
+import IllustrationTabs1 from "../assets/illustration-features-tab-1.svg";
+import IllustrationTabs2 from "../assets/illustration-features-tab-2.svg";
+import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
+---
+
+<section class="flex w-full justify-center">
+  <div class="w-full max-w-4xl rounded-lg bg-white">
+    <div class="mb-16 flex flex-col items-center justify-center sm:flex-row">
+      <button
+        class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
+        data-tab="tab1"
+      >
+        Simple Bookmarking
+        <span
+          class="tab-underline bg-custom-red-400 absolute bottom-0 left-1/2 hidden h-[3px] w-[163px] -translate-x-1/2 rounded-full"
+        ></span>
+      </button>
+      <button
+        class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
+        data-tab="tab2"
+      >
+        Speedy Searching
+        <span
+          class="tab-underline bg-custom-red-400 absolute bottom-0 left-1/2 hidden h-[3px] w-[163px] -translate-x-1/2 rounded-full"
+        ></span>
+      </button>
+      <button
+        class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
+        data-tab="tab3"
+      >
+        Easy Sharing
+        <span
+          class="tab-underline bg-custom-red-400 absolute bottom-0 left-1/2 hidden h-[3px] w-[163px] -translate-x-1/2 rounded-full"
+        ></span>
+      </button>
+    </div>
+
+    <div class="tab-content relative" id="tab1">
+      <img
+        src={IllustrationTabs1.src}
+        alt="Illustration 1"
+        class="absolute left-1/2 h-auto w-[75%] max-w-[440px] -translate-x-1/2 sm:w-[80%]"
+      />
+    </div>
+    <div class="tab-content relative hidden" id="tab2">
+      <img
+        src={IllustrationTabs2.src}
+        alt="Illustration 1"
+        class="absolute left-1/2 h-auto w-[75%] max-w-[440px] -translate-x-1/2 sm:w-[80%]"
+      />
+    </div>
+    <div class="tab-content relative hidden" id="tab3">
+      <img
+        src={IllustrationTabs3.src}
+        alt="Illustration 3"
+        class="absolute left-1/2 h-auto w-[75%] max-w-[440px] -translate-x-1/2 sm:w-[80%]"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabButtons =
+    document.querySelectorAll<HTMLButtonElement>(".tab-button");
+  const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabId = button.dataset.tab;
+      if (!tabId) return;
+
+      // Reset tous les boutons
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("text-custom-blue-950");
+        btn.classList.add("text-custom-blue-950/75");
+
+        const underline = btn.querySelector(
+          ".tab-underline",
+        ) as HTMLElement | null;
+        if (underline) underline.classList.add("hidden");
+      });
+
+      // Masquer les contenus
+      tabContents.forEach((content) => {
+        content.classList.add("hidden");
+        content.classList.remove("block");
+      });
+
+      // Activer le bouton sélectionné
+      button.classList.remove("text-custom-blue-950/75");
+      button.classList.add("text-custom-blue-950");
+
+      const activeUnderline = button.querySelector(
+        ".tab-underline",
+      ) as HTMLElement | null;
+      if (activeUnderline) activeUnderline.classList.remove("hidden");
+
+      // Afficher le contenu sélectionné
+      const targetContent = document.getElementById(tabId);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+        targetContent.classList.add("block");
+      }
+    });
+  });
+</script>

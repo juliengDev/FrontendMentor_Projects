@@ -128,12 +128,19 @@ body {
 
 /* test */
 /* you can use apply for base, component and utility */
-.font-custom-1 {
-  @apply text-2xl font-bold text-gray-900;
+.heading-1 {
+  @apply text-center text-3xl leading-[135%] font-medium;
 }
-.link-custom {
-  @apply leading-[2.31px] text-xl tracking-[17] text-white uppercase
+.para-1 {
+  @apply text-custom-blue-950/50 text-center text-[0.9375rem] leading-[165%] font-normal tracking-normal;
 }
+.btn-primary {
+  @apply bg-custom-blue-600 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium text-white;
+}
+.btn-secondary {
+  @apply bg-custom-grey-50 text-custom-blue-950 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium;
+}
+
 @layer components {
   .card {
     @apply m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black;

@@ -3,7 +3,10 @@ const { linkName } = Astro.props;
 ---
 
 <li class="w-full text-center lg:w-auto">
-  <a href="#" class="link-custom block px-6 py-6 font-normal text-white">
+  <a
+    href={`#${linkName}`}
+    class="link-custom block px-6 py-6 font-normal text-white"
+  >
     {linkName}
   </a>
 </li>

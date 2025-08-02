@@ -2,7 +2,10 @@
 const { title } = Astro.props;
 
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
 import "../styles/global.css";
+import Bookmarks from "../components/Bookmarks.astro";
 ---
 
 <html lang="en">
@@ -18,9 +21,12 @@ import "../styles/global.css";
     <title>{title}</title>
   </head>
   <body>
-    <div class="px-8 py-10">
+    <div class="py-10">
       <Header />
       <main>
+        <Hero />
+        <Features />
+        <Bookmarks/>
         <slot />
       </main>
     </div>
