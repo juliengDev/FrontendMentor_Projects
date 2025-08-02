@@ -23,12 +23,13 @@ import Bookmarks from "../components/Bookmarks.astro";
   <body>
     <div class="py-10">
       <Header />
-      <main>
+      <main class="container-safe">
         <Hero />
         <Features />
-        <Bookmarks/>
+        <Bookmarks />
         <slot />
       </main>
     </div>
   </body>
 </html>
+
