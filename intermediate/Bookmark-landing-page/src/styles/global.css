@@ -135,10 +135,14 @@ body {
 .heading-1 {
   @apply text-center text-3xl leading-[135%] font-medium;
 }
+
 .heading-title {
-  @apply text-center text-3xl leading-[135%] font-medium md:text-[3rem];
+  @apply text-center text-3xl leading-[135%] font-medium md:text-[3rem] lg:text-start;
 }
 .para-1 {
+  @apply text-custom-blue-950/50 text-center text-[0.9375rem] leading-[165%] font-normal tracking-normal md:text-lg lg:text-start;
+}
+.para-2 {
   @apply text-custom-blue-950/50 text-center text-[0.9375rem] leading-[165%] font-normal tracking-normal md:text-lg;
 }
 .btn-primary {
@@ -148,7 +152,7 @@ body {
   @apply bg-custom-grey-50 text-custom-blue-950 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium;
 }
 .btn-destructive {
-  @apply bg-custom-red-400 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium text-white;
+  @apply bg-custom-red-400 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium text-white lg:px-9;
 }
 
 @layer components {

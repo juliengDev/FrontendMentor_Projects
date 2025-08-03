@@ -1,13 +1,7 @@
----
-import IllustrationTabs1 from "../assets/illustration-features-tab-1.svg";
-import IllustrationTabs2 from "../assets/illustration-features-tab-2.svg";
-import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
----
-
-<section class="flex w-full justify-center">
+<section class="flex w-full justify-center lg:mb-20">
   <div class="w-full max-w-4xl rounded-lg bg-white">
     <div
-      class="mb-16 flex flex-col items-center justify-center sm:flex-row md:mx-8"
+      class="mb-16 flex w-full flex-col items-center justify-center sm:flex-row md:mx-8"
     >
       <button
         class="tab-button text-custom-blue-950 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
@@ -40,103 +34,5 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
         ></span>
       </button>
     </div>
-
-    <div class="tab-content relative" id="tab1">
-      <img
-        src={IllustrationTabs1.src}
-        alt="Illustration 1"
-        class="absolute left-1/2 block h-auto max-w-[90%] -translate-x-1/2"
-      />
-      <div class="bg-left"></div>
-    </div>
-    <div class="tab-content relative hidden" id="tab2">
-      <img
-        src={IllustrationTabs2.src}
-        alt="Illustration 1"
-        class="absolute left-1/2 block h-auto max-w-[90%] -translate-x-1/2"
-      />
-      <div class="bg-left"></div>
-    </div>
-    <div class="tab-content relative hidden" id="tab3">
-      <img
-        src={IllustrationTabs3.src}
-        alt="Illustration 3"
-        class="absolute left-1/2 block h-auto max-w-[90%] -translate-x-1/2"
-      />
-      <div class="bg-left"></div>
-    </div>
   </div>
-
-  <style>
-    .bg-left {
-      position: absolute;
-      left: -60%;
-      bottom: -390px;
-      height: 390px;
-      max-height: 390px;
-      width: 120%;
-      background-color: hsl(231, 69%, 60%);
-      border-radius: 0 200px 200px 0;
-      z-index: -1;
-    }
-  </style>
-  <script>
-    const tabButtons =
-      document.querySelectorAll<HTMLButtonElement>(".tab-button");
-    const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
-    const descriptionContents = document.querySelectorAll<HTMLElement>(
-      ".description-content",
-    );
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const tabId = button.dataset.tab;
-        const descriptionId = button.dataset.description;
-        if (!tabId) return;
-        if (!descriptionId) return;
-
-        // Reset tous les boutons
-        tabButtons.forEach((btn) => {
-          btn.classList.remove("text-custom-blue-950");
-          btn.classList.add("text-custom-blue-950/75");
-
-          const underline = btn.querySelector(
-            ".tab-underline",
-          ) as HTMLElement | null;
-          if (underline) underline.classList.add("hidden");
-        });
-
-        // Masquer les contenus
-        tabContents.forEach((content) => {
-          content.classList.add("hidden");
-          content.classList.remove("block");
-        });
-        descriptionContents.forEach((content) => {
-          content.classList.add("hidden");
-          content.classList.remove("flex");
-        });
-
-        // Activer le bouton sélectionné
-        button.classList.remove("text-custom-blue-950/75");
-        button.classList.add("text-custom-blue-950");
-
-        const activeUnderline = button.querySelector(
-          ".tab-underline",
-        ) as HTMLElement | null;
-        if (activeUnderline) activeUnderline.classList.remove("hidden");
-
-        // Afficher le contenu sélectionné
-        const targetContent = document.getElementById(tabId);
-        if (targetContent) {
-          targetContent.classList.remove("hidden");
-          targetContent.classList.add("block");
-        }
-
-        const targetContentTxt = document.getElementById(descriptionId);
-        if (targetContentTxt) {
-          targetContentTxt.classList.remove("hidden");
-          targetContentTxt.classList.add("flex");
-        }
-      });
-    });
-  </script>
 </section>

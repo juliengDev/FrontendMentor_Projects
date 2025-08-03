@@ -4,12 +4,21 @@ import LogoDark from "../assets/logo-bookmark-dark.svg";
 import ButtonClose from "./ButtonClose.astro";
 import ButtonMenu from "./ButtonMenu.astro";
 import NavGroup from "./NavGroup.astro";
+import NavLink from "./NavLink.astro";
 ---
 
 <header class="relative z-50 mx-8 pt-10 md:mx-20">
   <nav id="main-nav" class="flex w-full items-center justify-between p-4">
-    <Logo id="logo" />
-    <LogoDark id="logo-dark" class="relative z-50 hidden" />
+    <div class="lg:flex lg:w-full lg:items-center lg:justify-between">
+      <Logo id="logo" />
+      <LogoDark id="logo-dark" class="relative z-50 hidden" />
+      <ul class="hidden items-center lg:flex">
+        <li><NavLink linkName="features" /></li>
+        <li><NavLink linkName="pricing" /></li>
+        <li><NavLink linkName="contact" /></li>
+        <a href="#" class="btn-destructive ml-12 uppercase">login</a>
+      </ul>
+    </div>
     <ButtonMenu />
     <ButtonClose />
   </nav>

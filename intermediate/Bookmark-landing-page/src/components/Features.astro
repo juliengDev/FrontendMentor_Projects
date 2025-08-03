@@ -1,50 +1,127 @@
 ---
 import Tabs from "./Tabs.astro";
+import TabsContent from "./TabsContent.astro";
 ---
 
 <article class="mt-[8rem] flex flex-col items-center">
-  <div class="mx-8 md:mx-[114px]">
+  <div class="mx-8 md:mx-[114px] lg:max-w-[540px]">
     <h2 class="heading-1 mb-6">Features</h2>
-    <p class="para-1 mb-18">
+    <p class="para-2 mb-18">
       Our aim is to make it quick and easy for you to access your favourite
       websites. Your bookmarks sync between your devices so you can access them
       on the go.
     </p>
   </div>
   <Tabs />
-
-  <div
-    id="description1"
-    class="description-content mx-8 mt-[432px] flex flex-col items-center md:mx-[114px]"
-  >
-    <h2 class="heading-1 mb-6">Bookmark in one click</h2>
-    <p class="para-1 mb-4">
-      Organize your bookmarks however you like. Our simple drag-and-drop
-      interface gives you complete control over how you manage your favourite
-      sites.
-    </p>
-    <a href="#" class="btn-primary">More Info</a>
-  </div>
-  <div
-    id="description2"
-    class="description-content mx-8 mt-[432px] hidden flex-col items-center"
-  >
-    <h2 class="heading-1 mb-6">Intelligent search</h2>
-    <p class="para-1 mb-4">
-      Our powerful search feature will help you find saved sites in no time at
-      all. No need to trawl through all of your bookmarks.
-    </p>
-    <a href="#" class="btn-primary">More Info</a>
-  </div>
-  <div
-    id="description3"
-    class="description-content mx-8 mt-[432px] hidden flex-col items-center"
-  >
-    <h2 class="heading-1 mb-6">Share your bookmarks</h2>
-    <p class="para-1 mb-4">
-      Easily share your bookmarks and collections with others. Create a
-      shareable link that you can send at the click of a button.
-    </p>
-    <a href="#" class="btn-primary">More Info</a>
+  <div class="lg:flex lg:items-center">
+    <TabsContent />
+    <section class="flex-1">
+      <div
+        id="description1"
+        class="description-content mx-8 mt-[432px] flex flex-col items-center md:mx-[114px] lg:mt-[100px] lg:items-start"
+      >
+        <h2
+          class="mb-6 text-center text-3xl leading-[135%] font-medium lg:text-start"
+        >
+          Bookmark in one click
+        </h2>
+        <p class="para-1 mb-4">
+          Organize your bookmarks however you like. Our simple drag-and-drop
+          interface gives you complete control over how you manage your
+          favourite sites.
+        </p>
+        <a href="#" class="btn-primary">More Info</a>
+      </div>
+      <div
+        id="description2"
+        class="description-content mx-8 mt-[432px] hidden flex-col items-center md:mx-[114px] lg:mt-[100px] lg:items-start"
+      >
+        <h2
+          class="mb-6 text-center text-3xl leading-[135%] font-medium lg:text-start"
+        >
+          Intelligent search
+        </h2>
+        <p class="para-1 mb-4">
+          Our powerful search feature will help you find saved sites in no time
+          at all. No need to trawl through all of your bookmarks.
+        </p>
+        <a href="#" class="btn-primary">More Info</a>
+      </div>
+      <div
+        id="description3"
+        class="description-content mx-8 mt-[432px] hidden flex-col items-center md:mx-[114px] lg:mt-[100px] lg:items-start"
+      >
+        <h2
+          class="mb-6 text-center text-3xl leading-[135%] font-medium lg:text-start"
+        >
+          Share your bookmarks
+        </h2>
+        <p class="para-1 mb-4">
+          Easily share your bookmarks and collections with others. Create a
+          shareable link that you can send at the click of a button.
+        </p>
+        <a href="#" class="btn-primary">More Info</a>
+      </div>
+    </section>
   </div>
 </article>
+
+<script>
+  const tabButtons =
+    document.querySelectorAll<HTMLButtonElement>(".tab-button");
+  const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
+  const descriptionContents = document.querySelectorAll<HTMLElement>(
+    ".description-content",
+  );
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabId = button.dataset.tab;
+      const descriptionId = button.dataset.description;
+      if (!tabId) return;
+      if (!descriptionId) return;
+
+      // Reset tous les boutons
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("text-custom-blue-950");
+        btn.classList.add("text-custom-blue-950/75");
+
+        const underline = btn.querySelector(
+          ".tab-underline",
+        ) as HTMLElement | null;
+        if (underline) underline.classList.add("hidden");
+      });
+
+      // Masquer les contenus
+      tabContents.forEach((content) => {
+        content.classList.add("hidden");
+        content.classList.remove("block");
+      });
+      descriptionContents.forEach((content) => {
+        content.classList.add("hidden");
+        content.classList.remove("flex");
+      });
+
+      // Activer le bouton sélectionné
+      button.classList.remove("text-custom-blue-950/75");
+      button.classList.add("text-custom-blue-950");
+
+      const activeUnderline = button.querySelector(
+        ".tab-underline",
+      ) as HTMLElement | null;
+      if (activeUnderline) activeUnderline.classList.remove("hidden");
+
+      // Afficher le contenu sélectionné
+      const targetContent = document.getElementById(tabId);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+        targetContent.classList.add("block");
+      }
+
+      const targetContentTxt = document.getElementById(descriptionId);
+      if (targetContentTxt) {
+        targetContentTxt.classList.remove("hidden");
+        targetContentTxt.classList.add("flex");
+      }
+    });
+  });
+</script>
