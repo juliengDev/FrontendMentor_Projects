@@ -1,9 +1,20 @@
 ---
 import "@fontsource-variable/plus-jakarta-sans";
-import '@fontsource-variable/rubik';
+import "@fontsource-variable/rubik";
 import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Extensions from "../components/Extensions.astro";
+import Faq from "../components/Faq.astro";
+import Newletters from "../components/Newletters.astro";
 
-const pageTitle = "Room homepage";
+const pageTitle = "Bookmark landing page";
 ---
 
-<MainLayout title={pageTitle} />
+<MainLayout title={pageTitle}>
+  <Hero />
+  <Features />
+  <Extensions />
+  <Faq />
+  <Newletters />
+</MainLayout>
