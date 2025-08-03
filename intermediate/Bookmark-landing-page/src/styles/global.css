@@ -135,8 +135,11 @@ body {
 .heading-1 {
   @apply text-center text-3xl leading-[135%] font-medium;
 }
+.heading-title {
+  @apply text-center text-3xl leading-[135%] font-medium md:text-[3rem];
+}
 .para-1 {
-  @apply text-custom-blue-950/50 text-center text-[0.9375rem] leading-[165%] font-normal tracking-normal;
+  @apply text-custom-blue-950/50 text-center text-[0.9375rem] leading-[165%] font-normal tracking-normal md:text-lg;
 }
 .btn-primary {
   @apply bg-custom-blue-600 rounded-[5px] px-3.5 py-2 text-[0.9375rem] leading-[200%] font-medium text-white;
