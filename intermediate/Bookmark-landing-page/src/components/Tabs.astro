@@ -8,17 +8,19 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
   <div class="w-full max-w-4xl rounded-lg bg-white">
     <div class="mb-16 flex flex-col items-center justify-center sm:flex-row">
       <button
-        class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
+        class="tab-button text-custom-blue-950 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
         data-tab="tab1"
+        data-description="description1"
       >
         Simple Bookmarking
         <span
-          class="tab-underline bg-custom-red-400 absolute bottom-0 left-1/2 hidden h-[3px] w-[163px] -translate-x-1/2 rounded-full"
+          class="tab-underline bg-custom-red-400 absolute bottom-0 left-1/2 h-[3px] w-[163px] -translate-x-1/2 rounded-full"
         ></span>
       </button>
       <button
         class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
         data-tab="tab2"
+        data-description="description2"
       >
         Speedy Searching
         <span
@@ -28,6 +30,7 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
       <button
         class="tab-button text-custom-blue-950/75 relative w-full flex-1 cursor-pointer border-b border-gray-300 bg-transparent p-4 text-base font-bold tracking-wide transition-all duration-300 focus:outline-none"
         data-tab="tab3"
+        data-description="description3"
       >
         Easy Sharing
         <span
@@ -79,11 +82,15 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
     const tabButtons =
       document.querySelectorAll<HTMLButtonElement>(".tab-button");
     const tabContents = document.querySelectorAll<HTMLElement>(".tab-content");
-
+    const descriptionContents = document.querySelectorAll<HTMLElement>(
+      ".description-content",
+    );
     tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const tabId = button.dataset.tab;
+        const descriptionId = button.dataset.description;
         if (!tabId) return;
+        if (!descriptionId) return;
 
         // Reset tous les boutons
         tabButtons.forEach((btn) => {
@@ -101,6 +108,10 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
           content.classList.add("hidden");
           content.classList.remove("block");
         });
+        descriptionContents.forEach((content) => {
+          content.classList.add("hidden");
+          content.classList.remove("flex");
+        });
 
         // Activer le bouton sélectionné
         button.classList.remove("text-custom-blue-950/75");
@@ -116,6 +127,13 @@ import IllustrationTabs3 from "../assets/illustration-features-tab-3.svg";
         if (targetContent) {
           targetContent.classList.remove("hidden");
           targetContent.classList.add("block");
+        }
+
+        const targetContentTxt = document.getElementById(descriptionId);
+        console.log(targetContentTxt);
+        if (targetContentTxt) {
+          targetContentTxt.classList.remove("hidden");
+          targetContentTxt.classList.add("flex");
         }
       });
     });
