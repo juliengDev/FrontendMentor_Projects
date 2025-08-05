@@ -1,0 +1,12 @@
+---
+const { linkName } = Astro.props;
+---
+
+<li class="w-full text-center lg:w-auto">
+  <a
+    href={`#${linkName}`}
+    class="link-custom lg:text-custom-blue-950 block px-6 py-6 font-normal text-white lg:text-sm lg:uppercase"
+  >
+    {linkName}
+  </a>
+</li>

@@ -1,0 +1,33 @@
+---
+import NavLink from "./NavLink.astro";
+import Facebook from "../assets/icon-facebook.svg";
+import Twitter from "../assets/icon-twitter.svg";
+---
+
+<div
+  id="menu"
+  class="bg-custom-blue-950/95 fixed inset-0 z-40 hidden w-full pt-[130px]"
+>
+  <ul
+    class="flex-col items-center justify-center lg:relative lg:flex lg:h-auto lg:w-auto lg:flex-row lg:bg-transparent lg:backdrop-blur-none"
+  >
+    <hr class="mx-8 text-[#979797]" />
+    <NavLink linkName="features" />
+    <hr class="mx-8 text-[#979797]" />
+    <NavLink linkName="pricing" />
+    <hr class="mx-8 text-[#979797]" />
+    <NavLink linkName="contact" />
+    <hr class="mx-8 text-[#979797]" />
+  </ul>
+  <a
+    href="#"
+    class="link-custom mx-8 mt-6 block rounded-[5px] border border-white py-4 text-center text-xl font-medium text-white"
+    >Login</a
+  >
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+    <div class="flex items-center gap-10">
+      <a href="https://www.facebook.com/" aria-label="Facebook"><Facebook /></a>
+      <a href="https://x.com/home" aria-label="Twitter"> <Twitter /></a>
+    </div>
+  </div>
+</div>

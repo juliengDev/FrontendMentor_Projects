@@ -1,0 +1,66 @@
+---
+import Logo from "../assets/logo-bookmark.svg";
+import LogoDark from "../assets/logo-bookmark-dark.svg";
+import ButtonClose from "./ButtonClose.astro";
+import ButtonMenu from "./ButtonMenu.astro";
+import NavGroup from "./NavGroup.astro";
+import NavLink from "./NavLink.astro";
+---
+
+<header class="relative z-50 mx-8 pt-10 md:mx-20">
+  <nav id="main-nav" class="flex w-full items-center justify-between p-4">
+    <div class="lg:flex lg:w-full lg:items-center lg:justify-between">
+      <Logo id="logo" />
+      <LogoDark id="logo-dark" class="relative z-50 hidden" />
+      <ul class="hidden items-center lg:flex">
+        <NavLink linkName="features" />
+        <NavLink linkName="pricing" />
+        <NavLink linkName="contact" />
+        <a href="#" class="btn-destructive ml-12 uppercase">login</a>
+      </ul>
+    </div>
+    <ButtonMenu />
+    <ButtonClose />
+  </nav>
+  <!-- Menu mobile en dehors du nav principal -->
+  <NavGroup />
+</header>
+
+<script>
+  const menu = document.getElementById("menu") as HTMLUListElement;
+  const iconBurger = document.getElementById(
+    "icon-burger",
+  ) as HTMLButtonElement;
+  const iconClose = document.getElementById("icon-close") as HTMLButtonElement;
+  const logoEl = document.getElementById("logo") as HTMLElement;
+  const logoDarkEl = document.getElementById("logo-dark") as HTMLElement;
+
+  function openMenu() {
+    logoEl.classList.add("hidden");
+    logoDarkEl.classList.remove("hidden");
+    menu.classList.remove("hidden");
+    iconBurger.classList.add("hidden");
+    iconClose.classList.remove("hidden");
+    // Empêcher le scroll du body
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    logoEl.classList.remove("hidden");
+    logoDarkEl.classList.add("hidden");
+    menu.classList.add("hidden");
+    iconBurger.classList.remove("hidden");
+    iconClose.classList.add("hidden");
+    // Rétablir le scroll du body
+    document.body.style.overflow = "auto";
+  }
+
+  iconBurger?.addEventListener("click", openMenu);
+  iconClose?.addEventListener("click", closeMenu);
+
+  // Fermer le menu en cliquant sur un lien
+  const menuLinks = menu?.querySelectorAll("a");
+  menuLinks?.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+</script>

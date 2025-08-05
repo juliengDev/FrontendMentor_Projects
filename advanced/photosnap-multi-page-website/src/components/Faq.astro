@@ -1,0 +1,105 @@
+---
+import IconArrow from "../assets/icon-arrow.svg";
+---
+
+<article
+  class="mx-8 mt-[128px] md:mx-auto md:mt-[142px] md:max-w-[540px] lg:max-w-[540px]"
+>
+  <h2 class="heading-1 mb-4">Frequently Asked Questions</h2>
+  <p class="para-2">
+    Here are some of our FAQs. If you have any other questions you’d like
+    answered please feel free to email us.
+  </p>
+  <section class="mx-auto mt-14 flex max-w-[540px] flex-col items-center">
+    <div class="drop-faq flex w-full flex-col items-center">
+      <hr class="w-full border-1 border-[#979797]" />
+      <div class="flex w-full items-center justify-between py-4">
+        <h3>What is Bookmark?</h3>
+        <IconArrow class="icon-arrow cursor-pointer" data-faq="faq1" />
+      </div>
+
+      <p class="my-6 hidden" id="faq1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+        justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare
+        mattis.
+      </p>
+    </div>
+    <div class="drop-faq flex w-full flex-col items-center">
+      <hr class="w-full border-1 border-[#979797]" />
+      <div class="flex w-full items-center justify-between py-4">
+        <h3>How can I request a new browser?</h3>
+        <IconArrow class="icon-arrow cursor-pointer" data-faq="faq2" />
+      </div>
+
+      <p class="my-6 hidden" id="faq2">
+        Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+        ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet
+        convallis ultricies. Mauris augue massa, ultricies non ligula.
+        Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+        Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+      </p>
+    </div>
+    <div class="drop-faq flex w-full flex-col items-center">
+      <hr class="w-full border-1 border-[#979797]" />
+      <div class="flex w-full items-center justify-between py-4">
+        <h3>Is there a mobile app?</h3>
+        <IconArrow class="icon-arrow cursor-pointer" data-faq="faq3" />
+      </div>
+
+      <p class="my-6 hidden" id="faq3">
+        Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+        vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
+        quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin ex et
+        ultricies bibendum.
+      </p>
+    </div>
+    <div class="drop-faq flex w-full flex-col items-center">
+      <hr class="w-full border-1 border-[#979797]" />
+      <div class="flex w-full items-center justify-between py-4">
+        <h3>What about other Chromium browsers?</h3>
+        <IconArrow class="icon-arrow cursor-pointer" data-faq="faq4" />
+      </div>
+
+      <hr class="w-full border-1 border-[#979797]" />
+      <p class="my-6 hidden" id="faq4">
+        Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi,
+        at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non
+        ut velit. More Info 35,000+ already joined Stay up-to-date with what
+        we’re doing Contact Us Features Pricing Contact
+      </p>
+    </div>
+    <a href="#" class="btn-primary mt-[4.125rem]">More Info</a>
+  </section>
+</article>
+
+<script>
+  const arrowIconsEl = document.querySelectorAll(
+    ".icon-arrow",
+  ) as NodeListOf<SVGElement>;
+
+  arrowIconsEl.forEach((arrow) => {
+    arrow.classList.add("transition-transform", "duration-200");
+
+    arrow.addEventListener("click", () => {
+      // Toggle l'icône
+      arrow.classList.toggle("rotate-180");
+
+      // Toggle le contenu
+      const faqId = arrow.dataset.faq;
+      if (!faqId) return;
+
+      const targetContent = document.getElementById(faqId);
+      if (!targetContent) return;
+
+      const isHidden = targetContent.classList.contains("hidden");
+
+      if (isHidden) {
+        targetContent.classList.remove("hidden");
+        targetContent.classList.add("block");
+      } else {
+        targetContent.classList.add("hidden");
+        targetContent.classList.remove("block");
+      }
+    });
+  });
+</script>

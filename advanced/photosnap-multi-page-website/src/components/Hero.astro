@@ -1,0 +1,52 @@
+---
+import IllustrationHero from "../assets/illustration-hero.svg";
+---
+
+<article class="mt-20 lg:flex lg:flex-row-reverse">
+  <div class="relative lg:flex-1">
+    <img
+      src={IllustrationHero.src}
+      alt="Illustration"
+      class="mx-auto block h-auto w-full max-w-[90%]"
+    />
+    <div class="bg"></div>
+  </div>
+
+  <section class="mx-8 mt-8 md:mx-[114px] lg:flex-1">
+    <h1 class="heading-title mb-6">A Simple Bookmark Manager</h1>
+    <p class="para-1 mb-6">
+      A clean and simple interface to organize your favourite websites. Open a
+      new browser tab and see your sites load instantly. Try it for free.
+    </p>
+    <div class="flex justify-center gap-4 lg:justify-start">
+      <a href="#" class="btn-primary"> Get it on Chrome </a>
+      <a href="#" class="btn-secondary"> Get it on Firefox </a>
+    </div>
+  </section>
+</article>
+
+<style>
+  .bg {
+    position: absolute;
+    right: -82px;
+    bottom: 40px;
+    height: 250px;
+    width: 100%;
+    background-color: hsl(231, 69%, 60%);
+    border-radius: 200px 0 0 200px;
+    z-index: -1;
+  }
+
+  @media screen and (width > 1024px) {
+    .bg {
+      position: absolute;
+      right: -82px;
+      bottom: 0px;
+      height: 250px;
+      width: 100%;
+      background-color: hsl(231, 69%, 60%);
+      border-radius: 200px 0 0 200px;
+      z-index: -1;
+    }
+  }
+</style>
