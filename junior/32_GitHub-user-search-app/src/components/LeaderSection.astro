@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import imageInteractiveMobile from "../assets/mobile/image-interactive.jpg";
+import imageInteractiveDesktop from "../assets/desktop/image-interactive.jpg";
+---
+
+<section class="px-6 py-24 lg:px-[165px]">
+  <div class="lg:grid lg:grid-cols-2 lg:items-end lg:gap-8">
+    <div>
+      <Image
+        src={imageInteractiveMobile}
+        alt="image interactive"
+        class="h-full w-full object-cover xl:hidden"
+        decoding="async"
+        loading="lazy"
+      />
+      <Image
+        src={imageInteractiveDesktop}
+        alt="image interactive"
+        class="hidden h-full w-full object-cover xl:block"
+        decoding="async"
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="px-8 pt-12 pb-[6rem] lg:z-30 lg:-ml-40 lg:bg-white lg:px-0 lg:pb-0 lg:pl-12"
+    >
+      <h2
+        class="mb-4 text-center text-[clamp(2rem,4vw,3rem)] leading-[100%] font-light uppercase lg:max-w-[445px] lg:text-start"
+      >
+        The leader in interactive VR
+      </h2>
+      <p
+        class="text-alata text-center text-[0.9375rem] leading-[165%] font-medium text-black/70 lg:max-w-[445px] lg:text-start"
+      >
+        Founded in 2011, Loopstudios has been producing world-class virtual
+        reality projects for some of the best companies around the globe. Our
+        award-winning creations have transformed businesses through digital
+        experiences that bind to their brand.
+      </p>
+    </div>
+  </div>
+</section>
