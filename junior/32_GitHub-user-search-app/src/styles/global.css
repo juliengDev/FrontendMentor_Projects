@@ -2,39 +2,33 @@
 
 :root {
   /* COLORS */
-  --green-900: rgb(36, 85, 74);
-  --green-600: rgb(62, 116, 103);
-  --green-500: rgb(69, 141, 126);
-  --green-300: rgb(144, 212, 198);
-  --grey-950: rgb(36, 48, 62);
-  --grey-700: rgb(68, 68, 68);
-  --grey-600: rgb(91, 99, 109);
-  --grey-550: rgb(128, 131, 151);
-  --grey-400: rgb(167, 170, 173);
-  --blue-950: rgb(5, 44, 59);
-  --blue-800: rgb(25, 83, 108);
-  --red: rgb(254, 119, 102);
-  --yellow: rgb(250, 212, 0);
+  --neutral-900: rgb(20, 29, 47);
+  --neutral-800: rgb(30, 42, 71);
+  --neutral-700: rgb(43, 52, 66);
+  --neutral-500: rgb(75, 106, 155);
+  --neutral-300: rgb(105, 124, 154);
+  --neutral-200: rgb(144, 164, 212);
+  --neutral-100: rgb(246, 248, 255);
+  --blue-300: rgb(96, 171, 255);
+  --blue-500: rgb(0, 121, 255);
+  --red-500: rgb(247, 70, 70);
 }
 @theme {
-  --color-custom-green-950: var(--green-900);
-  --color-custom-green-600: var(--green-600);
-  --color-custom-green-500: var(--green-500);
-  --color-custom-green-300: var(--green-300);
-  --color-custom-grey-950: var(--grey-950);
-  --color-custom-grey-700: var(--grey-700);
-  --color-custom-grey-600: var(--grey-600);
-  --color-custom-grey-550: var(--grey-550);
-  --color-custom-grey-400: var(--grey-400);
-  --color-custom-blue-950: var(--blue-950);
-  --color-custom-blue-800: var(--blue-800);
-  --color-custom-red: var(--red);
-  --color-custom-yellow: var(--yellow);
+  --color-custom-neutral-900: var(--neutral-900);
+  --color-custom-neutral-800: var(--neutral-800);
+  --color-custom-neutral-700: var(--neutral-700);
+  --color-custom-neutral-500: var(--neutral-500);
+  --color-custom-neutral-300: var(--neutral-300);
+  --color-custom-neutral-200: var(--neutral-200);
+  --color-custom-neutral-100: var(--neutral-100);
+  --color-custom-blue-300: var(--blue-300);
+  --color-custom-blue-500: var(--blue-500);
+  --color-custom-red-500: var(--red-500);
 }
 
 /* FONTS */
 
-@font-face {
+/* @font-face {
   font-family: "DM Sans", sans-serif;
   src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
   font-optical-sizing: auto;
@@ -48,17 +42,17 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 /* html {
   scroll-behavior: smooth;
 } */
 body {
-  font-family: "Josefin Sans Variable", sans-serif;
+  font-family: "Space Mono", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
-  font-size: 1.125rem;
+  font-size: 1rem;
   min-height: 100dvh;
 }
 
@@ -97,7 +91,7 @@ body {
     animation: shake 0.4s ease-in-out;
   }
 
-  .text-alata {
+  /* .text-alata {
     font-family: "Alata", sans-serif;
-  }
+  } */
 }
