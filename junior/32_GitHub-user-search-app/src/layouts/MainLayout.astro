@@ -16,12 +16,10 @@ import Header from "../components/Header.astro"
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <div class="my-8 mx-4" >
+  <body class="py-8 px-4 min-h-screen bg-background text-foreground">
       <Header />
       <main>
         <slot />
       </main>
-    </body>
-  </div>
+  </body>
 </html>
