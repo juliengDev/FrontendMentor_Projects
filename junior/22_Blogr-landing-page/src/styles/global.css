@@ -1,3 +1,109 @@
+@font-face {
+  font-family: "Overpass";
+  src: url(/fonts/Overpass-VariableFont_wght.ttf) format("woff");
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url("/fonts/Overpass-Italic-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* COLORS */
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+
+  /* gray */
+  --gray-950: rgb(36, 36, 44);
+  --gray-600: rgb(76, 88, 98);
+  --gray-550: rgb(135, 141, 146);
+  --gray-100: rgb(231, 231, 231);
+
+  /* purple */
+  --purple-950: rgb(45, 46, 64);
+  --purple-900: rgb(62, 64, 98);
+  --purple-start-gradient: rgb(45, 46, 64);
+  --purple-end-gradient: rgb(63, 65, 100);
+  --purple-800: rgb(82, 82, 111);
+
+  /* red */
+  --red-500: rgb(255, 80, 92);
+  --red-400: rgb(255, 123, 134);
+  --red-start-gradient: rgb(255, 143, 113);
+  --red-end-gradient: rgb(155, 62, 85);
+  --red-50: rgb(246, 246, 246);
+
+  /* blue */
+  --blue-900: rgb(31, 62, 90);
+
+  /* gradient */
+  --gradient-purple: linear-gradient(
+    90deg,
+    var(--purple-start-gradient),
+    var(--purple-end-gradient)
+  );
+  --gradient-red: linear-gradient(
+    var(--red-start-gradient),
+    var(--red-end-gradient)
+  );
+
+  /* TYPOGRAPHY */
+
+  /* font-size  */
+  --ft-size-preset-1: 4rem;
+  --ft-size-preset-2: 2.5rem;
+  --ft-size-preset-3: 1.75rem;
+  --ft-size-preset-4: 1.25rem;
+  --ft-size-preset-5: 1rem;
+  --ft-size-preset-6: 1rem;
+
+  /* font-weigh */
+  /* 
+  font-weight: 100; Thin
+  font-weight: 200; Extra Light
+  font-weight: 300; Light
+  font-weight: 400; Normal
+  font-weight: 500; Medium
+  font-weight: 600; Semi Bold
+  font-weight: 700; Bold
+  font-weight: 800; Extra Bold
+  font-weight: 900; Black
+  */
+  --ft-weight-preset-1: 600;
+  --ft-weight-preset-2: 600;
+  --ft-weight-preset-3: 600;
+  --ft-weight-preset-4: 300;
+  --ft-weight-preset-5: 300;
+  --ft-weight-preset-6-bold: 700;
+  --ft-weight-preset-6-regular: 400;
+
+  /* line-height */
+  --ft-line-height-preset-1: 100%;
+  --ft-line-height-preset-2: 125%;
+  --ft-line-height-preset-3: 100%;
+  --ft-line-height-preset-4: 125%;
+  --ft-line-height-preset-5: 175%;
+  --ft-line-height-preset-6-bold: 115%;
+  --ft-line-height-preset-6-regular: 200%;
+
+  /* letter-spacing  */
+  --ft-letter-spacing-preset-1: -2px;
+  --ft-letter-spacing-preset-2: -1.2px;
+  --ft-letter-spacing-preset-3: 0px;
+  --ft-letter-spacing-preset-4: 0px;
+  --ft-letter-spacing-preset-5: 0.6px;
+  --ft-letter-spacing-preset-6-bold: 0px;
+  --ft-letter-spacing-preset-6-regular: 0px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +111,54 @@
 }
 
 html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 body {
   width: 100%;
+  height: 100dvh;
   line-height: 1.5;
+}
+
+.txt-preset-1 {
+  font-size: var(--ft-size-preset-1);
+  font-weight: var(--ft-weight-preset-1);
+  line-height: var(--ft-line-height-preset-1);
+  letter-spacing: var(--ft-letter-spacing-preset-1);
+}
+.txt-preset-2 {
+  font-size: var(--ft-size-preset-2);
+  font-weight: var(--ft-weight-preset-2);
+  line-height: var(--ft-line-height-preset-2);
+  letter-spacing: var(--ft-letter-spacing-preset-2);
+}
+.txt-preset-3 {
+  font-size: var(--ft-size-preset-3);
+  font-weight: var(--ft-weight-preset-3);
+  line-height: var(--ft-line-height-preset-3);
+  letter-spacing: var(--ft-letter-spacing-preset-3);
+}
+.txt-preset-4 {
+  font-size: var(--ft-size-preset-4);
+  font-weight: var(--ft-weight-preset-4);
+  line-height: var(--ft-line-height-preset-4);
+  letter-spacing: var(--ft-letter-spacing-preset-4);
+}
+.txt-preset-5 {
+  font-size: var(--ft-size-preset-5);
+  font-weight: var(--ft-weight-preset-5);
+  line-height: var(--ft-line-height-preset-5);
+  letter-spacing: var(--ft-letter-spacing-preset-5);
+}
+.txt-preset-6-bold {
+  font-size: var(--ft-size-preset-6);
+  font-weight: var(--ft-weight-preset-6-bold);
+  line-height: var(--ft-line-height-preset-6-bold);
+  letter-spacing: var(--ft-letter-spacing-preset-6-bold);
+}
+.txt-preset-6-regular {
+  font-size: var(--ft-size-preset-6);
+  font-weight: var(--ft-weight-preset-6-regular);
+  line-height: var(--ft-line-height-preset-6-regular);
+  letter-spacing: var(--ft-letter-spacing-preset-6-regular);
 }
