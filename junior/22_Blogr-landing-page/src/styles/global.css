@@ -119,6 +119,14 @@ body {
   line-height: 1.5;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .txt-preset-1 {
   font-size: var(--ft-size-preset-1);
   font-weight: var(--ft-weight-preset-1);
@@ -170,4 +178,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.hidden {
+  display: none;
 }
