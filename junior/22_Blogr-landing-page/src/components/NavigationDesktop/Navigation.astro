@@ -1,0 +1,35 @@
+<ul class="desktop-nav txt-preset-6-bold">
+  <li class="list-item">
+    <p>Product</p>
+    <img src="/images/icon-arrow-light.svg" alt="icon arrow light" />
+  </li>
+  <li>
+    <p>Company</p>
+    <img src="/images/icon-arrow-light.svg" alt="icon arrow light" />
+  </li>
+  <li>
+    <p>Connect</p>
+    <img src="/images/icon-arrow-light.svg" alt="icon arrow light" />
+  </li>
+</ul>
+
+<style>
+  .desktop-nav {
+    display: none;
+    list-style-type: none;
+    gap: 2rem;
+    color: var(--white);
+  }
+
+  .desktop-nav li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: flex;
+    }
+  }
+</style>

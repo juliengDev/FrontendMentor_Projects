@@ -1,9 +1,12 @@
 ---
 import "../styles/global.css";
+import "../styles/app.css";
+
+interface Props {
+  pageTitle: string;
+}
+
 const { pageTitle } = Astro.props;
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -14,16 +17,7 @@ const textCase = "uppercase";
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
 
-    <script>
-      import "../scripts/menu.js";
-    </script>
-    <style is:global define:vars={{ skillColor, fontWeight, textCase }}>
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
+    <script type="module" src="/scripts/app.js"></script>
   </head>
   <body>
     <slot />
