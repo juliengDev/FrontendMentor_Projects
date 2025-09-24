@@ -1,5 +1,122 @@
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 108px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navigation {
+  width: 100%;
+}
+
+.navItem {
+  text-align: center;
+}
+
+.navItemTitle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--purple-900);
+  padding: 0.5rem 0;
+}
+
+.arrow {
+  transform: rotate(0deg);
+  transition: transform 300ms ease;
+}
+
+.arrow.active {
+  transform: rotate(180deg);
+}
+
+.navItemMenu {
+  background-color: var(--gray-100);
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navItemLink {
+  color: var(--purple-800);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navItemLink:hover {
+  color: var(--purple-950);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray-200);
+}
+
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.loginButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--purple-900);
+}
+
+.signupButton {
+  background: var(--gradient-red);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  width: 60%;
+}
+
 @media (min-width: 768px) {
-  .openButton {
+  .menuButton,
+  .menu {
     display: none;
   }
 }

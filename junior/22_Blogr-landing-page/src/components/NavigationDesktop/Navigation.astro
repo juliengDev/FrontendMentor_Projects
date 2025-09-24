@@ -1,13 +1,32 @@
 ---
-import NavigationItemConnect from "./NavigationItemConnect.astro";
-import NavigationItemCompany from "./NavigationItemCompany.astro";
-import NavigationItemProduct from "./NavigationItemProduct.astro";
+import NavigationItem from "./NavigationItem.astro";
+
+const productLinks = [
+  { href: "#", label: "Overview" },
+  { href: "#", label: "Pricing" },
+  { href: "#", label: "Marketplace" },
+  { href: "#", label: "Features" },
+  { href: "#", label: "Integrations" },
+];
+
+const companyLinks = [
+  { href: "#", label: "About" },
+  { href: "#", label: "Team" },
+  { href: "#", label: "Blog" },
+  { href: "#", label: "Careers" },
+];
+
+const connectLinks = [
+  { href: "#", label: "Contact" },
+  { href: "#", label: "Newsletter" },
+  { href: "#", label: "LinkedIn" },
+];
 ---
 
 <ul class="desktop-nav txt-preset-6-bold">
-  <NavigationItemProduct />
-  <NavigationItemCompany />
-  <NavigationItemConnect />
+  <NavigationItem title="Product" links={productLinks} />
+  <NavigationItem title="Company" links={companyLinks} />
+  <NavigationItem title="Connect" links={connectLinks} />
 </ul>
 
 <style>

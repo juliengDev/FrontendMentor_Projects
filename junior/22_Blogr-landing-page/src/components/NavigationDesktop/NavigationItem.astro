@@ -1,0 +1,152 @@
+---
+interface Props {
+  title: string;
+  links: { href: string; label: string }[];
+}
+
+const { title, links } = Astro.props;
+---
+
+<li class="nav-item">
+  <div class="nav-item__title">
+    <p>{title}</p>
+    <img
+      class="nav-item__arrow"
+      src="/images/icon-arrow-light.svg"
+      alt="icon arrow light"
+    />
+  </div>
+  {
+    links.length > 0 && (
+      <div class="nav-item__menu">
+        <ul class="nav-item__menu-container">
+          {links.map((link) => (
+            <li class="nav-item__menu-link">
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</li>
+
+<style>
+  .nav-item {
+    position: relative;
+    cursor: pointer;
+  }
+  .nav-item__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-item__arrow {
+    transform: rotate(0deg);
+    transition: transform 300ms ease;
+  }
+  .nav-item__arrow.active {
+    transform: rotate(180deg);
+  }
+  .nav-item__menu {
+    position: absolute;
+    top: 24px;
+    left: -20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 1.5rem;
+  }
+  .nav-item__menu.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-item__menu-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-item__menu-link a {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    color: var(--purple-950);
+    white-space: nowrap;
+  }
+  .nav-item__menu-link a:hover {
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const navItems = document.querySelectorAll<HTMLElement>(".nav-item");
+
+    navItems.forEach((item) => {
+      const titleElement = item.querySelector<HTMLElement>(".nav-item__title");
+      const menuElement = item.querySelector<HTMLElement>(".nav-item__menu");
+      const arrowElement = item.querySelector<HTMLElement>(".nav-item__arrow");
+
+      // S'il n'y a pas les éléments nécessaires, on ne fait rien
+      if (!titleElement || !menuElement || !arrowElement) {
+        return;
+      }
+
+      titleElement.addEventListener("click", (e: MouseEvent) => {
+        const isCurrentlyOpen = menuElement.classList.contains("show");
+
+        // On ferme tous les autres menus ouverts
+        navItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem
+              .querySelector<HTMLElement>(".nav-item__menu")
+              ?.classList.remove("show");
+            otherItem
+              .querySelector<HTMLElement>(".nav-item__arrow")
+              ?.classList.remove("active");
+          }
+        });
+
+        // On bascule l'état du menu actuel
+        if (isCurrentlyOpen) {
+          menuElement.classList.remove("show");
+          arrowElement.classList.remove("active");
+        } else {
+          menuElement.classList.add("show");
+          arrowElement.classList.add("active");
+        }
+        e.stopPropagation();
+      });
+    });
+
+    // Gestion des clics en dehors des menus pour les fermer
+    document.addEventListener("click", (e: MouseEvent) => {
+      navItems.forEach((item) => {
+        if (!item.contains(e.target as Node)) {
+          item
+            .querySelector<HTMLElement>(".nav-item__menu")
+            ?.classList.remove("show");
+          item
+            .querySelector<HTMLElement>(".nav-item__arrow")
+            ?.classList.remove("active");
+        }
+      });
+    });
+
+    // Gestion de la touche "Echap"
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Escape" || e.key === "Esc") {
+        navItems.forEach((item) => {
+          item
+            .querySelector<HTMLElement>(".nav-item__menu")
+            ?.classList.remove("show");
+          item
+            .querySelector<HTMLElement>(".nav-item__arrow")
+            ?.classList.remove("active");
+        });
+      }
+    });
+  });
+</script>
