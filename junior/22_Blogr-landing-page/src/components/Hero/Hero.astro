@@ -2,13 +2,15 @@
 import Button from "../ui/Button.astro";
 ---
 
-<h1 class="hero__title">A modern publishing platform</h1>
-<h2 class="hero__description">
-  Grow your audience and build your online brand
-</h2>
-<div class="hero__btnGroup">
-  <Button name="Start for free" variant="primary" />
-  <Button name="Learn More" variant="secondary" />
+<div class="hero">
+  <h1 class="hero__title">A modern publishing platform</h1>
+  <h2 class="hero__description">
+    Grow your audience and build your online brand
+  </h2>
+  <div class="hero__btnGroup">
+    <Button name="Start for Free" variant="primary" />
+    <Button name="Learn More" variant="secondary" />
+  </div>
 </div>
 <style>
   .hero__title {
@@ -26,6 +28,7 @@ import Button from "../ui/Button.astro";
   .hero__description {
     color: var(--white);
     text-align: center;
+    margin: 0 auto;
     width: 90%;
     max-width: 921px;
     font-size: var(--ft-size-preset-4);

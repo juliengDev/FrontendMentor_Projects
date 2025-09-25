@@ -6,6 +6,7 @@
   height: 100dvh;
   max-height: 600px;
   border-bottom-left-radius: 100px;
+  margin-bottom: 100px;
 }
 
 .nav__container {
@@ -37,6 +38,7 @@
       url("../images/bg-pattern-intro-desktop.svg"), var(--gradient-red);
     background-position: 20% 51%;
     background-size: 200%;
+    margin-bottom: 151px;
   }
   .menuButton {
     display: none;

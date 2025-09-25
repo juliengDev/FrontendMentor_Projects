@@ -1,0 +1,136 @@
+<section class="design">
+  <h2 class="design__title">Designed for the future</h2>
+  <div class="design__container">
+    <div class="design__imgContainer">
+      <img
+        class="design__img_mobile"
+        src="/images/illustration-editor-mobile.svg"
+        alt="illustration editor mobile"
+      />
+      <img
+        class="design__img_desktop"
+        src="/images/illustration-editor-desktop.svg"
+        alt="illustration editor mobile"
+      />
+    </div>
+    <div class="design__txtGlobalContainer">
+      <div class="design__txtContainer">
+        <h3 class="design__txtContainer__title">
+          Introducing an extensible editor
+        </h3>
+        <p class="design__txtContainer__description">
+          Blogr features an exceedingly intuitive interface which lets you focus
+          on one thing: creating content. The editor supports management of
+          multiple blogs and allows easy manipulation of embeds such as images,
+          videos, and Markdown. Extensibility with plugins and themes provide
+          easy ways to add functionality or change the looks of a blog.
+        </p>
+      </div>
+      <div class="design__txtContainer">
+        <h3 class="design__txtContainer__title">Robust content management</h3>
+        <p class="design__txtContainer__description">
+          Flexible content management enables users to easily move through
+          posts. Increase the usability of your blog by adding customized
+          categories, sections, format, or flow. With this functionality, you’re
+          in full control.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .design {
+    width: 90%;
+    margin: 0 auto 100px;
+  }
+  .design__title {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: var(--ft-size-preset-3);
+    font-weight: var(--ft-weight-preset-3);
+    line-height: var(--ft-line-height-preset-3);
+    letter-spacing: var(--ft-letter-spacing-preset-3);
+    color: var(--blue-900);
+  }
+  .design__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .design__imgContainer {
+    margin: 56px 0;
+  }
+  .design__img_mobile {
+    display: block;
+    width: 100%;
+  }
+  .design__img_desktop {
+    display: none;
+  }
+
+  .design__txtContainer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .design__txtContainer__title {
+    color: var(--blue-900);
+    font-size: var(--ft-size-preset-3);
+    font-weight: var(--ft-weight-preset-3);
+    line-height: var(--ft-line-height-preset-3);
+    letter-spacing: var(--ft-letter-spacing-preset-3);
+    margin-bottom: 1rem;
+  }
+  .design__txtContainer__description {
+    color: var(--gray-600);
+    font-size: var(--ft-size-preset-5);
+    font-weight: var(--ft-weight-preset-5);
+    line-height: var(--ft-line-height-preset-5);
+    letter-spacing: var(--ft-letter-spacing-preset-5);
+  }
+  @media screen and (min-width: 540px) {
+    .design__title {
+      font-size: var(--ft-size-preset-2);
+      font-weight: var(--ft-weight-preset-2);
+      line-height: var(--ft-line-height-preset-2);
+      letter-spacing: var(--ft-letter-spacing-preset-2);
+    }
+    .design__imgContainer {
+      margin: 8px 0 32px 0;
+    }
+    .design__img_mobile {
+      display: none;
+    }
+    .design__img_desktop {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .design__title {
+      margin-bottom: 86px;
+    }
+    .design__txtGlobalContainer {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .design__imgContainer {
+      width: 50%;
+      position: absolute;
+      top: -110px;
+      right: -240px;
+      transform: scale(1.4);
+    }
+    .design__container {
+      flex-direction: row-reverse;
+      position: relative;
+      overflow: visible;
+    }
+  }
+</style>
