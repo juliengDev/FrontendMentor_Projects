@@ -22,14 +22,12 @@ const connectLinks = [
   { href: "#", label: "LinkedIn" },
 ];
 
-function NavItem({ title, links }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function NavItem({ title, links, isOpen, setIsOpen }) {
   return (
     <div className={styles.navItem}>
       <button
-        className={styles.navItemTitle}
-        onClick={() => setIsOpen(!isOpen)}
+        className={`${styles.navItemTitle} ${isOpen ? styles.active : ""}`}
+        onClick={setIsOpen}
       >
         {title}
         <img
@@ -38,21 +36,24 @@ function NavItem({ title, links }) {
           alt="icon arrow"
         />
       </button>
-      {isOpen && (
-        <div className={styles.navItemMenu}>
-          {links.map((link) => (
-            <a key={link.label} href={link.href} className={styles.navItemLink}>
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
+      <div className={`${styles.navItemMenu} ${isOpen ? styles.open : ""}`}>
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className={`${styles.navItemLink} txt-preset-6-regular`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openItem, setOpenItem] = useState(null);
 
   function handleToggleMenu() {
     setIsOpen(!isOpen);
@@ -78,9 +79,24 @@ export default function MobileMenu() {
       {isOpen && (
         <div className={styles.menu}>
           <nav className={styles.navigation}>
-            <NavItem title="Product" links={productLinks} />
-            <NavItem title="Company" links={companyLinks} />
-            <NavItem title="Connect" links={connectLinks} />
+            <NavItem
+              title="Product"
+              links={productLinks}
+              isOpen={openItem === "Product"}
+              setIsOpen={() => setOpenItem(openItem === "Product" ? null : "Product")}
+            />
+            <NavItem
+              title="Company"
+              links={companyLinks}
+              isOpen={openItem === "Company"}
+              setIsOpen={() => setOpenItem(openItem === "Company" ? null : "Company")}
+            />
+            <NavItem
+              title="Connect"
+              links={connectLinks}
+              isOpen={openItem === "Connect"}
+              setIsOpen={() => setOpenItem(openItem === "Connect" ? null : "Connect")}
+            />
           </nav>
           <div className={styles.divider} />
           <div className={styles.authButtons}>

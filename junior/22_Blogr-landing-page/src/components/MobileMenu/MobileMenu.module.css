@@ -11,20 +11,19 @@
 
 .menu {
   position: fixed;
-  top: 108px;
+  top: 125px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 400px;
+  max-width: 688px;
   background-color: var(--white);
   border-radius: 5px;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .navigation {
@@ -47,10 +46,14 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--purple-900);
-  padding: 0.5rem 0;
+  padding: 1rem 0;
+}
+.navItemTitle.active {
+  color: rgba(45, 46, 64, 0.75);
 }
 
 .arrow {
+  margin-left: 1rem;
   transform: rotate(0deg);
   transition: transform 300ms ease;
 }
@@ -62,34 +65,49 @@
 .navItemMenu {
   background-color: var(--gray-100);
   border-radius: 5px;
-  margin-top: 1rem;
+  margin: 0;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  /* --- AJOUTS POUR L'ANIMATION --- */
+
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition:
+    margin 300ms ease-in-out,
+    max-height 300ms ease-in-out,
+    padding-top 300ms ease-in-out,
+    padding-bottom 300ms ease-in-out;
+}
+
+.navItemMenu.open {
+  max-height: 200px; /* Mettez une valeur assez grande pour contenir le menu */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .navItemLink {
-  color: var(--purple-800);
-  font-weight: 600;
+  color: var(--blue-900);
   text-decoration: none;
-}
-
-.navItemLink:hover {
-  color: var(--purple-950);
 }
 
 .divider {
   width: 100%;
   height: 1px;
-  background-color: var(--gray-200);
+  margin: 1.5rem 0;
+  background-color: var(--gray-100);
 }
 
 .authButtons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
