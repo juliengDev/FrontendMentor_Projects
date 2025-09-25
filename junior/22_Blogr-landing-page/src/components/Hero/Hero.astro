@@ -1,0 +1,67 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<h1 class="hero__title">A modern publishing platform</h1>
+<h2 class="hero__description">
+  Grow your audience and build your online brand
+</h2>
+<div class="hero__btnGroup">
+  <Button name="Start for free" variant="primary" />
+  <Button name="Learn More" variant="secondary" />
+</div>
+<style>
+  .hero__title {
+    color: var(--white);
+    text-align: center;
+    width: 90%;
+    max-width: 921px;
+    margin: 96px auto 24px;
+    font-size: var(--ft-size-preset-2);
+    font-weight: var(--ft-weight-preset-2);
+    line-height: var(--ft-line-height-preset-2);
+    letter-spacing: var(--ft-letter-spacing-preset-2);
+  }
+
+  .hero__description {
+    color: var(--white);
+    text-align: center;
+    width: 90%;
+    max-width: 921px;
+    font-size: var(--ft-size-preset-4);
+    font-weight: var(--ft-weight-preset-4);
+    line-height: var(--ft-line-height-preset-4);
+    letter-spacing: var(--ft-letter-spacing-preset-4);
+    margin-bottom: 40px;
+  }
+
+  .hero__btnGroup {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* .hero__btnGroup:nth-child(1) {
+    padding: 
+  } */
+
+  @media screen and (min-width: 624px) {
+    .hero__title {
+      font-size: var(--ft-size-preset-1);
+      font-weight: var(--ft-weight-preset-1);
+      line-height: var(--ft-line-height-preset-1);
+      letter-spacing: var(--ft-letter-spacing-preset-1);
+      margin: 96px auto 32px;
+    }
+
+    .hero__description {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 624px) {
+    .hero__description {
+      margin-bottom: 48px;
+    }
+  }
+</style>
