@@ -1,0 +1,95 @@
+<section class="infra">
+  <img
+    class="infra__img"
+    src="/images/illustration-phones.svg"
+    alt="illustration phone"
+  />
+  <div class="infra__container">
+    <h2 class="infra__title">State of the Art Infrastructure</h2>
+    <p class="infra__description">
+      With reliability and speed in mind, worldwide data centers provide the
+      backbone for ultra-fast connectivity. This ensures your site will load
+      instantly, no matter where your readers are, keeping your site
+      competitive.
+    </p>
+  </div>
+</section>
+
+<style>
+  .infra {
+    position: relative;
+    height: 540px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background: url("/images/bg-pattern-circles.svg"), var(--gradient-purple);
+    background-position:
+      center -280px,
+      center center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    color: var(--white);
+    margin-bottom: 80px;
+  }
+  .infra__title {
+    font-size: var(--ft-size-preset-2);
+    font-weight: var(--ft-weight-preset-2);
+    line-height: var(--ft-line-height-preset-2);
+    letter-spacing: var(--ft-letter-spacing-preset-2);
+
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 160px;
+    margin-bottom: 32px;
+  }
+  .infra__description {
+    font-size: var(--ft-size-preset-5);
+    font-weight: var(--ft-weight-preset-5);
+    line-height: var(--ft-line-height-preset-5);
+    letter-spacing: var(--ft-letter-spacing-preset-5);
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .infra__img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -230px;
+    width: 100%;
+    max-width: 375px;
+  }
+
+  @media screen and (min-width: 375px) {
+    .infra {
+      height: 440px;
+      background-position:
+        center -480px,
+        center center;
+      background-size: 102%;
+    }
+    .infra__title {
+      padding-top: 200px;
+    }
+  }
+  @media screen and (min-width: 1120px) {
+    .infra {
+      height: 400px;
+    }
+    .infra__container {
+      width: 50%;
+      margin-left: auto;
+    }
+    .infra__title {
+      padding-top: 100px;
+      text-align: left;
+    }
+    .infra__description {
+      text-align: left;
+      margin: 0;
+    }
+    .infra__img {
+      top: -50px;
+      left: 373px;
+    }
+  }
+</style>

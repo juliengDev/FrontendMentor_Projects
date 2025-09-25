@@ -42,7 +42,7 @@
 <style>
   .design {
     width: 90%;
-    margin: 0 auto 100px;
+    margin: 0 auto 300px;
   }
   .design__title {
     width: 90%;
@@ -110,19 +110,28 @@
   }
 
   @media screen and (min-width: 768px) {
+    .design {
+      margin: 0 auto 300px;
+    }
     .design__title {
       margin-bottom: 86px;
     }
     .design__txtGlobalContainer {
       width: 50%;
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
+    }
+    .design__txtContainer__title {
+      text-align: left;
+    }
+    .design__txtContainer__description {
+      text-align: left;
     }
 
     .design__imgContainer {
       width: 50%;
-      position: absolute;
+      position: relative;
       top: -110px;
       right: -240px;
       transform: scale(1.4);
@@ -131,6 +140,12 @@
       flex-direction: row-reverse;
       position: relative;
       overflow: visible;
+    }
+  }
+
+  @media screen and (min-width: 1120px) {
+    .design {
+      margin: 0 auto 40px;
     }
   }
 </style>
