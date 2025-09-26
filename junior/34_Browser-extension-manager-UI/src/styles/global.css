@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf")
+    format("truetype-variations");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-optical-sizing: auto;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* COLORS */
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+
+  /* neutral */
+  --neutral-900: rgb(9, 21, 64);
+  --neutral-800: rgb(32, 37, 53);
+  --neutral-700: rgb(47, 54, 75);
+  --neutral-600: rgb(83, 88, 104);
+  --neutral-300: rgb(198, 198, 198);
+  --neutral-200: rgb(214, 226, 245);
+  --neutral-100: rgb(238, 238, 238);
+  --neutral-0: rgb(251, 253, 254);
+
+  /* purple */
+  --purple-950: rgb(45, 46, 64);
+  --purple-900: rgb(63, 65, 100);
+  --purple-start-gradient: rgb(45, 46, 64);
+  --purple-end-gradient: rgb(63, 65, 100);
+  --purple-800: rgb(82, 82, 111);
+
+  /* red */
+  --red-700: rgb(199, 35, 26);
+  --red-500: rgb(222, 72, 64);
+  --red-400: rgb(242, 92, 84);
+
+  /* gradient */
+  --gradient-light: linear-gradient(180deg, #ebf2fc 0%, #eefbf9 100%);
+  --gradient-dark: linear-gradient(180deg, #04091b 0%, #091540 100%);
+
+  /* TYPOGRAPHY */
+
+  /* font-size  */
+  --ft-size-preset-1: 2.125rem;
+  --ft-size-preset-2: 1.25rem;
+  --ft-size-preset-3: 1.25rem;
+  --ft-size-preset-4: 1.25rem;
+  --ft-size-preset-5: 1rem;
+  --ft-size-preset-6: 1rem;
+
+  /* font-weigh */
+  /* 
+  font-weight: 100; Thin
+  font-weight: 200; Extra Light
+  font-weight: 300; Light
+  font-weight: 400; Normal
+  font-weight: 500; Medium
+  font-weight: 600; Semi Bold
+  font-weight: 700; Bold
+  font-weight: 800; Extra Bold
+  font-weight: 900; Black
+  */
+  --ft-weight-preset-1: 700;
+  --ft-weight-preset-2: 700;
+  --ft-weight-preset-3: 400;
+  --ft-weight-preset-4: 500;
+  --ft-weight-preset-5: 400;
+  --ft-weight-preset-6: 500;
+
+  /* line-height */
+  --ft-line-height-preset-1: 100%;
+  --ft-line-height-preset-2: 120%;
+  --ft-line-height-preset-3: 140%;
+  --ft-line-height-preset-4: 140%;
+  --ft-line-height-preset-5: 140%;
+  --ft-line-height-preset-6: 140%;
+
+  /* letter-spacing  */
+  --ft-letter-spacing-preset-1: -1px;
+  --ft-letter-spacing-preset-2: -0.2px;
+  --ft-letter-spacing-preset-3: -0.3px;
+  --ft-letter-spacing-preset-4: -0.3px;
+  --ft-letter-spacing-preset-5: -0.5px;
+  --ft-letter-spacing-preset-6: -0.5px;
+
+  /* SPACING  */
+
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-125: 10px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+
+  /* RADIUS  */
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 100%;
+  overflow-x: clip;
+  height: 100dvh;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.txt-preset-1 {
+  font-size: var(--ft-size-preset-1);
+  font-weight: var(--ft-weight-preset-1);
+  line-height: var(--ft-line-height-preset-1);
+  letter-spacing: var(--ft-letter-spacing-preset-1);
+}
+.txt-preset-2 {
+  font-size: var(--ft-size-preset-2);
+  font-weight: var(--ft-weight-preset-2);
+  line-height: var(--ft-line-height-preset-2);
+  letter-spacing: var(--ft-letter-spacing-preset-2);
+}
+.txt-preset-3 {
+  font-size: var(--ft-size-preset-3);
+  font-weight: var(--ft-weight-preset-3);
+  line-height: var(--ft-line-height-preset-3);
+  letter-spacing: var(--ft-letter-spacing-preset-3);
+}
+.txt-preset-4 {
+  font-size: var(--ft-size-preset-4);
+  font-weight: var(--ft-weight-preset-4);
+  line-height: var(--ft-line-height-preset-4);
+  letter-spacing: var(--ft-letter-spacing-preset-4);
+}
+.txt-preset-5 {
+  font-size: var(--ft-size-preset-5);
+  font-weight: var(--ft-weight-preset-5);
+  line-height: var(--ft-line-height-preset-5);
+  letter-spacing: var(--ft-letter-spacing-preset-5);
+}
+.txt-preset-6-bold {
+  font-size: var(--ft-size-preset-6);
+  font-weight: var(--ft-weight-preset-6-bold);
+  line-height: var(--ft-line-height-preset-6-bold);
+  letter-spacing: var(--ft-letter-spacing-preset-6-bold);
+}
+.txt-preset-6-regular {
+  font-size: var(--ft-size-preset-6);
+  font-weight: var(--ft-weight-preset-6-regular);
+  line-height: var(--ft-line-height-preset-6-regular);
+  letter-spacing: var(--ft-letter-spacing-preset-6-regular);
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 2rem 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

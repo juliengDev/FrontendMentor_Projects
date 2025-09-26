@@ -1,0 +1,45 @@
+---
+const { name, variant } = Astro.props;
+---
+
+<a
+  href="#"
+  class=`reset-btn txt-preset-6-bold ${variant === 'primary' ? "primary" : ""} ${variant === 'secondary' ? "secondary" : ""}`
+>
+  {name}
+</a>
+
+<style>
+  a {
+    color: var(--white);
+  }
+  .primary {
+    background-color: var(--white);
+    color: var(--red-500);
+    padding: 0.9375em 1.4em;
+    border-radius: 28px;
+    transition:
+      color 300ms ease,
+      background-color 300ms ease;
+  }
+
+  .primary:hover {
+    background-color: var(--red-400);
+    color: var(--white);
+  }
+
+  .secondary {
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid var(--white);
+    padding: 0.9375em 1.1em;
+    border-radius: 28px;
+    transition:
+      color 300ms ease,
+      background-color 300ms ease;
+  }
+  .secondary:hover {
+    color: var(--red-400);
+    background-color: var(--white);
+  }
+</style>
