@@ -8,6 +8,7 @@ import Design from "../components/Design/Design.astro";
 import Infrastructure from "../components/Infrastructure/Infrastructure.astro";
 import Tooling from "../components/Tooling/Tooling.astro";
 import Footer from "../components/Footer/Footer.astro";
+import Copyright from "../components/Copyright.astro";
 
 const pageTitle = "Home Page";
 ---
@@ -30,10 +31,5 @@ const pageTitle = "Home Page";
     <Tooling />
   </main>
   <Footer />
-  <div class="attribution">
-    Challenge by <a
-      href="https://www.frontendmentor.io?ref=challenge"
-      target="_blank">Frontend Mentor</a
-    >. Coded by <a href="https://juliengilbert.com/">Julien Gilbert</a>.
-  </div>
+  <Copyright />
 </BaseLayout>
