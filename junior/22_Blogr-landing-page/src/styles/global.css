@@ -109,15 +109,14 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: "Overpass", sans-serif;
-}
-
 body {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
   max-width: 100%;
   overflow-x: clip;
   height: 100dvh;
-  line-height: 1.5;
 }
 
 a,
