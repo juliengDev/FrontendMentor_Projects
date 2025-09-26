@@ -1,7 +1,106 @@
-<footer>FOOTER</footer>
+<footer class="footer">
+  <div class="footer__container">
+    <img class="footer__logo" src="/images/logo.svg" alt="logo" />
+    <div class="footer__grp">
+      <div class="footer__grpLinks">
+        <h3 class="footer__grpLinks__title">Product</h3>
+        <ul class="footer__links">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer__grpLinks">
+        <h3 class="footer__grpLinks__title">Company</h3>
+        <ul class="footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer__grpLinks">
+        <h3 class="footer__grpLinks__title">Connect</h3>
+        <ul class="footer__links">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <style>
   footer {
     text-align: center;
+    color: var(--white);
+    background-color: var(--gray-950);
+    border-top-right-radius: 100px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 73px 0;
+  }
+
+  .footer__logo {
+    margin-bottom: 72px;
+  }
+  .footer__grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .footer__grpLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__grpLinks__title {
+    font-size: var(--ft-size-preset-6);
+    font-weight: var(--ft-weight-preset-6-bold);
+    line-height: var(--ft-line-height-preset-6-bold);
+    letter-spacing: var(--ft-letter-spacing-preset-6-bold);
+    margin-bottom: 2rem;
+  }
+  .footer__links {
+    color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: var(--ft-size-preset-6);
+    font-weight: var(--ft-weight-preset-6-regular);
+    line-height: var(--ft-line-height-preset-6-regular);
+    letter-spacing: var(--ft-letter-spacing-preset-6-regular);
+  }
+
+  @media screen and (min-width: 764px) {
+    .footer__container {
+      flex-direction: row;
+      align-items: start;
+    }
+    .footer__grp {
+      justify-content: center;
+      align-items: start;
+      flex-direction: row;
+      flex: 1;
+      gap: 4rem;
+    }
+    .footer__grpLinks {
+      align-items: start;
+    }
+    .footer__links {
+      align-items: start;
+    }
   }
 </style>
