@@ -2,6 +2,8 @@
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import "../styles/app.css";
+import Header from "../components/Header.astro";
+import Copyright from "../components/Copyright.astro";
 
 interface Props {
   pageTitle: string;
@@ -22,6 +24,8 @@ const { pageTitle } = Astro.props;
     <script type="module" src="/scripts/app.js" is:inline></script>
   </head>
   <body>
+    <Header />
     <slot />
+    <Copyright />
   </body>
 </html>

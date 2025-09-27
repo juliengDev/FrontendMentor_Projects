@@ -1,11 +1,12 @@
 ---
-import Copyright from "../components/Copyright.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Browser extension manager";
+
+const response = await fetch(`${Astro.url.origin}/api/data`);
+const extensions = await response.json();
+
+console.log("Données récupérées côté serveur :", extensions);
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <header><h1>Welcome</h1></header>
-  <Copyright />
-</BaseLayout>
+<BaseLayout pageTitle={pageTitle}><main></main></BaseLayout>

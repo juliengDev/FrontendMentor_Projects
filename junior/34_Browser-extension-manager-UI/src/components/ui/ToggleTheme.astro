@@ -1,0 +1,74 @@
+---
+// Ce composant est purement piloté par le client, pas de code serveur ici.
+---
+
+<button id="theme-toggle" class="reset-btn" title="Changer le thème">
+  <img src="/images/icon-sun.svg" alt="Thème clair" class="sun w-6 h-6" />
+  <img src="/images/icon-moon.svg" alt="Thème sombre" class="moon w-6 h-6" />
+</button>
+
+<style is:global>
+  /* 
+    En mode clair (par défaut), on affiche la lune pour indiquer qu'on peut passer en mode sombre.
+    Le soleil est donc caché.
+  */
+  .sun {
+    display: none;
+    padding: 16px;
+    background-color: var(--neutral-700);
+    border-radius: 12px;
+  }
+  .moon {
+    display: block;
+    padding: 16px;
+    background-color: var(--neutral-100);
+    border-radius: 12px;
+  }
+
+  /* 
+    Lorsque le mode sombre est actif (.dark), on affiche le soleil pour indiquer qu'on peut revenir en mode clair.
+    La lune est alors cachée.
+  */
+  .dark .sun {
+    display: block;
+  }
+  .dark .moon {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  const themeToggleButton = document.getElementById("theme-toggle");
+
+  // Fonction pour appliquer le thème (dark/light)
+  const applyTheme = (theme) => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
+  // Au chargement, on détermine le thème à appliquer
+  const initialTheme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  applyTheme(initialTheme);
+
+  // Gestionnaire de clic pour le bouton
+  themeToggleButton.addEventListener("click", () => {
+    const currentTheme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
+  });
+</script>
