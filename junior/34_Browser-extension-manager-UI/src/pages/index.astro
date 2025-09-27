@@ -1,4 +1,5 @@
 ---
+import Filter from "../components/Filter/Filter.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Browser extension manager";
@@ -9,4 +10,8 @@ const extensions = await response.json();
 console.log("Données récupérées côté serveur :", extensions);
 ---
 
-<BaseLayout pageTitle={pageTitle}><main></main></BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
+  <main>
+    <Filter />
+  </main>
+</BaseLayout>
