@@ -16,6 +16,7 @@
   font-display: swap;
 }
 
+/* Palette de couleurs brutes - Ne changent jamais */
 :root {
   /* COLORS */
   --white: rgb(255, 255, 255);
@@ -121,15 +122,44 @@
   --radius-20: 20px;
   --radius-24: 24px;
   --radius-full: 999px;
+}
 
-  /* LIGHT MODE  */
+/* Variables sémantiques - Thème clair (défaut) */
+:root {
+  /* body */
   --background: var(--gradient-light);
   --foreground: var(--neutral-900);
+
+  --background-secondary: var(--neutral-0);
+  --heading-color-primary: var(--neutral-900);
+  --heading-txt-primary: var(--neutral-600);
+  /* button  */
+  --btn-color: var(--neutral-900);
+  --btn-background-color: var(--neutral-0);
+  --btn-strike: transparent;
+  --btn-color-active: var(--neutral-0);
+
+  --btn-remove-background: var(--neutral-0);
+  --btn-remove-foregound: var(--neutral-900);
+  --btn-remove-strike: var(--neutral-300);
 }
 
 .dark {
   --background: var(--gradient-dark);
   --foreground: var(--neutral-0);
+
+  --background-secondary: var(--neutral-800);
+  --heading-color-primary: var(--neutral-0);
+  --heading-txt-primary: var(--neutral-300);
+
+  --btn-color: var(--neutral-0);
+  --btn-background-color: var(--neutral-700);
+  --btn-strike: var(--neutral-600);
+  --btn-color-active: var(--neutral-900);
+
+  --btn-remove-background: var(--neutral-800);
+  --btn-remove-foregound: var(--neutral-0);
+  --btn-remove-strike: var(--neutral-0);
 }
 
 * {

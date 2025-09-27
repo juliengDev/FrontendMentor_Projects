@@ -1,17 +1,15 @@
 ---
-import Filter from "../components/Filter/Filter.astro";
+import Dashboard from "../components/Dashboard/Dashboard";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Browser extension manager";
 
 const response = await fetch(`${Astro.url.origin}/api/data`);
 const extensions = await response.json();
-
-console.log("Données récupérées côté serveur :", extensions);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main>
-    <Filter />
+    <Dashboard client:idle data={extensions} />
   </main>
 </BaseLayout>
