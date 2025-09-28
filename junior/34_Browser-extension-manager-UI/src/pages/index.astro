@@ -1,11 +1,14 @@
 ---
 import Dashboard from "../components/Dashboard/Dashboard";
 import BaseLayout from "../layouts/BaseLayout.astro";
+// On importe directement le JSON
+import extensions from "../data/data.json";
 
 const pageTitle = "Browser extension manager";
 
-const response = await fetch(`${Astro.url.origin}/api/data`);
-const extensions = await response.json();
+// On supprime le fetch qui n'est plus nécessaire
+// const response = await fetch(`${Astro.url.origin}/api/data`);
+// const extensions = await response.json();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
