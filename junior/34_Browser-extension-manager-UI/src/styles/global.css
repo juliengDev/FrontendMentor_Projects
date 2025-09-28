@@ -133,6 +133,12 @@
   --background-secondary: var(--neutral-0);
   --heading-color-primary: var(--neutral-900);
   --heading-txt-primary: var(--neutral-600);
+
+  --filter-link-foreground-active-hover: var(--neutral-0);
+  --filter-link-foreground-hover: var(--neutral-700);
+  --filter-link-background-hover: var(--neutral-200);
+  --filter-link-active: var(--neutral-0);
+  --filter-link-focus: var(--red-700);
   /* button  */
   --btn-color: var(--neutral-900);
   --btn-background-color: var(--neutral-0);
@@ -141,7 +147,9 @@
 
   --btn-remove-background: var(--neutral-0);
   --btn-remove-foreground: var(--neutral-900);
+  --btn-remove-foreground-hover: var(--neutral-0);
   --btn-remove-strike: var(--neutral-300);
+  --btn-remove-background-focus: var(--neutral-100);
 }
 
 .dark {
@@ -152,6 +160,12 @@
   --heading-color-primary: var(--neutral-0);
   --heading-txt-primary: var(--neutral-300);
 
+  --filter-link-foreground-active-hover: var(--neutral-900);
+  --filter-link-background-hover: var(--neutral-600);
+  --filter-link-foreground-hover: var(--neutral-0);
+  --filter-link-active: var(--neutral-600);
+  --filter-link-focus: var(--red-400);
+
   --btn-color: var(--neutral-0);
   --btn-background-color: var(--neutral-700);
   --btn-strike: var(--neutral-600);
@@ -159,7 +173,9 @@
 
   --btn-remove-background: var(--neutral-800);
   --btn-remove-foreground: var(--neutral-0);
-  --btn-remove-strike: var(--neutral-0);
+  --btn-remove-foreground-hover: var(--neutral-900);
+  --btn-remove-strike: var(--neutral-600);
+  --btn-remove-background-focus: var(--neutral-600);
 }
 
 * {

@@ -17,12 +17,26 @@
     padding: 16px;
     background-color: var(--neutral-700);
     border-radius: 12px;
+    transition: background-color 300ms ease;
   }
   .moon {
     display: block;
     padding: 16px;
     background-color: var(--neutral-100);
     border-radius: 12px;
+    transition: background-color 300ms ease;
+  }
+  .moon:hover {
+    background-color: var(--neutral-300);
+  }
+  .sun:hover {
+    background-color: var(--neutral-600);
+  }
+  button:focus-visible .sun {
+    background-color: var(--neutral-600);
+  }
+  button:focus-visible .moon {
+    background-color: var(--neutral-300);
   }
 
   /* 

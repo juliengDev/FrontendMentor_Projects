@@ -49,4 +49,17 @@
   background-color: var(--btn-remove-background);
   border-radius: var(--radius-full);
   border: 1px solid var(--btn-remove-strike);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+.extenstion__removeBtn:hover {
+  background-color: var(--filter-link-focus);
+  color: var(--btn-remove-foreground-hover);
+  border: 1px solid transparent;
+}
+.extenstion__removeBtn:focus-visible {
+  background-color: var(--btn-remove-background-focus);
+  outline: 3px solid var(--filter-link-focus);
+  outline-offset: 4px;
 }

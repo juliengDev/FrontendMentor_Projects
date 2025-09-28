@@ -31,19 +31,34 @@
   display: block;
   text-align: center;
   box-shadow: inset 0 0 0 1px var(--btn-strike);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
 .filter__link:focus-visible {
-  outline: 3px solid var(--red-700);
-  outline-offset: 2px;
+  background-color: var(--filter-link-active);
+  outline: 3px solid var(--filter-link-focus);
+  outline-offset: 4px;
 }
 
+.filter__link.active:hover {
+  background-color: var(--red-500);
+  color: var(--filter-link-foreground-active-hover);
+}
 .filter__link:not(.active):hover {
-  color: var(--red-700);
+  background-color: var(--filter-link-background-hover);
+  color: var(--filter-link-foreground-hover);
 }
 
 .filter__link.active {
-  background-color: var(--red-700);
+  background-color: var(--filter-link-focus);
   color: var(--btn-color-active);
   box-shadow: none;
+}
+
+@media screen and (min-width: 940px) {
+  .filter__tabs {
+    justify-content: end;
+  }
 }
