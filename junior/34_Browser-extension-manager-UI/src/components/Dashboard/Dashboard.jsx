@@ -35,7 +35,7 @@ function Dashboard({ data }) {
     <>
       <section className={styles.filter}>
         <h1 className={styles.filter__heading}>Extensions List</h1>
-        <Filter activTab={activeTab} setActivTab={setActiveTab} />
+        <Filter activeTab={activeTab} setActiveTab={setActiveTab} />
       </section>
 
       <section>

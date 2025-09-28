@@ -54,7 +54,6 @@
 .filter__link.active {
   background-color: var(--filter-link-focus);
   color: var(--btn-color-active);
-  box-shadow: none;
 }
 
 @media screen and (min-width: 940px) {
