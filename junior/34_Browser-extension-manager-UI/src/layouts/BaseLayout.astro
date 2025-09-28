@@ -21,11 +21,11 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
     <ClientRouter />
 
-    <script type="module" src="/scripts/app.js" is:inline></script>
+    <!-- <script type="module" src="/scripts/app.js" is:inline></script> -->
   </head>
   <body>
     <Header />
     <slot />
-    <!-- <Copyright /> -->
+    <Copyright />
   </body>
 </html>

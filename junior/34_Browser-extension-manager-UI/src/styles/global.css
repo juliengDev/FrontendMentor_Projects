@@ -150,8 +150,12 @@
   --btn-remove-foreground-hover: var(--neutral-0);
   --btn-remove-strike: var(--neutral-300);
   --btn-remove-background-focus: var(--neutral-100);
+
+  --footer-primary: var(--neutral--900);
+  --footer-secondary: var(--red-400);
 }
 
+/* Variables sémantiques - Thème sombre */
 .dark {
   --background: var(--gradient-dark);
   --foreground: var(--neutral-0);
@@ -176,6 +180,9 @@
   --btn-remove-foreground-hover: var(--neutral-900);
   --btn-remove-strike: var(--neutral-600);
   --btn-remove-background-focus: var(--neutral-600);
+
+  --footer-primary: var(--neutral--0);
+  --footer-secondary: var(--red-400);
 }
 
 * {
@@ -231,17 +238,12 @@ a:active {
   line-height: var(--ft-line-height-preset-5);
   letter-spacing: var(--ft-letter-spacing-preset-5);
 }
-.txt-preset-6-bold {
-  font-size: var(--ft-size-preset-6);
-  font-weight: var(--ft-weight-preset-6-bold);
-  line-height: var(--ft-line-height-preset-6-bold);
-  letter-spacing: var(--ft-letter-spacing-preset-6-bold);
-}
+
 .txt-preset-6-regular {
   font-size: var(--ft-size-preset-6);
-  font-weight: var(--ft-weight-preset-6-regular);
-  line-height: var(--ft-line-height-preset-6-regular);
-  letter-spacing: var(--ft-letter-spacing-preset-6-regular);
+  font-weight: var(--ft-weight-preset-6);
+  line-height: var(--ft-line-height-preset-6);
+  letter-spacing: var(--ft-letter-spacing-preset-6);
 }
 
 .reset-btn {
@@ -261,15 +263,12 @@ a:active {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: 2rem;
   padding: 2rem 0;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--white);
+  color: var(--footer-primary);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--footer-secondary);
 }
 .portfolio {
   padding-left: 1rem;

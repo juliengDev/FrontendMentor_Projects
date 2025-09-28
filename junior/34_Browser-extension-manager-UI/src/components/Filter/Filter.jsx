@@ -1,6 +1,6 @@
 import styles from "./Filter.module.css";
 
-function Filter({ activTab, setActivTab }) {
+function Filter({ activeTab, setActiveTab }) {
   const tabs = ["All", "Active", "Inactive"];
 
   return (
@@ -10,9 +10,9 @@ function Filter({ activTab, setActivTab }) {
           <li key={tab}>
             <button
               className={` ${styles.filter__link} ${
-                tab === activTab ? styles.active : ""
+                tab === activeTab ? styles.active : ""
               }`}
-              onClick={() => setActivTab(tab)}
+              onClick={() => setActiveTab(tab)}
             >
               {tab}
             </button>

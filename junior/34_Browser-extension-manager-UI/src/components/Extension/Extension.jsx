@@ -26,13 +26,13 @@ function Extension({
       <div className={styles.extension__action}>
         <button
           onClick={() => handleRemove(id)}
-          className={styles.extenstion__removeBtn}
+          className={styles.extension__removeBtn}
         >
           Remove
         </button>
         <ToggleBtn
           extensionId={id}
-          initialIsActive={isActive}
+          isActive={isActive}
           handleToggle={handleToggle}
         />
       </div>

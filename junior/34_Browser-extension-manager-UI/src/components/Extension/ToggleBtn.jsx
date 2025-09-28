@@ -1,6 +1,6 @@
 import styles from "./ToggleBtn.module.css";
 
-function ToggleBtn({ extensionId, initialIsActive, handleToggle }) {
+function ToggleBtn({ extensionId, isActive, handleToggle }) {
   const uniqueInputId = `toggle-${extensionId}`;
 
   return (
@@ -9,7 +9,7 @@ function ToggleBtn({ extensionId, initialIsActive, handleToggle }) {
         type="checkbox"
         id={uniqueInputId}
         className={styles.input}
-        defaultChecked={initialIsActive}
+        checked={isActive}
         onChange={() => handleToggle(extensionId)}
       />
       <label htmlFor={uniqueInputId} className={styles.label}>

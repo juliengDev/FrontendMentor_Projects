@@ -4,12 +4,12 @@ import Filter from "../Filter/Filter";
 import Extension from "../Extension/Extension";
 
 function Dashboard({ data }) {
-  const [activTab, setActivTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("All");
   const [extensions, setExtensions] = useState(data);
 
   function handleRemove(id) {
-    const newExtensions = extensions.filter((ext) => ext.id !== id)
-    setExtensions(newExtensions)
+    const newExtensions = extensions.filter((ext) => ext.id !== id);
+    setExtensions(newExtensions);
   }
 
   function handleToggle(id) {
@@ -23,9 +23,9 @@ function Dashboard({ data }) {
   }
 
   let filteredExtensions;
-  if (activTab === "Active") {
+  if (activeTab === "Active") {
     filteredExtensions = extensions.filter((ext) => ext.isActive === true);
-  } else if (activTab === "Inactive") {
+  } else if (activeTab === "Inactive") {
     filteredExtensions = extensions.filter((ext) => ext.isActive === false);
   } else {
     filteredExtensions = extensions;
@@ -35,7 +35,7 @@ function Dashboard({ data }) {
     <>
       <section className={styles.filter}>
         <h1 className={styles.filter__heading}>Extensions List</h1>
-        <Filter activTab={activTab} setActivTab={setActivTab} />
+        <Filter activTab={activeTab} setActivTab={setActiveTab} />
       </section>
 
       <section>
