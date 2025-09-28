@@ -13,3 +13,26 @@
   margin-bottom: 24px;
 }
 
+.filter__notFound {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 128px;
+}
+.extensionsGrid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 540px) {
+  .extensionsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 940px) {
+  .extensionsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

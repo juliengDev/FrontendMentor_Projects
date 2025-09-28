@@ -1,34 +1,42 @@
 import styles from "./Extension.module.css";
+import ToggleBtn from "./ToggleBtn";
 
-function Extension({ data }) {
+function Extension({
+  id,
+  logo,
+  name,
+  description,
+  isActive,
+  handleToggle,
+  handleRemove,
+}) {
   return (
-    <>
-      {data.length > 0 && (
-        <ul className={styles.extension__container}>
-          {data.map((ext) => (
-            <li key={ext.id} className={styles.extension__item}>
-              <div className={styles.extension__heading}>
-                <img
-                  className={styles.extension__logo}
-                  src={ext.logo}
-                  alt="extension logo"
-                />
-                <div>
-                  <h3 className={styles.extension__name}>{ext.name}</h3>
-                  <p className={styles.extension__description}>
-                    {ext.description}
-                  </p>
-                </div>
-              </div>
-              <div className={styles.extension__action}>
-                <button className={styles.extenstion__removeBtn}>Remove</button>
-                <button>Toggle</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </>
+    <li className={styles.extension__item}>
+      <div className={styles.extension__heading}>
+        <img
+          className={styles.extension__logo}
+          src={logo}
+          alt="extension logo"
+        />
+        <div>
+          <h3 className={styles.extension__name}>{name}</h3>
+          <p className={styles.extension__description}>{description}</p>
+        </div>
+      </div>
+      <div className={styles.extension__action}>
+        <button
+          onClick={() => handleRemove(id)}
+          className={styles.extenstion__removeBtn}
+        >
+          Remove
+        </button>
+        <ToggleBtn
+          extensionId={id}
+          initialIsActive={isActive}
+          handleToggle={handleToggle}
+        />
+      </div>
+    </li>
   );
 }
 

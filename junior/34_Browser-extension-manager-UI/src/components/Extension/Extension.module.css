@@ -1,10 +1,3 @@
-.extension__container {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  list-style-type: none;
-}
 .extension__item {
   display: flex;
   flex-direction: column;
@@ -56,14 +49,4 @@
   background-color: var(--btn-remove-background);
   border-radius: var(--radius-full);
   border: 1px solid var(--btn-remove-strike);
-}
-@media screen and (min-width: 540px) {
-  .extension__container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (min-width: 940px) {
-  .extension__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
