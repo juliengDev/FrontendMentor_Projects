@@ -11,9 +11,19 @@ yarn-error.log*
 /frontend/node_modules/
 /frontend/dist/
 /frontend/.astro/
+/frontend/.vscode//
 /frontend/.env
 /frontend/.env.*
 !/frontend/.env.example
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/pnpm-debug.log*
+/frontend/.DS_Store
+/frontend/.idea/
+/frontend/ressources/
+/frontend/.netlify
+/frontend/
 
 # === SERVER (Express) ===
 /server/node_modules/

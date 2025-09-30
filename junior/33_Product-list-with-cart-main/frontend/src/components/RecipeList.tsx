@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Définissons une interface pour la structure d'une recette
 // Cela nous apportera la sécurité de typage avec TypeScript
@@ -21,7 +21,7 @@ interface RecipeListProps {
 const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
   return (
     <div>
-      <h2>Nos recettes</h2>
+      <h2>Desserts</h2>
       <ul>
         {recipes.map((recipe, index) => (
           <li key={index}>{recipe.name}</li>

@@ -1,19 +1,16 @@
 ---
 import RecipeList from '../components/RecipeList.tsx';
+import MainLayout from '../layouts/MainLayout.astro';
 
 const response = await fetch('http://localhost:3001/api/recipes');
 const recipes = await response.json();
 console.log("Recettes chargées depuis l'API:", recipes);
+const pageTitle = "Product list with cart";
 ---
 
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-    <RecipeList client:load recipes={recipes} />
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+
+    <MainLayout pageTitle={pageTitle}>
+
+      <RecipeList client:load recipes={recipes} />
+    </MainLayout>
+
