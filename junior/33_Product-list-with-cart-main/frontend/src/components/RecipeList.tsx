@@ -1,7 +1,7 @@
 import React from "react";
+import styles from "./RecipeList.module.css";
+import ProductsList from "./ProductsList";
 
-// Définissons une interface pour la structure d'une recette
-// Cela nous apportera la sécurité de typage avec TypeScript
 interface Recipe {
   name: string;
   price: number;
@@ -14,20 +14,16 @@ interface Recipe {
   };
 }
 
-interface RecipeListProps {
+export interface RecipeListProps {
   recipes: Recipe[];
 }
 
 const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
   return (
-    <div>
-      <h2>Desserts</h2>
-      <ul>
-        {recipes.map((recipe, index) => (
-          <li key={index}>{recipe.name}</li>
-        ))}
-      </ul>
-    </div>
+    <main className={styles.app}>
+      <h1 className={styles.app__heading}>Desserts</h1>
+      <ProductsList recipes={recipes} />
+    </main>
   );
 };
 
