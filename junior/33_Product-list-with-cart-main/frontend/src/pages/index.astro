@@ -1,0 +1,19 @@
+---
+import RecipeList from '../components/RecipeList.tsx';
+
+const response = await fetch('http://localhost:3001/api/recipes');
+const recipes = await response.json();
+console.log("Recettes chargées depuis l'API:", recipes);
+---
+
+<html>
+  <body>
+    <h1>Hello, World!</h1>
+    <RecipeList client:load recipes={recipes} />
+  </body>
+</html>
+<style>
+  h1 {
+    color: orange;
+  }
+</style>
