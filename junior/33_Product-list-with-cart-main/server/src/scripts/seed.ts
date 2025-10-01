@@ -17,6 +17,8 @@ import { Recipe } from "../types/recipe.types";
       driver: sqlite3.Database,
     });
 
+    
+
     // 2. Créer la table 'recipes' (si elle n'existe pas)
     // TODO: Écrire la requête CREATE TABLE ici
     console.log("Création de la table recipes...");

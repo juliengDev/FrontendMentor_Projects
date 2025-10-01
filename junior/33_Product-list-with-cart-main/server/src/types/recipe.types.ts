@@ -9,3 +9,7 @@ export interface Recipe {
     desktop: string;
   };
 }
+
+export interface NewRecipes extends Recipe {
+  id: string;
+}

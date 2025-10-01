@@ -1,18 +1,29 @@
 import { Request, Response } from "express";
-import fs from "fs/promises";
 import path from "path";
-import { Recipe } from "../types/recipe.types";
+import { open } from "sqlite";
+import sqlite3 from "sqlite3";
+import { NewRecipes } from "../types/recipe.types";
 
-// Le chemin vers data.json, en partant de la racine du projet
-const DATA_PATH = path.join(__dirname, "../data/data.json");
+const dbPath = path.join(__dirname, "../../database.db");
 
 export const getRecipes = async (req: Request, res: Response) => {
   try {
-    const data = await fs.readFile(DATA_PATH, "utf-8");
-    const recipes: Recipe[] = JSON.parse(data);
-    res.status(200).json(recipes);
+    //1 - Ouvrir la base de données
+    const db = await open({
+      filename: dbPath,
+      driver: sqlite3.Database,
+    });
+
+    //2 - Executer la requete select et stocker le resultat
+    const data: NewRecipes[] = await db.all(`SELECT * FROM recipes`);
+
+    //3 - Fermer la connexion a la base de données
+    await db.close();
+
+    //4 - Envoyer les données
+    res.status(200).json(data);
   } catch (error) {
-    console.error("Error reading data.json:", error);
+    console.error("Error reading data:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
