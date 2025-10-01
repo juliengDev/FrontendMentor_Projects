@@ -40,6 +40,7 @@
   letter-spacing: var(--ft-letter-spacing-preset-4);
   font-weight: 600;
   color: var(--rose-900);
+  background-color: var(--white);
 }
 
 .product__DescriptionCategory {
