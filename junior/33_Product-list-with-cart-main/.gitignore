@@ -23,7 +23,6 @@ yarn-error.log*
 /frontend/.idea/
 /frontend/ressources/
 /frontend/.netlify
-/frontend/
 
 # === SERVER (Express) ===
 /server/node_modules/

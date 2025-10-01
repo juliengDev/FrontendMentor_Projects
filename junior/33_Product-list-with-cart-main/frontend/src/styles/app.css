@@ -1,0 +1,11 @@
+html {
+  background: var(--rose-50);
+  color: var(--rose-900);
+}
+
+body {
+  width: 100%;
+  max-width: 1170px;
+  padding: 20px 16px;
+  margin: 0 auto;
+}

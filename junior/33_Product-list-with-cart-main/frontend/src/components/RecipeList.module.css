@@ -1,0 +1,12 @@
+.app {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.app__heading {
+  font-size: var(--ft-size-preset-1);
+  font-weight: var(--ft-weight-preset-1);
+  line-height: var(--ft-line-height-preset-1);
+  letter-spacing: var(--ft-letter-spacing-preset-1);
+  margin-bottom: 2rem;
+}
