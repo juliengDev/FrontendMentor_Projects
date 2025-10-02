@@ -15,9 +15,7 @@ import { Recipe } from "../types/recipe.types";
     const db = await open({
       filename: dbPath,
       driver: sqlite3.Database,
-    });
-
-    
+    });    
 
     // 2. Créer la table 'recipes' (si elle n'existe pas)
     // TODO: Écrire la requête CREATE TABLE ici

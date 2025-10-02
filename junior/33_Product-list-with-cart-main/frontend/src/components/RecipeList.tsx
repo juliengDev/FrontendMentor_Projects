@@ -3,15 +3,14 @@ import styles from "./RecipeList.module.css";
 import ProductsList from "./ProductsList";
 
 interface Recipe {
+  id: number;
   name: string;
   price: number;
   category: string;
-  image: {
-    thumbnail: string;
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
+  image_thumbnail: string;
+  image_mobile: string;
+  image_tablet: string;
+  image_desktop: string;
 }
 
 export interface RecipeListProps {

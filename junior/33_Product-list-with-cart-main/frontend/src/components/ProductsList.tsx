@@ -4,24 +4,31 @@ const ProductsList: React.FC<RecipeListProps> = ({ recipes }) => {
   return (
     <ul className={styles.productList}>
       {recipes.map((recipe, index) => {
-        const { image, name, category, price } = recipe;
-        const { mobile, tablet, desktop } = image;
+        const {
+          id,
+          name,
+          category,
+          price,
+          image_mobile,
+          image_tablet,
+          image_desktop,
+        } = recipe;
         const cartIcon = "/assets/images/svg/icon-add-to-cart.svg";
         return (
           <li className={styles.product__container} key={index}>
             <div className={styles.product__ImgContainer}>
               <picture>
                 <source
-                  srcSet={desktop.substring(2)}
+                  srcSet={image_desktop.substring(2)}
                   media="(min-width: 1200px)"
                 />
                 <source
-                  srcSet={tablet.substring(2)}
+                  srcSet={image_tablet.substring(2)}
                   media="(min-width: 768px)"
                 />
                 <img
                   className={styles.product__img}
-                  src={mobile.substring(2)}
+                  src={image_mobile.substring(2)}
                   alt={`Image of ${name}`}
                 />
               </picture>
